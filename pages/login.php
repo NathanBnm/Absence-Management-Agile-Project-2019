@@ -2,6 +2,25 @@
 if (isset($_POST['submit'])) {
     $username = htmlspecialchars(trim($_POST['username']));
     $password = htmlspecialchars(trim($_POST['password']));
+
+    $errors[];
+
+    if(empty($username) || empty($password)) {
+        $errors['empty'] = "Tous les champs n'ont pas été remplis";
+    }
+    else if(user_exist($username, $token) == 0 || user_exist($username, $token) > 1) {
+        $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
+    }
+
+    if(!empty($errors)){
+        foreach($errors as $error) {
+            echo "<p>".$error."</p>";
+        }
+    }
+    else {
+        header("Location:index.php?page=dashboard");
+        exit;
+    }
 }
 
 ?>
