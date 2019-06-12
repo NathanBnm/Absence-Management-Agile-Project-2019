@@ -3,7 +3,7 @@
 <html lang="fr">
   <?php
     echo "<title>Page Enseignant</title> ";
-	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"style.css\" title=\"Styles base\" />";
+	echo "<link rel=\"stylesheet\" type=\"text/css\" href=\"Estyle.css\" title=\"Styles base\" />";
   ?>
 </head>
     <meta charset="utf-8">	
