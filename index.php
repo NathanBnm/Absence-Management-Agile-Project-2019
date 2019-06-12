@@ -24,8 +24,8 @@ if (in_array($page . '.func.php', $pages_functions)) {
 <html lang="fr">
 
 <head>
-    meta charset="UTF-8">
-    <title>Connexion</title>
+    <meta charset="UTF-8">
+    <title>Absences</title>
     <link type="text/css" rel="stylesheet" href="../css/bulma.css"/>
     <link type="text/css" rel="stylesheet" href="../css/main.css"/>
 
