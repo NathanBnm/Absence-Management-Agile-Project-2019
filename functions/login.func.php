@@ -58,7 +58,7 @@
             $ens_eleve['absence'] = $row;
         }
         return $ens_eleve;
-        
+ 
     }
     
     //demander vérification à l'utilisateur
@@ -69,10 +69,11 @@
             'UTI_IDENTIFIANT_ELEVE'      => $usernametu,
             'SIG_DATE'                   => $date
         ];
-        $absence[];
-        $absence[] = origine_absence($username,$usernametu)['absence']->DATE;
-        foreach($absence as $row){
-            if($absence['row'] == $date){
+        $absences[] = origine_absence($username, $usernametu)['absence']->DATE;
+        var_dump($absences);
+        /*
+        foreach($absences as $absence){
+            if($absence['date'] == $date){
                 $sql = "DELETE from ABS_SIGNALEMENT WHERE UTI_CODE = ':UTI_IDENTIFIANT_ENSEIGNANT' AND UTI_CODE_1 = ':UTI_IDENTIFIANT_ELEVE' AND SIG_DATE = ':DATE'";
                 $req = $db->prepare($sql);
                 $req->execute($sql);
@@ -80,10 +81,10 @@
             }
             else{
                 echo "Pas d'absence à supprimer";
-            }
-        }
-           
         
+        }
+        */
+  
     }
 
     
