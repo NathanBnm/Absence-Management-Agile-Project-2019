@@ -34,17 +34,17 @@ if (isset($_POST['submit'])) {
             <div class="column is-6 is-offset-3">
                 <nav class="tabs is-fullwidth is-boxed is-medium">
                     <ul>
-                        <li class="tab is-active" onclick="openTab('Etudiant')">
+                        <li class="tab is-active" data-tab="etudiant">
                             <a>
                                 <span class="icon "><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
                             </a>
                         </li>
-                        <li class="tab" onclick="openTab('Professeur')">
+                        <li class="tab" data-tab="enseignant">
                             <a>
                                 <span class="icon"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
                             </a>
                         </li>
-                        <li class="tab" onclick="openTab('Directeur')">
+                        <li class="tab" data-tab="directeur">
                             <a>
                                 <span class="icon"><i class="fas fa-user-tie"></i>&nbsp;Directeur</span>
                             </a>
