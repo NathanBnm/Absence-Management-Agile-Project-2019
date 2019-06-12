@@ -49,18 +49,20 @@ if($page == 'login' && isLogged()){
 <body>
 
     <?php 
+        if($page == 'login' || $page == 'error') {
+            //On importe la page correspondante
+            require 'pages/' . $page . '.php';
+        } else {
+            //On importe l'entête
+            require 'body/header.php';
 
-        //On importe l'entête
-        require 'body/header.php';
-
-        //On importe la page correspondante
-        require 'pages/' . $page . '.php';
-
-        //On importe le pied de page
-        require 'body/footer.php';
-
+            //On importe la page correspondante
+            require 'pages/' . $page . '.php';
+            
+            //On importe le pied de page
+            require 'body/footer.php';
+        }
     ?>
-
 
     <script src="js/script.js"></script>
 

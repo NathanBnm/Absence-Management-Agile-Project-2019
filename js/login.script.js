@@ -23,22 +23,22 @@ document.addEventListener('DOMContentLoaded', function () {
                     var tabName = tabListItem.dataset.tab;
 
                     if (tabName == 'etudiant') {
-                        istitle[0].style.color = "hsl(204, 86%, 53%)";
+                        istitle[0].style.color = "#74b9ff";
+                        issubmit.style.backgroundColor = "#74b9ff";
                         istitle[0].innerHTML = "Espace étudiant";
-                        istitle[1].style.color = "hsl(204, 86%, 53%)";
-                        issubmit.style.backgroundColor = "hsl(217, 71%, 53%)";
+                        istitle[1].style.color = "#74b9ff";
                     }
                     else if (tabName == 'enseignant') {
-                        istitle[0].style.color = "hsl(24,85%,55%)";
+                        istitle[0].style.color = "#fdcb6e";
                         istitle[0].innerHTML = "Espace enseignant";
-                        istitle[1].style.color = "hsl(24,85%,55%)";
-                        issubmit.style.backgroundColor = "hsl(20,91%,45%)";
+                        istitle[1].style.color = "#fdcb6e";
+                        issubmit.style.backgroundColor = "#fdcb6e";
                     }
                     else if (tabName == 'directeur') {
-                        istitle[0].style.color = "hsl(294,90%,50%)";
+                        issubmit.style.backgroundColor = "#a29bfe";
+                        istitle[0].style.color = "#a29bfe";
                         istitle[0].innerHTML = "Espace directeur des études";
-                        istitle[1].style.color = "hsl(294,90%,50%)";
-                        issubmit.style.backgroundColor = "hsl(293,100%,43%)";
+                        istitle[1].style.color = "#a29bfe";
                     }
 
                     // on identifie tous les contenus possibles puis on applique la classe has-display-none si l'ID du contenu ne correspond pas à la valeur de l'attribut data-tab
