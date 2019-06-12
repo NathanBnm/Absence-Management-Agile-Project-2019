@@ -12,11 +12,7 @@ if (isset($_POST['submit'])) {
         $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
     }
 
-    if (!empty($errors)) {
-        foreach ($errors as $error) {
-            echo "<p>" . $error . "</p>";
-        }
-    } else {
+    if (empty($errors)) {
         $_SESSION['id'] = $username;
         $_SESSION['rank'] = user_rank($username)['rank']->CAT_CODE;
 
@@ -42,6 +38,9 @@ if (isset($_POST['submit'])) {
                         <h1 class="title bleu">
                             Espace étudiant
                         </h1>
+                        <h2 class="subtitle">
+                            Gestion des absences
+                        </h2>
                     </div>
                 </div>
             </section>
@@ -61,10 +60,23 @@ if (isset($_POST['submit'])) {
                 </nav>
                 <div class="box border-radius-bottom has-text-centered">
                     <h1 class="title has-text-weight-bold uppercase bleu">Se connecter</h1>
+                    <?php
+                    if (!empty($errors)) {
+                        foreach ($errors as $error) {
+                            ?>
+                            <article class="message is-danger">
+                                <div class="message-body">
+                                    <?php echo $error; ?>
+                                </div>
+                            </article>
+                            <?php
+                        }
+                    } else
+                        ?>
                     <div class="stroke-line is-center"></div>
                     <?php
-                    require 'forms/login.form.php';
-                    ?>
+                require 'forms/login.form.php';
+                ?>
                 </div>
             </div>
             <div class="hero-body">

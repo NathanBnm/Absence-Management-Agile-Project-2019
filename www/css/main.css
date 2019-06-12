@@ -1,14 +1,5 @@
-* {
-    box-sizing: border-box;
-}
-
-html, body {
-    margin: 0;
-    padding:0;
-}
-
-body {
-    overflow: hidden;
+html {
+    overflow-y: unset !important;
 }
 
 .uppercase {
@@ -18,7 +9,7 @@ body {
 .stroke-line {
     border-bottom: 3px solid #696969;
     width: 100px;
-    margin: 15px auto;
+    margin: 30px auto;
 }
 
 .box {
@@ -43,8 +34,6 @@ body {
     width: 200px;
 }
 
-/* Navbar */
-
 .bg-bleu {
     background-color: #74b9ff !important;
 }
@@ -67,4 +56,8 @@ body {
 
 .violet {
     color: #a29bfe !important;
+}
+
+.navbar-link i {
+    margin: 0 5px;
 }

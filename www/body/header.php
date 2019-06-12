@@ -41,7 +41,7 @@ if(isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 			</a>
 		</div>
 		<div class="navbar-end">
-			<a href="index.php?page=logout" class="navbar-item">
+			<a href="index.php?page=logout" title="Déconnexion" class="navbar-item">
 				<i class="fas fa-power-off fa-lg"></i>
 			</a>
 		</div>
