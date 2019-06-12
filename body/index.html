@@ -12,23 +12,34 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
     <body>
+
+
     <section class="hero is-success has-background-grey-darker is-fullheight">
+
+        <div class="hero-head" >
+            <div class="container" >
+                <h1 class="title">
+                    Espace étudiant
+                </h1>
+            </div>
+        </div>
+
         <div class="hero-body has-text-centered">
             <div class="container hero-body">
                 <div class="column is-6 is-offset-3">
                     <nav class="tabs is-fullwidth is-boxed is-medium">
                         <ul>
-                            <li class="tab is-active" onclick="openTab(event,'Etudiant')">
+                            <li class="tab is-active" data-tab="etudiant">
                                 <a>
                                     <span class="icon "><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
                                 </a>
                             </li>
-                            <li class="tab" onclick="openTab(event,'Professeur')">
+                            <li class="tab" data-tab="enseignant">
                                 <a>
                                     <span class="icon"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
                                 </a>
                             </li>
-                            <li class="tab" onclick="openTab(event,'Directeur')">
+                            <li class="tab" data-tab="directeur">
                                 <a>
                                     <span class="icon"><i class="fas fa-user-tie"></i>&nbsp;Directeur</span>
                                 </a>
