@@ -28,10 +28,11 @@
         //user_rank($username)['rank']->CAT_CODE;
     }
 
+    /*
     function grab_absence($username){
         global $db;
         $u = [
-            'UTI_IDENTIFIANT' => $username;
+            'UTI_IDENTIFIANT' => $username
         ];
         $sql = "";
         $req->execute($u);
@@ -39,7 +40,7 @@
     }
 
     function delete_absence($usernamens, $usernametu, $date){
-            /*UTI_CODE => personne qui a signalé l'absence seule qui peut supprimer*/
+            /*UTI_CODE => personne qui a signalé l'absence seule qui peut supprimer*//*
         global $db;
         $u = [
             'UTI_IDENTIFIANT_ENSEIGNANT' => $usernamens;
@@ -48,5 +49,6 @@
         $sql = "SELECT * from ABS_SIGNALEMENT WHERE UTI_CODE = ':UTI_ENSEIGNANT' AND UTI_CODE_1 = 'UTI_IDENTIFIANT_ELEVE' ";
         
     }
+    */
    
 ?>
