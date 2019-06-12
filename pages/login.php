@@ -42,15 +42,15 @@ if (isset($_POST['submit'])) {
                     <div id="navbarBasicExample" class="navbar-menu">
                         <div class="navbar-start">
                             <a class="navbar-item item has-text-centered">
-                                Espace étudiant
+                                <i class="fas fa-user-graduate"></i>&nbsp;Étudiant
                             </a>
 
                             <a class="navbar-item item has-text-centered">
-                                Espace professeur
+                            <i class="fas fa-user"></i>&nbsp;Enseignant
                             </a>
 
                             <a class="navbar-item item has-text-centered">
-                                Directeur des études
+                                <i class="fas fa-user-tie"></i>&nbsp;Directeur des études
                             </a>
                         </div>
                     </div>
