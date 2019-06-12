@@ -25,3 +25,12 @@ button, form {
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+
+.item{
+    border-top-left-radius: 15px !important;
+    border-top-right-radius: 15px !important;
+    background-color: white;
+    color: black !important;
+    width: 12.9vw !important;
+    height: 6vh;
+}
