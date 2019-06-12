@@ -26,12 +26,10 @@ if (in_array($page . '.func.php', $pages_functions)) {
 <head>
     <meta charset="UTF-8">
     <title>Absences</title>
-    <link type="text/css" rel="stylesheet" href="../css/bulma.css"/>
-    <link type="text/css" rel="stylesheet" href="../css/main.css"/>
-
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="css/bulma.css"/>
+    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <script src="https://kit.fontawesome.com/4a31b437ba.js"></script>
 </head>
 
 <body>
