@@ -20,7 +20,12 @@
         $sql = "SELECT CAT_CODE from ABS_UTILISATEUR where UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
         $req = $db->prepare($sql);
         $req->execute($u);
-        return $req;
+        $user_rank = [];
+        while($row = $req->fetchObject()){
+            $user_rank['rank'] = $row;
+        }
+        return $user_rank;
+        //user_rank($username)['rank']->CAT_CODE;
     }
 
     function grab_absence($username){
