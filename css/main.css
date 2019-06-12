@@ -37,3 +37,19 @@ button, form {
 #submit {
     background-color : hsl(217, 71%, 53%);
 }
+
+.navbar.bleu {
+    background-color: hsl(217, 71%, 53%);
+}
+
+.navbar.orange {
+    background-color: hsl(24,85%,55%);
+}
+
+.navbar.orange:hover {
+    background-color: hsl(29, 70%, 47%);
+}
+
+.navbar.violet {
+    background-color: hsl(299,90%,50%);
+}

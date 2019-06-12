@@ -6463,7 +6463,7 @@ a.list-item {
 }
 
 .navbar.is-dark {
-  background-color: hsl(24,85%,55%);
+  background-color: #363636;
   color: whitesmoke;
 }
 
@@ -6476,7 +6476,7 @@ a.list-item {
 .navbar.is-dark .navbar-brand .navbar-link:focus,
 .navbar.is-dark .navbar-brand .navbar-link:hover,
 .navbar.is-dark .navbar-brand .navbar-link.is-active {
-  background-color: hsl(29, 70%, 47%);
+  background-color: #292929;
   color: whitesmoke;
 }
 
