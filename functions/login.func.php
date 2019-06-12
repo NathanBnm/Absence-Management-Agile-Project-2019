@@ -70,7 +70,7 @@
             'SIG_DATE'                   => $date
         ];
         $absences[] = origine_absence($username, $usernametu)['absence']->DATE;
-        var_dump($absences);
+        /*var_dump($absences);*/
         /*
         foreach($absences as $absence){
             if($absence['date'] == $date){
