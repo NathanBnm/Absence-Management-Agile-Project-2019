@@ -19,5 +19,6 @@
             </label>
         </div>
     </div>
-    <button name="submit" id="submit" class="button is-block has-text-black is-fullwidth has-text-weight-medium">Connexion</button>
+    <br>
+    <button name="submit" id="submit" class="button is-block has-text-black is-fullwidth has-text-weight-medium bg-bleu">Connexion</button>
 </form>

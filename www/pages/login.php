@@ -6,19 +6,17 @@ if (isset($_POST['submit'])) {
 
     $errors = [];
 
-    if(empty($username) || empty($password)) {
+    if (empty($username) || empty($password)) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
-    }
-    else if(user_exist($username, $password) == 0 || user_exist($username, $password) > 1) {
+    } else if (user_exist($username, $password) == 0 || user_exist($username, $password) > 1) {
         $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
     }
 
-    if(!empty($errors)){
-        foreach($errors as $error) {
-            echo "<p>".$error."</p>";
+    if (!empty($errors)) {
+        foreach ($errors as $error) {
+            echo "<p>" . $error . "</p>";
         }
-    }
-    else {
+    } else {
         $_SESSION['id'] = $username;
         $_SESSION['rank'] = user_rank($username)['rank']->CAT_CODE;
 
@@ -32,18 +30,21 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<section onload="openTab(event, 'Etudiant')" class="hero is-success has-background-grey-darker is-fullheight">
-
-    <div class="hero-head">
-        <div class="container">
-            <h1 class="title">
-                Espace étudiant
-            </h1>
-        </div>
+<section class="hero is-dark is-fullheight">
+    <div class="logo">
+        <img src="../img/logoiut.png" alt="Logo">
     </div>
-
-    <div class="hero-body has-text-centered">
-        <div class="container hero-body">
+    <div class="hero-body">
+        <div class="container">
+            <section class="hero">
+                <div class="hero-body">
+                    <div class="container">
+                        <h1 class="title bleu">
+                            Espace étudiant
+                        </h1>
+                    </div>
+                </div>
+            </section>
             <div class="column is-6 is-offset-3">
                 <nav class="tabs is-fullwidth is-boxed is-medium">
                     <ul>
@@ -58,14 +59,17 @@ if (isset($_POST['submit'])) {
                         </li>
                     </ul>
                 </nav>
-                <div class="box boite">
-                    <h1 class="title has-text-weight-bold uppercase">Se connecter</h1>
+                <div class="box border-radius-bottom has-text-centered">
+                    <h1 class="title has-text-weight-bold uppercase bleu">Se connecter</h1>
                     <div class="stroke-line is-center"></div>
                     <?php
                     require 'forms/login.form.php';
                     ?>
                 </div>
             </div>
+            <div class="hero-body">
+                <div class="container">
+                </div>
+            </div>
         </div>
-    </div>
 </section>
