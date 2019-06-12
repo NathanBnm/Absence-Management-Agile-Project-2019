@@ -35,12 +35,16 @@ if (in_array($page . '.func.php', $pages_functions)) {
 <body>
 
     <?php 
+
         //On importe l'entête
         require 'body/header.php';
+
         //On importe la page correspondante
         require 'pages/' . $page . '.php';
+
         //On importe le pied de page
-        require 'body/footer.php'
+        require 'body/footer.php';
+
     ?>
 
 

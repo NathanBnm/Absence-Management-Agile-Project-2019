@@ -3,13 +3,13 @@
         global $db;
         $u = [
             'UTI_IDENTIFIANT'   =>  $username,
-            'UTI_MDP'           =>  sha256($password)
+            'UTI_MDP'           =>  hash('sha256', $password)
         ];
-        $sql = "SELECT UTI_IDENTIFIANT from ABS_UTILISATEUR where UTI_IDENTIFIANT = :UTI_IDENTIFIANT and where UTI_MDP = :UTI_MDP";
+        $sql = "SELECT * FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT AND UTI_MDP = :UTI_MDP";
         $req = $db->prepare($sql);
         $req->execute($u);
-        $exist = rowCount($sql);
-        return exist;
+        $exist = $req->rowCount($sql);
+        return $exist;
     }
 
     function user_rank($username){

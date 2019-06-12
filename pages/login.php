@@ -1,14 +1,15 @@
 <?php
+
 if (isset($_POST['submit'])) {
     $username = htmlspecialchars(trim($_POST['username']));
     $password = htmlspecialchars(trim($_POST['password']));
 
-    $errors[];
+    $errors = [];
 
     if(empty($username) || empty($password)) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
     }
-    else if(user_exist($username, $token) == 0 || user_exist($username, $token) > 1) {
+    else if(user_exist($username, $password) == 0 || user_exist($username, $password) > 1) {
         $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
     }
 
@@ -18,6 +19,7 @@ if (isset($_POST['submit'])) {
         }
     }
     else {
+        $_SESSION['id'] = $username;
         header("Location:index.php?page=dashboard");
         exit;
     }
@@ -40,15 +42,15 @@ if (isset($_POST['submit'])) {
                     <div id="navbarBasicExample" class="navbar-menu">
                         <div class="navbar-start">
                             <a class="navbar-item item has-text-centered">
-                                Espace étudiant
+                                <i class="fas fa-user-graduate"></i>&nbsp;Étudiant
                             </a>
 
                             <a class="navbar-item item has-text-centered">
-                                Espace professeur
+                            <i class="fas fa-user"></i>&nbsp;Enseignant
                             </a>
 
                             <a class="navbar-item item has-text-centered">
-                                Directeur des études
+                                <i class="fas fa-user-tie"></i>&nbsp;Directeur des études
                             </a>
                         </div>
                     </div>
