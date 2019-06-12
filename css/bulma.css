@@ -1572,7 +1572,6 @@ a.has-text-danger:hover, a.has-text-danger:focus {
 
 .box {
   background-color: white;
-  border-radius: 6px;
   box-shadow: 0 2px 3px rgba(10, 10, 10, 0.1), 0 0 0 1px rgba(10, 10, 10, 0.1);
   color: #4a4a4a;
   display: block;
@@ -6272,7 +6271,6 @@ a.list-item {
 
 .navbar {
   background-color: white;
-  min-height: 3.25rem;
   position: relative;
   z-index: 30;
 }
@@ -6900,7 +6898,6 @@ a.list-item {
 .navbar > .container {
   align-items: stretch;
   display: flex;
-  min-height: 3.25rem;
   width: 100%;
 }
 
@@ -6942,7 +6939,6 @@ body.has-navbar-fixed-bottom {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
-  min-height: 3.25rem;
 }
 
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
@@ -7046,9 +7042,10 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .navbar-item {
-  display: block;
-  flex-grow: 0;
-  flex-shrink: 0;
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 0;
+    height: 4vh;
 }
 
 .navbar-item img {
@@ -7177,7 +7174,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     display: flex;
   }
   .navbar {
-    min-height: 3.25rem;
+    min-height: 0rem;
   }
   .navbar.is-spaced {
     padding: 1rem 2rem;
@@ -10052,8 +10049,8 @@ label.panel-block:hover {
 .hero.is-primary a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active,
 .hero.is-primary .navbar-link:hover,
 .hero.is-primary .navbar-link.is-active {
-  background-color: #00b89c;
-  color: #fff;
+  background-color: #000000;
+  color: #ffffff !important;
 }
 
 .hero.is-primary .tabs a {
