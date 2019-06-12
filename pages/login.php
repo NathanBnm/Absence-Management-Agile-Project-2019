@@ -20,6 +20,7 @@ if (isset($_POST['submit'])) {
     }
     else {
         $_SESSION['id'] = $username;
+        $_SESSION['rank'] = user_rank($username)['rank']->CAT_CODE;
         header("Location:index.php?page=dashboard");
         exit;
     }

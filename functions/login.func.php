@@ -12,6 +12,21 @@
         return $exist;
     }
 
+    function user_rank($username){
+        global $db;
+        $u = [
+            'UTI_IDENTIFIANT'   =>  $username
+        ];
+        $sql = "SELECT CAT_CODE from ABS_UTILISATEUR where UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+        $req = $db->prepare($sql);
+        $req->execute($u);
+        $user_rank = [];
+        while($row = $req->fetchObject()){
+            $user_rank['rank'] = $row;
+        }
+        return $user_rank;
+    }
+
     /*
     function grab_absence($username){
         global $db;
