@@ -38,18 +38,32 @@ button, form {
     background-color : hsl(217, 71%, 53%);
 }
 
-.navbar.bleu {
-    background-color: hsl(217, 71%, 53%);
+.uppercase {
+    text-transform: uppercase;
 }
 
-.navbar.orange {
-    background-color: hsl(24,85%,55%);
+/* Navbar */
+
+.bg-bleu {
+    background-color: #74b9ff;
 }
 
-.navbar.orange:hover {
-    background-color: hsl(29, 70%, 47%);
+.bg-orange {
+    background-color: #fdcb6e;
 }
 
-.navbar.violet {
-    background-color: hsl(299,90%,50%);
+.bg-violet {
+    background-color: #a29bfe;
+}
+
+.bleu {
+    color: #74b9ff;
+}
+
+.orange {
+    color: #fdcb6e;
+}
+
+.violet {
+    color: #a29bfe;
 }
