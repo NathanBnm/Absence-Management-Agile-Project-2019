@@ -28,7 +28,7 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<section class="hero is-success is-primary has-background-grey-darker is-fullheight">
+<section onload="openTab(event, 'Etudiant')" class="hero is-success has-background-grey-darker is-fullheight">
     <div class="hero-body has-text-centered">
         <div class="container hero-body">
             <div class="column is-6 is-offset-3">
