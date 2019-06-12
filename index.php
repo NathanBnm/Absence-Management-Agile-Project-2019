@@ -18,6 +18,19 @@ $pages_functions = scandir('functions/');
 if (in_array($page . '.func.php', $pages_functions)) {
     require 'functions/' . $page . '.func.php';
 }
+
+//On redirige l'utilisateur vers la page de connexion s'il n'est pas connecté
+if($page != 'login' && $page != 'error' && !isLogged()) {
+    header("Location:index.php?page=login");
+    exit;
+}
+
+//On redirige l'utilisateur vers la page du tableau de bord s'il est déjà connecté
+if($page == 'login' && isLogged()){
+    header("Location:index.php?page=dashboard");
+    exit;
+}
+
 ?>
 
 <!DOCTYPE html>
