@@ -9,7 +9,7 @@
                 'SIG_COMMENTAIRE'               =>  $commentaire,
                 'SIG_MOTIF'                     =>  $motif,
                 'SIG_TYPE'                      =>  $type,
-                'SIG_DATE'                      =>  $date
+                'COU_DATE'                      =>  $date
 
             ];
             $sql = "INSERT INTO ABS_SIGNALEMENT (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_MOTIF, SIG_TYPE, SIG_DATE) VALUES (:UTI_IDENTIFIANT_ENSEIGNANT, :UTI_IDENTIFIANT_ELEVE, :COU_CODE, :SIG_COMMENTAIRE, :SIG_MOTIF, :SIG_TYPE, :SIG_DATE)";
@@ -27,12 +27,14 @@
                 'SIG_DATE'                   => $date,
                 'SIG_TYPE'                   => $type
             ];
-            $sql = "";
+            $sql = "DELETE FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE COU_DATE = :COU_DATE)";
             $req = $db->prepare($sql);
             $req->execute($u);
     
         }
 
+
+        //insérer un commentaire dans la base
         function insert_commentaire($username, $usernametu,$date, $commentaire){
             global $db;
             $u = [
@@ -41,7 +43,7 @@
                 'SIG_DATE'                   => $date,
                 'SIG_COMMENTAIRE'            => $commentaire
             ];
-            $sql = "";
+            $sql = "UPDATE ABS_SIGNALEMENT SET SIG_COMMENTAIRE = :SIG_COMMENTAIRE WHERE SIG_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND SIG_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE COU_DATE = :COU_DATE)"; // modifier le commentaire à une date précise
             $req = $db->prepare($sql);
             $req->execute($sql);
         }
@@ -73,7 +75,7 @@
                 'SIG_DATE'                   => $date,
                 'SIG_TYPE'                   => $type
             ];
-            $sql = "";
+            $sql = "DELETE FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ETUDIANT AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE COU_DATE = :COU_DATE)";
             $req = $db->prepare($sql);
             $req->execute($u);
     
@@ -88,4 +90,23 @@
             $req = $db->prepare($sql);
             $req->execute($u);
         }
+
+
+        function ajouter_cours($date, $module, $type, $libelle, $groupe, $promo){
+            global $db;
+            $u = [
+                'COU_DATE'          => $date,
+                'COU_MODULE'        => $module,
+                'COU_TYPE'          => $type,
+                'COU_LIBELLE'       => $libelle,
+                'COU_GROUPE'        => $groupe,
+                'COU_PROMO'         => $promo
+            ];
+            $sql = "INSERT INTO ABS_COURS (COU_DATE,COU_MODULE,COU_TYPE,COU_LIBELLE,COU_GROUPE,COU_PROMO) 
+            VALUES (:COU_DATE,:COU_MODULE,:COU_TYPE,:COU_LIBELLE,:COU_GROUPE,:COU_PROMO)";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+        }
+
+
 ?>
