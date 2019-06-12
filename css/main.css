@@ -30,3 +30,10 @@ button, form {
     margin-bottom: 0 !important;
 }
 
+.title{
+    color : hsl(204, 86%, 53%);
+}
+
+#submit {
+    background-color : hsl(217, 71%, 53%);
+}

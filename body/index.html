@@ -6,38 +6,37 @@
     <link type="text/css" rel="stylesheet" href="../css/bulma.css"/>
     <link type="text/css" rel="stylesheet" href="../css/main.css"/>
 
-    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <script src="https://kit.fontawesome.com/4a31b437ba.js"></script>
+    <script src="../js/login.script.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-    <body>
-
-
-    <section class="hero is-primary has-background-grey-darker is-fullheight">
+    <body onload="openTab(event, 'Etudiant')">
+    <section class="hero is-success is-primary has-background-grey-darker is-fullheight">
         <div class="hero-body has-text-centered">
-            <div class="container">
+            <div class="container hero-body">
                 <div class="column is-6 is-offset-3">
-                    <div class="tabs is-fullwidth is-boxed is-medium">
+                    <nav class="tabs is-fullwidth is-boxed is-medium">
                         <ul>
-                            <li class="is-active">
+                            <li class="tab is-active" onclick="openTab(event,'Etudiant')">
                                 <a>
-                                    <span class="icon is-small"><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
+                                    <span class="icon "><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="tab" onclick="openTab(event,'Professeur')">
                                 <a>
-                                    <span class="icon is-small"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
+                                    <span class="icon"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
                                 </a>
                             </li>
-                            <li>
+                            <li class="tab" onclick="openTab(event,'Directeur')">
                                 <a>
-                                    <span class="icon is-small"><i class="fas fa-user-tie"></i>&nbsp;Directeur des études</span>
+                                    <span class="icon"><i class="fas fa-user-tie"></i>&nbsp;Directeur</span>
                                 </a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="box boite">
-                        <h1 class="title has-text-info has-text-weight-bold">SE CONNECTER</h1>
+                    </nav>
+                    <div class="box boite content-tab">
+                        <h1 class="title has-text-weight-bold">SE CONNECTER</h1>
                         <div class="stroke-line is-center"></div>
                         <form action="" method="POST">
                             <div class="field">
@@ -61,7 +60,7 @@
                                 </div>
                             </div>
 
-                            <input type="submit" name="submit" id="submit" value="Connexion" class="button is-block has-text-black is-link is-fullwidth has-text-weight-medium" />
+                            <input type="submit" name="submit" id="submit" value="Connexion" class="button is-block has-text-black is-fullwidth has-text-weight-medium" />
                         </form>
                     </div>
                 </div>

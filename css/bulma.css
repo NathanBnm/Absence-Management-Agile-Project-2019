@@ -4037,7 +4037,7 @@ a.tag:hover {
 }
 
 .title {
-  color: #363636;
+  color : hsl(204, 86%, 53%);
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.125;
@@ -7724,7 +7724,6 @@ label.panel-block:hover {
 
 .tabs.is-boxed a:hover {
   background-color: whitesmoke;
-  border-bottom-color: #dbdbdb;
 }
 
 .tabs.is-boxed li.is-active a {
