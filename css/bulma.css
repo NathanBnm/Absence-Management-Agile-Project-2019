@@ -6271,6 +6271,7 @@ a.list-item {
 
 .navbar {
   background-color: white;
+  min-height: 3.25rem;
   position: relative;
   z-index: 30;
 }
@@ -6898,6 +6899,7 @@ a.list-item {
 .navbar > .container {
   align-items: stretch;
   display: flex;
+  min-height: 3.25rem;
   width: 100%;
 }
 
@@ -6939,6 +6941,7 @@ body.has-navbar-fixed-bottom {
   align-items: stretch;
   display: flex;
   flex-shrink: 0;
+  min-height: 3.25rem;
 }
 
 .navbar-brand a.navbar-item:focus, .navbar-brand a.navbar-item:hover {
@@ -7042,10 +7045,9 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
 }
 
 .navbar-item {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 0;
-    height: 4vh;
+  display: block;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .navbar-item img {
@@ -7174,7 +7176,7 @@ a.navbar-item:focus, a.navbar-item:focus-within, a.navbar-item:hover, a.navbar-i
     display: flex;
   }
   .navbar {
-    min-height: 0rem;
+    min-height: 3.25rem;
   }
   .navbar.is-spaced {
     padding: 1rem 2rem;
@@ -10049,8 +10051,8 @@ label.panel-block:hover {
 .hero.is-primary a.navbar-item:hover, .hero.is-primary a.navbar-item.is-active,
 .hero.is-primary .navbar-link:hover,
 .hero.is-primary .navbar-link.is-active {
-  background-color: #000000;
-  color: #ffffff !important;
+  background-color: #00b89c;
+  color: #fff;
 }
 
 .hero.is-primary .tabs a {
