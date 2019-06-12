@@ -26,5 +26,5 @@
         }
         return $user_rank;
     }
-   
+
 ?>
