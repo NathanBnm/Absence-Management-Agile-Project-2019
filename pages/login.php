@@ -28,31 +28,31 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<section class="hero is-primary has-background-grey-darker is-fullheight">
+<section onload="openTab(event, 'Etudiant')" class="hero is-success is-primary has-background-grey-darker is-fullheight">
     <div class="hero-body has-text-centered">
-        <div class="container">
+        <div class="container hero-body">
             <div class="column is-6 is-offset-3">
-                <div class="tabs is-fullwidth is-boxed is-medium">
+                <nav class="tabs is-fullwidth is-boxed is-medium">
                     <ul>
-                        <li class="is-active">
+                        <li class="tab is-active" onclick="openTab(event,'Etudiant')">
                             <a>
-                                <span class="icon is-small"><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
+                                <span class="icon "><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="tab" onclick="openTab(event,'Professeur')">
                             <a>
-                                <span class="icon is-small"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
+                                <span class="icon"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
                             </a>
                         </li>
-                        <li>
+                        <li class="tab" onclick="openTab(event,'Directeur')">
                             <a>
-                                <span class="icon is-small"><i class="fas fa-user-tie"></i>&nbsp;Directeur des études</span>
+                                <span class="icon"><i class="fas fa-user-tie"></i>&nbsp;Directeur</span>
                             </a>
                         </li>
                     </ul>
-                </div>
+                </nav>
                 <div class="box boite">
-                    <h1 class="title has-text-info has-text-weight-bold">SE CONNECTER</h1>
+                    <h1 class="title has-text-weight-bold">SE CONNECTER</h1>
                     <div class="stroke-line is-center"></div>
                     <?php
                     require 'forms/login.form.php';
