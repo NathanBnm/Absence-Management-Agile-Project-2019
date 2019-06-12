@@ -20,3 +20,8 @@ button, form {
 .localisation div {
     max-width: 800px;
 }
+
+.boite{
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
