@@ -1,4 +1,4 @@
-function openTab(evt, tabName) {
+function openTab(tabName) {
     var i, tablinks;
     let istitle = document.getElementsByClassName("title");
     let issubmit = document.getElementById("submit");

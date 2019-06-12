@@ -28,23 +28,23 @@ if (isset($_POST['submit'])) {
 
 ?>
 
-<section onload="openTab(event, 'Etudiant')" class="hero is-success is-primary has-background-grey-darker is-fullheight">
+<section class="hero is-success is-primary has-background-grey-darker is-fullheight">
     <div class="hero-body has-text-centered">
         <div class="container hero-body">
             <div class="column is-6 is-offset-3">
                 <nav class="tabs is-fullwidth is-boxed is-medium">
                     <ul>
-                        <li class="tab is-active" onclick="openTab(event,'Etudiant')">
+                        <li class="tab is-active" onclick="openTab('Etudiant')">
                             <a>
                                 <span class="icon "><i class="fas fa-user-graduate"></i>&nbsp;Étudiant</span>
                             </a>
                         </li>
-                        <li class="tab" onclick="openTab(event,'Professeur')">
+                        <li class="tab" onclick="openTab('Professeur')">
                             <a>
                                 <span class="icon"><i class="fas fa-user"></i>&nbsp;Enseignant</span>
                             </a>
                         </li>
-                        <li class="tab" onclick="openTab(event,'Directeur')">
+                        <li class="tab" onclick="openTab('Directeur')">
                             <a>
                                 <span class="icon"><i class="fas fa-user-tie"></i>&nbsp;Directeur</span>
                             </a>
