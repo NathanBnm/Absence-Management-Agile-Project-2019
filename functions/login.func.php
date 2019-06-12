@@ -48,24 +48,24 @@
     function origine_absence($username, $usernametu){
         global $db;
         $u = [
-            'UTI_IDENTIFIANT_ENSEIGNANT' => $usernamens,
+            'UTI_IDENTIFIANT_ENSEIGNANT' => $username,
             'UTI_IDENTIFIANT_ELEVE'      => $usernametu
         ];
         $sql = "SELECT * from ABS_SIGNALEMENT WHERE UTI_CODE = ':UTI_ENSEIGNANT' AND UTI_CODE_1 = 'UTI_IDENTIFIANT_ELEVE' ";
         $req = $db->prepare($sql);
+        $req->execute($u);
         $ens_eleve = [];
         while($row = $req->fetchObject()){
             $ens_eleve['absence'] = $row;
         }
         return $ens_eleve;
- 
     }
     
     //demander vérification à l'utilisateur
     function delete_absence($username, $usernametu, $date){
         global $db;
         $u = [
-            'UTI_IDENTIFIANT_ENSEIGNANT' => $usernamens,
+            'UTI_IDENTIFIANT_ENSEIGNANT' => $username,
             'UTI_IDENTIFIANT_ELEVE'      => $usernametu,
             'SIG_DATE'                   => $date
         ];
