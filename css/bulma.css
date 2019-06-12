@@ -6463,7 +6463,7 @@ a.list-item {
 }
 
 .navbar.is-dark {
-  background-color: #363636;
+  background-color: hsl(24,85%,55%);
   color: whitesmoke;
 }
 
@@ -6476,7 +6476,7 @@ a.list-item {
 .navbar.is-dark .navbar-brand .navbar-link:focus,
 .navbar.is-dark .navbar-brand .navbar-link:hover,
 .navbar.is-dark .navbar-brand .navbar-link.is-active {
-  background-color: #292929;
+  background-color: hsl(29, 70%, 47%);
   color: whitesmoke;
 }
 
@@ -6505,7 +6505,7 @@ a.list-item {
   .navbar.is-dark .navbar-end .navbar-link:focus,
   .navbar.is-dark .navbar-end .navbar-link:hover,
   .navbar.is-dark .navbar-end .navbar-link.is-active {
-    background-color: #292929;
+    background-color: hsl(29, 70%, 47%);
     color: whitesmoke;
   }
   .navbar.is-dark .navbar-start .navbar-link::after,
@@ -6515,11 +6515,11 @@ a.list-item {
   .navbar.is-dark .navbar-item.has-dropdown:focus .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown:hover .navbar-link,
   .navbar.is-dark .navbar-item.has-dropdown.is-active .navbar-link {
-    background-color: #292929;
+    background-color: hsl(29, 70%, 47%);
     color: whitesmoke;
   }
   .navbar.is-dark .navbar-dropdown a.navbar-item.is-active {
-    background-color: #363636;
+    background-color: hsl(29, 70%, 47%);
     color: whitesmoke;
   }
 }
