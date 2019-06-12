@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
                         </li>
                     </ul>
                 </div>
-                <div class="box">
+                <div class="box boite">
                     <h1 class="title has-text-info has-text-weight-bold">SE CONNECTER</h1>
                     <div class="stroke-line is-center"></div>
                     <?php
