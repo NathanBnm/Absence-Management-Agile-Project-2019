@@ -2,7 +2,21 @@
     box-sizing: border-box;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
+button, form {
+    margin-top: 40px;
+}
+
+.stroke-line {
+    border-bottom: dimgrey solid 3px;
+    width: 100px;
+    margin: 0 auto;
+}
+
+.localisation {
+    display: flex;
+    justify-content: space-between;
+}
+
+.localisation div {
+    max-width: 800px;
 }

@@ -24,11 +24,14 @@ if (in_array($page . '.func.php', $pages_functions)) {
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Absences</title>
-    <link href="css/main.css" rel="stylesheet">
+    meta charset="UTF-8">
+    <title>Connexion</title>
+    <link type="text/css" rel="stylesheet" href="../css/bulma.css"/>
+    <link type="text/css" rel="stylesheet" href="../css/main.css"/>
+
+    <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
