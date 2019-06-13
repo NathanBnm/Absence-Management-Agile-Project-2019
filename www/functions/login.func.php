@@ -1,6 +1,6 @@
 <?php
     function user_exist($username, $password){
-        if(isset($_POST["rang"]){
+        if(isset($_POST["rang"])){
             $rank = $_POST["rang"];
         }
         else {
