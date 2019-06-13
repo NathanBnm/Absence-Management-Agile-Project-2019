@@ -2,15 +2,15 @@
 $rank = '';
 $couleur = '';
 $icon = '';
-if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
+if ($_SESSION['rank'] == 'ETU') {
 	$rank = 'Étudiant';
 	$couleur = 'bg-bleu';
 	$icon = 'fa-user-graduate';
-} else if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ENS') {
+} else if ($_SESSION['rank'] == 'ENS') {
 	$rank = 'Enseignant';
 	$couleur = 'bg-orange';
 	$icon = 'fa-user';
-} else if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'DIR') {
+} else if ($_SESSION['rank'] == 'DIR') {
 	$rank = 'Directeur';
 	$couleur = 'bg-violet';
 	$icon = 'fa-user-tie';
@@ -19,31 +19,37 @@ if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 <nav class="navbar <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
 	<div id="navbar" class="navbar-menu">
 		<div class="navbar-start">
-			<a class="navbar-item">
+			<p class="navbar-item">
 				<i class="fas <?php echo $icon; ?> fa-lg"></i>
 				<span class="space-name">Espace <?php echo $rank; ?></span>
+			</p>
+			<a class="navbar-item" href="index.php?page=dashboard">
+				<i class="fas fa-columns"></i>
+				Tableau de bord
 			</a>
-			<div class="navbar-item has-dropdown is-hoverable">
-				<a class="navbar-link has-dropdown">
-					<?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?>
-				</a>
-				<div class="navbar-dropdown is-left">
-					<a class="navbar-item">
-						Mes Informations
-					</a>
-				</div>
-			</div>
-			<a class="navbar-item">
-				Accueil
-			</a>
-			<a class="navbar-item">
+			<a class="navbar-item" href="index.php?page=absences">
+				<i class="fas fa-user-slash"></i>
 				Absences
 			</a>
-			<a class="navbar-item">
+			<a class="navbar-item" href="index.php?page=delays">
+				<i class="fas fa-running"></i>
 				Retards
 			</a>
+			<?php
+				if ($_SESSION['rank'] == 'ENS' || $_SESSION['rank'] == 'DIR') {
+			?>
+				<a class="navbar-item" href="index.php?page=courses">
+					<i class="fas fa-book"></i>
+					Cours
+				</a>
+			<?php
+				}
+			?>
 		</div>
 		<div class="navbar-end">
+			<a class="navbar-item" href="#">
+				<?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?>
+			</a>
 			<a href="index.php?page=logout" title="Déconnexion" class="navbar-item">
 				<i class="fas fa-power-off fa-lg"></i>
 			</a>

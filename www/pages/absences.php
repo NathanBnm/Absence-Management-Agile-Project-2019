@@ -8,5 +8,5 @@ if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
     $path = 'includes/director/';
 }
 
-require($path . 'dashboard.php');
+require($path . 'absences.php');
 ?>
