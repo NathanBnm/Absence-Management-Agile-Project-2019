@@ -159,10 +159,10 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" id="message" name="message"></textarea>
+                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" max="255" id="message" name="message"></textarea>
             </div>
-            <p class="help">
-                X caractères restants
+            <p id="count" class="help">
+                0 / 255
             </p>
             <div class="field is-grouped">
                 <div class="control">
