@@ -17,6 +17,7 @@
                                 <th><abbr title="nom">Motif</abbr></th>
                                 <th><abbr title="commentaire">Commentaire</abbr></th>
                                 <th><abbr title="date">Date</abbr></th>
+                                <th><abbr title="date">Statut</abbr></th>
                                 <th><abbr title="edit">Options</abbr></th>
                             </tr>
                         </thead>
@@ -32,6 +33,7 @@
                                 <td>Maladie</td>
                                 <td>2eme absence à ce cours</td>
                                 <td>15/06/2019</td>
+                                <td><label class="checkbox"><input type="checkbox"></label></td>
                                 <td>
                                     <a href="#" class="button is-info" aria-haspopup="true">
                                         <span class="icon is-small">
