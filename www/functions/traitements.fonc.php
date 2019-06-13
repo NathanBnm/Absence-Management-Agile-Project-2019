@@ -74,8 +74,10 @@
             $req = $db->prepare($sql);
             $req->execute($u);
             $user_absences = [];
+            $i =0;
             while($row = $req->fetchObject()){
-                $user_absences['absence'] = $row;
+                $user_absences[$i] = $row;
+                $i++;
             }
             return $user_absences;
         }
@@ -91,8 +93,10 @@
             $req = $db->prepare($sql);
             $req->execute($u);
             $user_absences = [];
+            $i = 0;
             while($row = $req->fetchObject()){
-                $user_absences['absence'] = $row;
+                $user_absences[$i] = $row;
+                $i++;
             }
             return $user_absences;   
         }
@@ -108,10 +112,57 @@
              $req = $db->prepare($sql);
              $req->execute($u);
              $user_liste_td = [];
+             $i =0;
              while($row = $req->fetchObject()){
-                 $user_liste_td['liste_td'] = $row;
+                 $user_liste_td[$i] = $row;
              }
              return $user_liste_td;  
+        }
+
+        function gerer_notif($utilisateur, $allou_notif){
+            global $db;
+            $u = [
+                'UTI_NOTIF'    => $allou_notif,
+                'UTI_CODE'    => $utilisateur
+            ];
+            $sql = "UPDATE ABS_UTILISATEUR SET UTI_NOTIF = :UTI_NOTIF WHERE UTI_CODE = :UTI_CODE";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+        }
+    
+        function afficher_eleves_cours($cours){
+            global $db;
+            $u = [
+                'COU_CODE' =>  $cours
+            ];
+            $sql = "SELECT UTI_NOM, UTI_PRENOM FROM ABS_UTILISATEUR WHERE UTI_CODE IN (SELECT UTI_CODE FROM SUIVRE WHERE COU_CODE = :COU_CODE)";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+            $user_cours = [];
+            $i = 0;
+            while($row = $req->fetchObject()){
+                $user_cours[$i] = $row;
+                $i++;
+            }
+               return $user_cours;
+        }
+
+        function afficher_cours_uti($username){
+            global $db;
+            $u = [
+                'UTI_IDENTIFIANT' =>  $username
+            ];
+            $sql = "SELECT cou_libelle, to_char(cou_date,'dd/mm/yyyy') AS DATE_COURS, to_char(cou_date,'HH24:MI') AS HEURE FROM ABS_COURS 
+            WHERE COU_CODE IN (SELECT COU_CODE FROM SUIVRE WHERE UTI_CODE = :UTI_IDENTIFIANT)";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+            $user_cours = [];
+            $i = 0;
+             while($row = $req->fetchObject()){
+                 $user_cours[$i] = $row;
+                 $i++;
+             }
+             return $user_cours;
         }
 
 
