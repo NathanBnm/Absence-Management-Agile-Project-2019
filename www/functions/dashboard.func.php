@@ -123,3 +123,23 @@ function last_delay_ticket(){
     }
     return $user_last_delay_ticket;
 }
+
+function detail_ticket(){
+    global $db;
+    $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, cours.COU_MODULE, 
+            DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_TYPE, UTI_GROUPE,UTI_PROMO
+            FROM ABS_BILLET absence
+            JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
+            JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1
+            AND absence.UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
+            ORDER BY SIG_CODE DESC
+            LIMIT 2";
+    $req = $db->query($sql);
+    $user_detail_ticket = [];
+    $i = 0;
+    while($row = $req->fetchObject()){
+        $user_detail_ticket[$i] = $row;
+        $i++;
+    }
+    return $user_detail_ticket;
+}
