@@ -26,7 +26,11 @@ if(isset($_POST['submit-ticket'])) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
     }
 
-    if($typecourse != 'td' && $typecourse != 'tp' && $typecourse != 'cm' && $typecourse != 'cc' && $type != 'a' && $type != 'r') {
+    if(strlen($message) > 255) {
+        $errors['invalid-size'] = "Le commentaire ne peut pas dépasser 255 caractères";
+    } 
+
+    if($typecourse != 'td' && $typecourse != 'tp' && $typecourse != 'cm' && $typecourse != 'cc' && $type != 'A' && $type != 'R') {
         $errors['invalid'] = "Le formulaire n'est pas valide";
     }
 

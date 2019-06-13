@@ -1,6 +1,8 @@
 <?php
     $total_absences = count_students_absences();
     $total_delays = count_students_delays();
+    $total_absences_not_justified = count_students_absences_not_justified();
+    $total_delays_not_justified = count_students_delays_not_justified();
 ?>
 
 <header>
@@ -24,7 +26,7 @@
                                 if($total_absences > 0)
                                 {
                                     ?>
-                                        Vous avez <strong><?php echo $total_absences ?><?php echo ($total_absences > 1) ? " absences" : " absence"; ?></strong> dont <strong>X retards non justifiées</strong>
+                                        Vous avez <strong><?php echo $total_absences ?><?php echo ($total_absences > 1) ? " absences" : " absence"; ?></strong> dont <strong><?php echo $total_absences_not_justified ?><?php echo ($total_absences_not_justified > 1) ? " non justifiées" : " non justifiée"; ?></strong>
                                     <?php
                                 }
                                 else {
@@ -40,7 +42,7 @@
                                 if($total_delays > 0)
                                 {
                                     ?>
-                                        Vous avez <strong><?php echo $total_delays ?><?php echo ($total_delays > 1) ? " retards" : " retard"; ?></strong> dont <strong>X retards non justifiées</strong>
+                                        Vous avez <strong><?php echo $total_delays ?><?php echo ($total_delays > 1) ? " retards" : " retard"; ?></strong> dont <strong><?php echo $total_delays_not_justified ?><?php echo ($total_delays_not_justified > 1) ? " non justifiés" : " non justifié"; ?></strong>
                                     <?php
                                 }
                                 else {

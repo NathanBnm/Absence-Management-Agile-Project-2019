@@ -40,7 +40,7 @@ function count_students_absences()
 
     $sql = "SELECT COUNT(*) FROM ABS_BILLET
             JOIN ABS_COURS USING(COU_CODE)
-            WHERE SIG_TYPE = 'a'
+            WHERE SIG_TYPE = 'A'
             AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
             ORDER BY SIG_CODE DESC";
 
@@ -62,7 +62,53 @@ function count_students_delays()
 
     $sql = "SELECT COUNT(*) FROM ABS_BILLET
             JOIN ABS_COURS USING(COU_CODE)
-            WHERE SIG_TYPE = 'r'
+            WHERE SIG_TYPE = 'R'
+            AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
+            ORDER BY SIG_CODE DESC";
+
+    $req = $db->prepare($sql);
+    $req->execute($r);
+
+    $total_absences = $req->fetch();
+    $req->closeCursor();
+    return $total_absences[0];
+}
+
+function count_students_absences_not_justified()
+{
+    global $db;
+
+    $r = [
+        'UTI_IDENTIFIANT'   =>  $_SESSION['id']
+    ];
+
+    $sql = "SELECT COUNT(*) FROM ABS_BILLET
+            JOIN ABS_COURS USING(COU_CODE)
+            WHERE SIG_TYPE = 'A'
+            AND SIG_ETAT = 'Non justifié'
+            AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
+            ORDER BY SIG_CODE DESC";
+
+    $req = $db->prepare($sql);
+    $req->execute($r);
+
+    $total_absences = $req->fetch();
+    $req->closeCursor();
+    return $total_absences[0];
+}
+
+function count_students_delays_not_justified()
+{
+    global $db;
+
+    $r = [
+        'UTI_IDENTIFIANT'   =>  $_SESSION['id']
+    ];
+
+    $sql = "SELECT COUNT(*) FROM ABS_BILLET
+            JOIN ABS_COURS USING(COU_CODE)
+            WHERE SIG_TYPE = 'R'
+            AND SIG_ETAT = 'Non justifié'
             AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
             ORDER BY SIG_CODE DESC";
 
