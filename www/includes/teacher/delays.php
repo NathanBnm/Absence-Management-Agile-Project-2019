@@ -26,8 +26,23 @@
                         </tfoot>
                         <tbody>
                             <?php
+                                $color = null;
+                                $color_etat = null;
                                 $retards = list_teacher_delays();
                                 foreach($retards as $retard) {
+                                    if($retard->SIG_TRAITE == 0) {
+                                        $color = "is-danger";
+                                    } else {
+                                        $color = "is-success";
+                                    }
+
+                                    if($retard->SIG_ETAT == "Non justifié") {
+                                        $color_etat = "is-danger";
+                                    } else if ($retard->SIG_ETAT == "Rattrapage"){
+                                        $color_etat = "is-warning";
+                                    } else{
+                                        $color_etat = "is-success";
+                                    }
                             ?>
                             <tr>
                                 <td>
@@ -37,7 +52,7 @@
                                     <?php echo strtoupper($retard->COU_TYPE); ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
+                                    <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
                                 </td>
                                 <td>
                                     <?php echo $retard->UTI_IDENTIFIANT; ?>
@@ -58,7 +73,7 @@
                                     <?php echo $retard->SIG_DATE; ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded">
+                                    <span class="tag <?php echo $color ?> is-rounded">
                                         <?php 
                                             if($retard->SIG_TRAITE == 0) {
                                                 echo "Non traité";

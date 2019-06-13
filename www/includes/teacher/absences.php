@@ -26,8 +26,23 @@
                         </tfoot>
                         <tbody>
                             <?php
+                                $color = null;
+                                $color_etat = null;
                                 $absences = list_teacher_absences();
                                 foreach($absences as $absence) {
+                                    if($absence->SIG_TRAITE == 0) {
+                                        $color = "is-danger";
+                                    } else {
+                                        $color = "is-success";
+                                    }
+
+                                    if($absence->SIG_ETAT == "Non justifié") {
+                                        $color_etat = "is-danger";
+                                    } else if ($absence->SIG_ETAT == "Rattrapage"){
+                                        $color_etat = "is-warning";
+                                    } else{
+                                        $color_etat = "is-success";
+                                    }
                             ?>
                             <tr>
                                 <td>
@@ -37,7 +52,7 @@
                                     <?php echo strtoupper($absence->COU_TYPE); ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                    <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
                                 </td>
                                 <td>
                                     <?php echo $absence->UTI_IDENTIFIANT; ?>
@@ -58,7 +73,7 @@
                                     <?php echo $absence->SIG_DATE; ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded">
+                                    <span class="tag <?php echo $color ?> is-rounded">
                                         <?php 
                                             if($absence->SIG_TRAITE == 0) {
                                                 echo "Non traité";
