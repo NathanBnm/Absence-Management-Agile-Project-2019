@@ -13,6 +13,7 @@ if (isset($_POST['submit'])) {
     }
 
     if (empty($errors)) {
+
         $_SESSION['id'] = $username;
         $_SESSION['rank'] = user_rank($username)['rank']->CAT_CODE;
         $_SESSION['firstname'] = user_firstname($username)['firstname']->UTI_PRENOM;

@@ -4,6 +4,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var issubmit = document.getElementById('submit');
 
     if (tabs) {
+        var xhr = new XMLHttpRequest();
+        var rank = null;
+        xhr.open("POST", "login.func.php", true);
+        xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         var loop = function loop() {
             var tabListItems = tabs[i].querySelectorAll('li');
             tabListItems.forEach(function (tabListItem) {
@@ -35,18 +39,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         istitle[0].innerHTML = "Espace étudiant";
                         istitle[1].classList.add('bleu');
                         issubmit.classList.add('bg-bleu');
+                        rank="0";
                     }
                     else if (tabName == 'enseignant') {
                         istitle[0].classList.add('orange');
                         istitle[0].innerHTML = "Espace enseignant";
                         istitle[1].classList.add('orange');
                         issubmit.classList.add('bg-orange');
+                        rank="1";
                     }
                     else if (tabName == 'directeur') {
                         istitle[0].classList.add('violet');
                         istitle[0].innerHTML = "Espace directeur des études";
                         istitle[1].classList.add('violet');
                         issubmit.classList.add('bg-violet');
+                        rank="2";
                     }
 
                 }, false);
@@ -56,5 +63,6 @@ document.addEventListener('DOMContentLoaded', function () {
         for (var i = 0; i < tabs.length; i++) {
             loop();
         }
+        xhr.send(rank);
     }
 });
