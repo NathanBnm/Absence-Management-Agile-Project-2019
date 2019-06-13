@@ -23,22 +23,22 @@ if ($_SESSION['rank'] == 'ETU') {
 				<i class="fas <?php echo $icon; ?> fa-lg"></i>
 				<span class="space-name">Espace <?php echo $rank; ?></span>
 			</p>
-			<a class="navbar-item" href="index.php?page=dashboard">
+			<a class="navbar-item <?php echo ($page == "dashboard") ? "is-active" : ""; ?>" href="index.php?page=dashboard">
 				<i class="fas fa-columns"></i>
 				Tableau de bord
 			</a>
-			<a class="navbar-item" href="index.php?page=absences">
+			<a class="navbar-item <?php echo ($page == "absences") ? "is-active" : ""; ?>" href="index.php?page=absences">
 				<i class="fas fa-user-slash"></i>
 				Absences
 			</a>
-			<a class="navbar-item" href="index.php?page=delays">
+			<a class="navbar-item <?php echo ($page == "delays") ? "is-active" : ""; ?>" href="index.php?page=delays">
 				<i class="fas fa-running"></i>
 				Retards
 			</a>
 			<?php
 				if ($_SESSION['rank'] == 'ENS' || $_SESSION['rank'] == 'DIR') {
 			?>
-				<a class="navbar-item" href="index.php?page=courses">
+				<a class="navbar-item <?php echo ($page == "courses") ? "is-active" : ""; ?>" href="index.php?page=courses">
 					<i class="fas fa-book"></i>
 					Cours
 				</a>

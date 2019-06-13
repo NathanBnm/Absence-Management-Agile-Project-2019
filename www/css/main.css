@@ -63,6 +63,10 @@ html {
     color: #696969 !important;
 }
 
+.navbar-item.is-active {
+    background-color: #fafafa !important;
+}
+
 .space-name {
     font-variant: small-caps;
     font-weight: bold;
