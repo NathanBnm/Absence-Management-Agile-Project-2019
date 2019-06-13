@@ -38,10 +38,10 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
     $req = $db->prepare($sql);
     $req->execute($u);
     $mail = recuperer_mail($etupass);
-    envoie($mail, $type);
+    envoie($mail, $type, $date);
 }
 
-function recuperer_mail($etupass, $type) {
+function recuperer_mail($etupass) {
 
     global $db;
     $u = [
