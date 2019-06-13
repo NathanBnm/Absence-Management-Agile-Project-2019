@@ -187,4 +187,13 @@
             return $i;
         }
 
+        function test_module_inexistant($module){
+            global $db;
+            $u = [
+                'COU_MODULE' => $module
+            ];
+            $sql = "SELECT COUNT(COU_CODE) FROM ABS_COURS WHERE COU_MODULE = :COU_MODULE";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+        }
 ?>
