@@ -37,4 +37,22 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
             )";
     $req = $db->prepare($sql);
     $req->execute($u);
+    $mail = recuperer_mail($etupass);
+    envoie($mail, $type);
+}
+
+function recuperer_mail($etupass, $type) {
+
+    global $db;
+    $u = [
+      'UTI_IDENTIFIANT' => $etupass
+    ];
+    $req = $db->query("SELECT UTI_MAIL FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT");
+    $mails = [];
+    $i = 0;
+    while ($row = $req->fetchObject()) {
+        $mails[$i] = $row;
+        $i++;
+    }
+    return $mails;
 }

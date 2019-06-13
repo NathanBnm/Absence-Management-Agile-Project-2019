@@ -37,7 +37,7 @@
                                     <?php echo strtoupper($retard->COU_TYPE); ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded"><?php echo $retard->COU_MODULE; ?></span>
+                                    <span class="tag is-danger is-rounded"><?php echo $retard->SIG_TYPE; ?></span>
                                 </td>
                                 <td>
                                     <?php echo $retard->UTI_IDENTIFIANT; ?>

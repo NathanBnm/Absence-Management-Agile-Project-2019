@@ -37,7 +37,7 @@
                                     <?php echo strtoupper($absence->COU_TYPE); ?>
                                 </td>
                                 <td>
-                                    <span class="tag is-danger is-rounded"><?php echo $absence->COU_MODULE; ?></span>
+                                    <span class="tag is-danger is-rounded"><?php echo $absence->SIG_TYPE; ?></span>
                                 </td>
                                 <td>
                                     <?php echo $absence->UTI_IDENTIFIANT; ?>
