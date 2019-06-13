@@ -1,6 +1,7 @@
 <?php
 
-function list_teacher_absences(){
+function list_teacher_absences()
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
@@ -14,11 +15,35 @@ function list_teacher_absences(){
             ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
-    $user_absences = [];
+    $absences = [];
     $i = 0;
-    while($row = $req->fetchObject()){
-        $user_absences[$i] = $row;
+    while ($row = $req->fetchObject()) {
+        $absences[$i] = $row;
         $i++;
     }
-    return $user_absences;   
+    return $absences;
+}
+
+function list_students_absences()
+{
+    global $db;
+    $u = [
+        'UTI_IDENTIFIANT' => $_SESSION['id']
+    ];
+    $sql = "SELECT COU_MODULE, SIG_ETAT, SIG_MOTIF, SIG_COMMENTAIRE, SIG_DATE
+            FROM ABS_BILLET
+            JOIN ABS_COURS USING(COU_CODE)
+            WHERE SIG_TYPE = 'a'
+            AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
+            ORDER BY SIG_CODE DESC
+            ";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+    $absences = [];
+    $i = 0;
+    while ($row = $req->fetchObject()) {
+        $absences[$i] = $row;
+        $i++;
+    }
+    return $absences;
 }

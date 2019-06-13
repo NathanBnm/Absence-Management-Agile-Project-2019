@@ -1,3 +1,8 @@
+<?php
+    $total_absences = count_students_absences();
+    $total_delays = count_students_delays();
+?>
+
 <header>
     <div class="tile is-ancestor" style="margin: 10px;">
         <div class="tile is-parent">
@@ -15,11 +20,35 @@
                     <div class="message-body">
                         <p>
                             <i class="fas fa-chair fa-sm"></i>
-                            Vous avez <strong>X absence(s)</strong> dont <strong>X absence(s)</strong> non justifiées
+                            <?php
+                                if($total_absences > 0)
+                                {
+                                    ?>
+                                        Vous avez <strong><?php echo $total_absences ?><?php echo ($total_absences > 1) ? " absences" : " absence"; ?></strong> dont <strong>X retards non justifiées</strong>
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                        Vous n'avez <strong>aucun retard</strong>
+                                    <?php 
+                                }
+                            ?>
                         </p>
                         <p>
                             <i class="fas fa-running fa-sm"></i>
-                            Vous avez <strong>X retard(s)</strong> dont <strong>X retard(s)</strong> non justifiées
+                            <?php
+                                if($total_delays > 0)
+                                {
+                                    ?>
+                                        Vous avez <strong><?php echo $total_delays ?><?php echo ($total_delays > 1) ? " retards" : " retard"; ?></strong> dont <strong>X retards non justifiées</strong>
+                                    <?php
+                                }
+                                else {
+                                    ?>
+                                        Vous n'avez <strong>aucun retard</strong>
+                                    <?php 
+                                }
+                            ?>
                         </p>
                     </div>
                 </article>

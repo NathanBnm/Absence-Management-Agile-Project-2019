@@ -1,45 +1,66 @@
+<?php
+    $total_absences = count_students_absences();
+?>
+
 <div class="tile is-ancestor">
     <div class="tile is-parent" style="margin: 20px;">
         <article class="tile is-child">
-            <article class="message is-info">
+            <article class="message is-dark">
                 <div class="message-header">
-                    <p>Tous vos Billets d'Absences</p>
+                    <p>Tous vos billets d'absence (<?php echo $total_absences; ?>)</p>
                 </div>
                 <div class="message-body">
                     <table class="table is-fullwidth is-striped">
                         <thead>
                             <tr>
-                                <th><abbr title="module">Module</abbr></th>
-                                <th><abbr title="etat">État</abbr></th>
-                                <th><abbr title="etucode">N°Étudiant</abbr></th>
-                                <th><abbr title="prenom">Prénom</abbr></th>
-                                <th><abbr title="nom">Nom</abbr></th>
-                                <th><abbr title="nom">Motif</abbr></th>
-                                <th><abbr title="commentaire">Commentaire</abbr></th>
-                                <th><abbr title="date">Date</abbr></th>
-                                <th><abbr title="edit">Options</abbr></th>
+                                <th>Module</th>
+                                <th>État</th>
+                                <th>Enseignant</th>
+                                <th>Motif</th>
+                                <th>Commentaire</th>
+                                <th>Date</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tfoot>
                         </tfoot>
                         <tbody>
+                            <?php
+                                $absences = list_students_absences();
+                                foreach($absences as $absence) {
+                            ?>
                             <tr>
-                                <th>M2101</th>
-                                <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                                <td>21800346</td>
-                                <td>Marie</td>
-                                <td>Martin</td>
-                                <td>Maladie</td>
-                                <td>2eme absence à ce cours</td>
-                                <td>15/06/2019</td>
+                                <th>
+                                    <?php echo $absence->COU_MODULE; ?>
+                                </th>
                                 <td>
-                                    <a class="button is-primary" onclick="michel.Consultation.open()">
+                                    <span class="tag is-danger is-rounded">
+                                        <?php echo $absence->SIG_ETAT; ?>
+                                    </span>
+                                </td>
+                                <td>
+                                    <?php echo "Récupérer nom du prof" ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_MOTIF; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_COMMENTAIRE; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_DATE; ?>
+                                </td>
+                                <td>
+                                    <a class="button is-primary" onclick="michel.Consultation.open()" title="Visualiser">
                                         <span class="icon is-small">
                                             <i class="fas fa-eye"></i>
                                         </span>
                                     </a>
                                 </td>
                             </tr>
+                            <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
