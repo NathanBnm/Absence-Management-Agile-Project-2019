@@ -39,14 +39,14 @@
             global $db;
             $u = [
                 'COU_MODULE'    =>  $module, 
-                'COU_DATE'      =>  $date,
+                'SIG_DATE'      =>  $date,
                 'COU_TYPE'      =>  $type,
                 'COU_LIBELLE'   =>  $libelle,
                 'COU_GROUPE'    =>  $groupe,
                 'COU_PROMO'     => $promo
             ];
-            $sql = "INSERT INTO ABS_COURS (COU_DATE,COU_MODULE,COU_TYPE,COU_LIBELLE,COU_GROUPE,COU_PROMO) 
-            VALUES (:COU_DATE,:COU_MODULE,:COU_TYPE,COU_LIBELLE, :COU_GROUPE,:COU_PROMO)";
+            $sql = "INSERT INTO ABS_COURS (SIG_DATE,COU_MODULE,COU_TYPE,COU_LIBELLE,COU_GROUPE,COU_PROMO) 
+            VALUES (:SIG_DATE,:COU_MODULE,:COU_TYPE,COU_LIBELLE, :COU_GROUPE,:COU_PROMO)";
             $req = $db->prepare($sql);
             $req->execute($u);
         }
@@ -58,10 +58,10 @@
             $u = [
                 'UTI_IDENTIFIANT_ENSEIGNANT' => $username,
                 'UTI_IDENTIFIANT_ELEVE'      => $usernametu,
-                'COU_DATE'                   => $date,
+                'SIG_DATE'                   => $date,
                 'SIG_TYPE'                   => $type
             ];
-            $sql = "DELETE FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND UPPER(SIG_TYPE) = UPPER(:SIG_TYPE) AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE COU_DATE = :COU_DATE)";
+            $sql = "DELETE FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND UPPER(SIG_TYPE) = UPPER(:SIG_TYPE) AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)";
             $req = $db->prepare($sql);
             $req->execute($u);
     
@@ -74,10 +74,10 @@
             $u = [
                 'UTI_IDENTIFIANT_ENSEIGNANT' => $username,
                 'UTI_IDENTIFIANT_ELEVE'      => $usernametu,
-                'COU_DATE'                   => $date,
+                'SIG_DATE'                   => $date,
                 'SIG_COMMENTAIRE'            => $commentaire
             ];
-            $sql = "UPDATE ABS_SIGNALEMENT SET SIG_COMMENTAIRE = :SIG_COMMENTAIRE WHERE SIG_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND SIG_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE COU_DATE = :COU_DATE)"; // modifier le commentaire à une date précise
+            $sql = "UPDATE ABS_SIGNALEMENT SET SIG_COMMENTAIRE = :SIG_COMMENTAIRE WHERE SIG_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND SIG_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)"; // modifier le commentaire à une date précise
             $req = $db->prepare($sql);
             $req->execute($sql);
         }
@@ -87,7 +87,7 @@
             $u = [
                 'UTI_IDENTIFIANT' => $username
             ];
-            $sql = "SELECT absence.SIG_TYPE, cours.COU_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
+            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
             JOIN ABS_COURS cours ON cours.COU_CODE = absence.COU_CODE
             WHERE UTI_CODE_1 = :UTI_IDENTIFIANT";
             $req = $db->prepare($sql);
@@ -106,7 +106,7 @@
             $u = [
                 'UTI_IDENTIFIANT' => $username
             ];
-            $sql = "SELECT absence.SIG_TYPE, cours.COU_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
+            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
             JOIN ABS_COURS cours ON cours.COU_CODE = absence.COU_CODE
             WHERE UTI_CODE = :UTI_IDENTIFIANT";
             $req = $db->prepare($sql);
@@ -171,7 +171,7 @@
             $u = [
                 'UTI_IDENTIFIANT' =>  $username
             ];
-            $sql = "SELECT cou_libelle, to_char(cou_date,'dd/mm/yyyy') AS DATE_COURS, to_char(cou_date,'HH24:MI') AS HEURE FROM ABS_COURS 
+            $sql = "SELECT cou_libelle, to_char(sig_date,'dd/mm/yyyy') AS DATE_COURS, to_char(sig_date,'HH24:MI') AS HEURE FROM ABS_COURS 
             WHERE COU_CODE IN (SELECT COU_CODE FROM SUIVRE WHERE UTI_CODE = :UTI_IDENTIFIANT)";
             $req = $db->prepare($sql);
             $req->execute($u);
