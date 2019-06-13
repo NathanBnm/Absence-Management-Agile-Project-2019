@@ -15,9 +15,8 @@ if (isset($_POST['submit'])) {
     if (empty($errors)) {
         $_SESSION['id'] = $username;
         $_SESSION['rank'] = user_rank($username)['rank']->CAT_CODE;
-
-        var_dump(user_rank($username)['rank']->CAT_CODE);
-        var_dump($_SESSION);
+        $_SESSION['firstname'] = user_firstname($username)['firstname']->UTI_PRENOM;
+        $_SESSION['lastname'] = user_lastname($username)['lastname']->UTI_NOM;
 
         header("Location:index.php?page=dashboard");
         exit;

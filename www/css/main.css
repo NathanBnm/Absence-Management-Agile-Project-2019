@@ -58,6 +58,12 @@ html {
     color: #a29bfe !important;
 }
 
-.navbar-link i {
+.navbar-item i {
     margin: 0 5px;
+    color: #696969 !important;
+}
+
+.space-name {
+    font-variant: small-caps;
+    font-weight: bold;
 }

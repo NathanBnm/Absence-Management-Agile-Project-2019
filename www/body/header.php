@@ -2,7 +2,7 @@
 $rank = '';
 $couleur = '';
 $icon = '';
-if(isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
+if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 	$rank = 'Étudiant';
 	$couleur = 'bg-bleu';
 	$icon = 'fa-user-graduate';
@@ -19,10 +19,13 @@ if(isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 <nav class="navbar <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
 	<div id="navbar" class="navbar-menu">
 		<div class="navbar-start">
+			<a class="navbar-item">
+				<i class="fas <?php echo $icon; ?> fa-lg"></i>
+				<span class="space-name">Espace <?php echo $rank; ?></span>
+			</a>
 			<div class="navbar-item has-dropdown is-hoverable">
 				<a class="navbar-link has-dropdown">
-					<i class="fas <?php echo $icon; ?> fa-lg"></i>
-					<?php echo $rank; ?>
+					<?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?>
 				</a>
 				<div class="navbar-dropdown is-left">
 					<a class="navbar-item">

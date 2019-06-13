@@ -27,4 +27,34 @@
         return $user_rank;
     }
 
+    function user_firstname($username){
+        global $db;
+        $u = [
+            'UTI_IDENTIFIANT'   =>  $username
+        ];
+        $sql = "SELECT UTI_PRENOM from ABS_UTILISATEUR where UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+        $req = $db->prepare($sql);
+        $req->execute($u);
+        $user_firstname = [];
+        while($row = $req->fetchObject()){
+            $user_firstname['firstname'] = $row;
+        }
+        return $user_firstname;
+    }
+
+    function user_lastname($username){
+        global $db;
+        $u = [
+            'UTI_IDENTIFIANT'   =>  $username
+        ];
+        $sql = "SELECT UTI_NOM from ABS_UTILISATEUR where UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+        $req = $db->prepare($sql);
+        $req->execute($u);
+        $user_lastname = [];
+        while($row = $req->fetchObject()){
+            $user_lastname['lastname'] = $row;
+        }
+        return $user_lastname;
+    }
+
 ?>
