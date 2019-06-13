@@ -94,24 +94,19 @@
         </div>
         <div class="field-label">
             <div class="field-body">
-                <div class="field">
+                <div class="field is-grouped">
                     <div class="control">
                         <div class="select">
                             <select id="day" name="day">
                                 <option value="0" class="selected" selected>Jour</option>
                                 <?php
-                                    for ($i = 1; $i <= 31; $i++) {
-                                        echo '<option value="' . $i . '">' . $i . '</option>';
-                                    }
+                                for ($i = 1; $i <= 31; $i++) {
+                                    echo '<option value="' . $i . '">' . $i . '</option>';
+                                }
                                 ?>
                             </select>
                         </div>
                     </div>
-                    <p class="help is-danger">
-                        Ce champ est obligatoire
-                    </p>
-                </div>
-                <div class="field">
                     <div class="control">
                         <div class="select">
                             <select id="month" name="month">
@@ -131,32 +126,35 @@
                             </select>
                         </div>
                     </div>
-                </div>
-                <div class="field">
                     <div class="control">
-                        <input class="input is-danger" type="time" placeholder="ex: 12:00">
+                        <input class="input is-danger" type="time">
                     </div>
-                    <p class="help is-danger">
-                        Ce champ est obligatoire
-                    </p>
                 </div>
             </div>
-            <div class="field is-grouped">
-                <div class="control">
-                    <a class="button is-success" aria-haspopup="true">
-                        <span class="icon is-small">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <span>Confirmer</span>
-                    </a>
-                </div>
-                <div class="control">
-                    <a class="button is-danger" aria-haspopup="true">
-                        <span class="icon is-small">
-                            <i class="fas fa-ban"></i>
-                        </span>
-                        <span>Annuler</span>
-                    </a>
+        </div>
+    </div>
+
+    <div class="field is-horizontal">
+        <div class="field-label"></div>
+        <div class="field-label">
+            <div class="field-body">
+                <div class="field is-horizontal is-grouped">
+                    <div class="control">
+                        <a class="button is-success" aria-haspopup="true">
+                            <span class="icon is-small">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span>Confirmer</span>
+                        </a>
+                    </div>
+                    <div class="control">
+                        <a class="button is-danger" aria-haspopup="true">
+                            <span class="icon is-small">
+                                <i class="fas fa-ban"></i>
+                            </span>
+                            <span>Annuler</span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>

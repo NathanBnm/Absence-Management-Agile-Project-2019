@@ -44,6 +44,14 @@ if ($_SESSION['rank'] == 'ETU') {
 				</a>
 			<?php
 				}
+				if ($_SESSION['rank'] == 'DIR') {
+			?>
+				<a class="navbar-item <?php echo ($page == "resume") ? "is-active" : ""; ?>" href="index.php?page=resume">
+					<i class="fas fa-list-ul"></i>
+					Récapitulatif
+				</a>
+			<?php
+				}
 			?>
 		</div>
 		<div class="navbar-end">
