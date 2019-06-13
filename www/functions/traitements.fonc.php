@@ -18,6 +18,20 @@
            
         }
 
+        function liste_modules(){
+            global $db;
+            $sql = "SELECT * FROM ABS_COURS";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+            $modules[];
+            $i = 0;
+            while($row = $req->fetchObject()){
+                $modules[$i] = $row;
+                $i++;
+            }
+            return $modules;
+        }
+
         function recup_etupass($nom, $prenom){
             global $db;
             $u = [
