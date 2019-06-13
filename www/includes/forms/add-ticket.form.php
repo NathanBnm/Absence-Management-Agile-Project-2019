@@ -37,6 +37,19 @@
     </div>
 </div>
 
+    <div class="field is-horizontal">
+        <div class="field-label is-normal">
+            <label class="label">Contrôle :</label>
+        </div>
+        <div class="field-label is-normal">
+            <div class="control">
+                <label class="checkbox">
+                    <input type="checkbox">
+                </label>
+            </div>
+        </div>
+    </div>
+
 <div class="field is-horizontal">
     <div class="field-label is-normal">
         <label class="label">Date et Heure :</label>
