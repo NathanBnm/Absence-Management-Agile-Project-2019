@@ -47,7 +47,11 @@ if ($_SESSION['rank'] == 'ETU') {
 			?>
 				<a class="navbar-item <?php echo ($page == "resume") ? "is-active" : ""; ?>" href="index.php?page=resume">
                     <i class="fas fa-clipboard-list"></i>
-					Billets
+					Récapitulatif
+				</a>
+				<a class="navbar-item <?php echo ($page == "notification") ? "is-active" : ""; ?>" href="index.php?page=notification">
+                    <i class="fas fa-bell"></i>
+					Notifications
 				</a>
 			<?php
 				}

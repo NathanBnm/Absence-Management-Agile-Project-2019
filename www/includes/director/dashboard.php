@@ -3,223 +3,188 @@
         <article class="tile is-child ">
             <article class="message">
                 <div class="message-header">
-                    <p>Recapitulatif Semestre</p>
+                    <p>Ajouter un billet</p>
                 </div>
                 <div class="message-body">
-                    <?php require('includes/forms/add-ticket.form.php'); ?>
+                    <?php
+                    if (!empty($errors)) {
+                        foreach ($errors as $error) {
+                            ?>
+                            <article class="message is-danger">
+                                <div class="message-body">
+                                    <?php echo $error; ?>
+                                </div>
+                            </article>
+                        <?php
+                    }
+                }
+                require('includes/forms/add-ticket.form.php'); ?>
                 </div>
             </article>
         </article>
     </div>
     <div class="tile is-parent">
-        <article class="tile is-child ">
+        <article class="tile is-child">
             <article class="message">
                 <div class="message-header">
-                    <p>Recapitulatif Enseignant</p>
+                    <p>Vos derniers billets</p>
                 </div>
                 <div class="message-body">
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal ">
-                            <label class="label">Selection Promotion</label>
-                        </div>
-                        <div class="field-label">
-                            <div class="control">
-                                <div class="select ">
-                                    <select>
-                                        <option>Info 2017-2018</option>
-                                        <option>Info 2018-2019</option>
-                                        <option>Info-com 2017-2018</option>
-                                        <option>Info-com 2018-2019</option>
-                                        <option>Rt 2017-2018</option>
-                                        <option>Rt 2018-2019</option>
-                                    </select>
-
+                    <div class="card" style="margin-bottom: 5%;">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                <span class="tag is-warning is-rounded" style="margin-right: 10px;">Retard</span>
+                                <span class="tag is-danger is-rounded" style="margin-right: 10px;">Non Justifié</span>
+                                Nom Prénom | Promo - Groupe
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <span class="tag is-success is-rounded" style="margin-right: 10px;">M2101</span>
+                                <span class="tag is-info is-rounded" style="margin-right: 10px;">16 Juin 2019 - 11h39</span> <br>
+                                <strong>Commentaire:<br></strong>
+                                En Retard de 30 minutes.
+                            </div>
+                            <div class="columns" style="text-align: center">
+                                <div class="column">
+                                    <a href="#" class="button is-link" aria-haspopup="true" onclick="m1.m1_acc.open()">
+                                        <span class="icon is-small">
+                                            <i class="far fa-edit"></i>
+                                        </span>
+                                        <span>Modifier</span>
+                                    </a>
+                                </div>
+                                <div class="column">
+                                    <a class="button is-danger">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </span>
+                                        <span>Supprimer</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="field is-horizontal">
-                        <div class="field-label is-normal ">
-                            <label class="label">Selection Enseignant</label>
-                        </div>
-                        <div class="field-label">
-                            <div class="control">
-                                <div class="select ">
-                                    <select>
-                                        <option>Monsieur Delhoumi</option>
-                                        <option>Monsieur Porcq</option>
-                                        <option>Madame Jort</option>
-                                        <option>Monsieur Anne</option>
-                                    </select>
-
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                <span class="tag is-warning is-rounded" style="margin-right: 10px;">Retard</span>
+                                <span class="tag is-danger is-rounded" style="margin-right: 10px;">Non Justifié</span>
+                                Nom Prénom | Promo - Groupe
+                            </p>
+                        </header>
+                        <div class="card-content">
+                            <div class="content">
+                                <span class="tag is-success is-rounded" style="margin-right: 10px;">M2101</span>
+                                <span class="tag is-info is-rounded" style="margin-right: 10px;">16 Juin 2019 - 11h39</span> <br>
+                                <strong>Commentaire:<br></strong>
+                                En Retard de 30 minutes.
+                            </div>
+                            <div class="columns" style="text-align: center">
+                                <div class="column">
+                                    <a href="#" class="button is-link" aria-haspopup="true" onclick="m1.m1_acc.open()">
+                                        <span class="icon is-small">
+                                            <i class="far fa-edit"></i>
+                                        </span>
+                                        <span>Modifier</span>
+                                    </a>
+                                </div>
+                                <div class="column">
+                                    <a class="button is-danger">
+                                        <span class="icon is-small">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </span>
+                                        <span>Supprimer</span>
+                                    </a>
                                 </div>
                             </div>
                         </div>
                     </div>
-
-                    <div class="columns" style="text-align: center">
-                        <div class="column">
-                            <a class="button is-primary">
-                                <span class="icon is-small">
-                                    <i class="fas fa-clipboard-list"></i>
-                                </span>
-                                <span>Acceder</span>
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a href="#" class="button is-link" aria-haspopup="true">
-                                <span class="icon is-small">
-                                    <i class="far fa-edit"></i>
-                                </span>
-                                <span>Modifier</span>
-                            </a>
-                        </div>
-                        <div class="column">
-                            <a class="button is-info">
-                                <span class="icon is-small">
-                                    <i class="fas fa-file-export"></i>
-                                </span>
-                                <span>Exporter</span>
-                            </a>
-                        </div>
-
-                    </div>
+                </div>
             </article>
         </article>
     </div>
-
-    <div id="Recap semestre" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card" style="width: 80%">
-            <header class="modal-card-head">
-                <p class="modal-card-title">
-                    Tout vos Cours
+</div>
+<div id="m1_acc" class="modal">
+    <div class="modal-background" onclick="m1.m1_acc.close()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">
+                Nom Prénom | Promo - Groupe
+            </p>
+            <button class="delete" aria-label="close" onclick="m1.m1_acc.close()"></button>
+        </header>
+        <section class="modal-card-body">
+            <strong>N°Étudiant : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">21800346</span>
+            <br><strong>Type : </strong><span class="tag is-warning is-rounded" style="margin-right: 10px;">Retard</span>
+            <br><strong>Motif : </strong>Médical
+            <br><strong>État : </strong><span class="tag is-danger is-rounded" style="margin-right: 10px;">Non Justifié</span>
+            <br><strong>Date : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">16 Juin 2019 - 11h39</span>
+            <br><strong>Module : </strong><span class="tag is-success is-rounded" style="margin-right: 10px;">M2101</span>
+            <label class="label">Commentaire :</label>
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea has-fixed-size" placeholder="Le Commentaire dans la base" rows="5"></textarea>
+                </div>
+                <p class="help">
+                    X caractères restants
                 </p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <table class="table is-fullwidth is-striped">
-                    <thead>
-                    <tr>
-                        <th><abbr title="module">N°Étudiant</abbr></th>
-                        <th><abbr title="etat">État</abbr></th>
-                        <th><abbr title="etucode">Module</abbr></th>
-                        <th><abbr title="prenom">Prénom</abbr></th>
-                        <th><abbr title="nom">Nom</abbr></th>
-                        <th><abbr title="nom">Motif</abbr></th>
-                        <th><abbr title="commentaire">Commentaire</abbr></th>
-                        <th><abbr title="date">Date</abbr></th>
-
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    </tfoot>
-                    <tbody>
-                    <tr>
-                        <th>21800346</th>
-                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                        <td>M2101</td>
-                        <td>Marie</td>
-                        <td>Martin</td>
-                        <td>Maladie</td>
-                        <td>2eme absence à ce cours</td>
-                        <td>15/06/2019</td>
-
-                    </tr>
-                    </tbody>
-                </table>
-
-            </section>
-        </div>
+            </div>
+        </section>
+        <footer class="modal-card-foot">
+            <div class="field is-grouped">
+                <div class="control">
+                    <a class="button is-success" aria-haspopup="true">
+                        <span class="icon is-small">
+                            <i class="fas fa-check"></i>
+                        </span>
+                        <span>Confirmer</span>
+                    </a>
+                </div>
+                <div class="control">
+                    <a class="button is-danger" aria-haspopup="true">
+                        <span class="icon is-small">
+                            <i class="fas fa-ban"></i>
+                        </span>
+                        <span>Annuler</span>
+                    </a>
+                </div>
+            </div>
+        </footer>
     </div>
-
-    <div id="Recap module" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card" style="width: 80%">
-            <header class="modal-card-head">
-                <p class="modal-card-title">
-                    Tout vos Cours
-                </p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <table class="table is-fullwidth is-striped">
-                    <thead>
-                    <tr>
-                        <th><abbr title="module">N°Étudiant</abbr></th>
-                        <th><abbr title="etat">État</abbr></th>
-                        <th><abbr title="etucode">Module</abbr></th>
-                        <th><abbr title="prenom">Prénom</abbr></th>
-                        <th><abbr title="nom">Nom</abbr></th>
-                        <th><abbr title="nom">Motif</abbr></th>
-                        <th><abbr title="commentaire">Commentaire</abbr></th>
-                        <th><abbr title="date">Date</abbr></th>
-
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    </tfoot>
-                    <tbody>
-                    <tr>
-                        <th>21800346</th>
-                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                        <td>M2101</td>
-                        <td>Marie</td>
-                        <td>Martin</td>
-                        <td>Maladie</td>
-                        <td>2eme absence à ce cours</td>
-                        <td>15/06/2019</td>
-
-                    </tr>
-                    </tbody>
-                </table>
-
-            </section>
-        </div>
-    </div>
-
-    <div id="Recap enseignant" class="modal">
-        <div class="modal-background"></div>
-        <div class="modal-card" style="width: 80%">
-            <header class="modal-card-head">
-                <p class="modal-card-title">
-                    Tout vos Cours
-                </p>
-                <button class="delete" aria-label="close"></button>
-            </header>
-            <section class="modal-card-body">
-                <table class="table is-fullwidth is-striped">
-                    <thead>
-                    <tr>
-                        <th><abbr title="module">N°Étudiant</abbr></th>
-                        <th><abbr title="etat">État</abbr></th>
-                        <th><abbr title="etucode">Module</abbr></th>
-                        <th><abbr title="prenom">Prénom</abbr></th>
-                        <th><abbr title="nom">Nom</abbr></th>
-                        <th><abbr title="nom">Motif</abbr></th>
-                        <th><abbr title="commentaire">Commentaire</abbr></th>
-                        <th><abbr title="date">Date</abbr></th>
-
-                    </tr>
-                    </thead>
-                    <tfoot>
-                    </tfoot>
-                    <tbody>
-                    <tr>
-                        <th>21800346</th>
-                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                        <td>M2101</td>
-                        <td>Marie</td>
-                        <td>Martin</td>
-                        <td>Maladie</td>
-                        <td>2eme absence à ce cours</td>
-                        <td>15/06/2019</td>
-
-                    </tr>
-                    </tbody>
-                </table>
-
-            </section>
-        </div>
+</div>
+<div id="information" class="modal">
+    <div class="modal-background" onclick="michel2.information.close()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">
+                Vos Informations !
+            </p>
+            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
+        </header>
+        <section class="modal-card-body">
+            <span class="icon is-small">
+                <i class="fas fa-user-graduate"></i>
+            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;">21800346</span>
+            <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
+            <span class="icon is-small">
+                <i class="fas fa-signature"></i>
+            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;">Jacquie</span>
+            <span class="icon is-small">
+                <i class="fas fa-signature"></i>
+            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;">21800346@unicaen</span>
+            <span class="icon is-small">
+                <i class="fas fa-envelope-open"></i>
+            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP 2.2</span>
+            <span class="icon is-small">
+                <i class="fas fa-graduation-cap"></i>
+            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">1ère année</span>
+            <span class="icon is-small">
+                <i class="fas fa-university"></i>
+            </span></i>
+        </section>
+        <footer class="modal-card-foot">
+            <strong>Vous êtes Mme Jort</strong>
+        </footer>
     </div>
 </div>
