@@ -1,6 +1,6 @@
 <?php
 
-function list_teacher_absences(){
+function list_teacher_delays(){
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
@@ -9,7 +9,7 @@ function list_teacher_absences(){
             FROM ABS_BILLET absence
             JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
             JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1
-            WHERE absence.SIG_TYPE = 'a'
+            WHERE absence.SIG_TYPE = 'r'
             AND absence.UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)";
     $req = $db->prepare($sql);
     $req->execute($u);

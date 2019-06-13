@@ -15,11 +15,10 @@
                                     <?php echo $error; ?>
                                 </div>
                             </article>
-                        <?php
+                    <?php
+                        }
                     }
-                }
-                ?>
-                    <?php require('includes/forms/add-ticket.form.php'); ?>
+                    require('includes/forms/add-ticket.form.php'); ?>
                 </div>
             </article>
         </article>
