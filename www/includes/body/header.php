@@ -35,7 +35,7 @@ if ($_SESSION['rank'] == 'ETU') {
 				Tableau de bord
 			</a>
 			<a class="navbar-item <?php echo ($page == "absences") ? "is-active" : ""; ?>" href="index.php?page=absences">
-				<i class="fas fa-user-slash"></i>
+				<i class="fas fa-chair"></i>
 				Absences
 			</a>
 			<a class="navbar-item <?php echo ($page == "delays") ? "is-active" : ""; ?>" href="index.php?page=delays">

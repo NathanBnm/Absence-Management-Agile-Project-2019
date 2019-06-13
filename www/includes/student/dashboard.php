@@ -4,26 +4,23 @@
             <article class="tile is-child">
                 <article class="message is-light" style="margin-top: 0.5%;">
                     <div class="message-header">
-                        <p>Récapitulatifs De Vos Absences</p>
+                        <p>Récapitulatif</p>
+                        <a class="button is-light" onclick="michel.Consultation.open()">
+                            <span class="icon is-small">
+                                <i class="fas fa-info-circle"></i>
+                            </span>
+                            <span>Détails</span>
+                        </a>
                     </div>
                     <div class="message-body">
-                        <div class="card" style="margin-bottom: 5%;">
-                            <header class="card-header">
-                                <p class="card-header-title">Total Absence(s) : X | Total Retard(s) : X | Total Abscence(s) injustifiée(s) : X | Total Retard(s) injustifié(s) : X</p>
-                            </header>
-                            <div class="card-content">
-                                <div class="columns" style="text-align: center">
-                                    <div class="column">
-                                        <a class="button is-light" onclick="michel.Consultation.open()">
-                                            <span class="icon is-small">
-                                                <i class="fas fa-info-circle"></i>
-                                            </span>
-                                            <span>Détails</span>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        <p>
+                            <i class="fas fa-chair fa-sm"></i>
+                            Vous avez <strong>X absence(s)</strong> dont <strong>X absence(s)</strong> non justifiées
+                        </p>
+                        <p>
+                            <i class="fas fa-running fa-sm"></i>
+                            Vous avez <strong>X retard(s)</strong> dont <strong>X retard(s)</strong> non justifiées
+                        </p>
                     </div>
                 </article>
             </article>
