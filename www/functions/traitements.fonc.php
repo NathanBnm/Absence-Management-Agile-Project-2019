@@ -12,7 +12,7 @@
                 'SIG_DATE'                      =>  $date
 
             ];
-            $sql = "INSERT INTO ABS_SIGNALEMENT (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_MOTIF, SIG_TYPE,SIG_DATE) VALUES (:UTI_IDENTIFIANT_ENSEIGNANT, :UTI_IDENTIFIANT_ELEVE, :COU_CODE, :SIG_COMMENTAIRE, :SIG_MOTIF, :SIG_TYPE, :SIG_DATE)";
+            $sql = "INSERT INTO ABS_BILLET (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_MOTIF, SIG_TYPE,SIG_DATE) VALUES (:UTI_IDENTIFIANT_ENSEIGNANT, :UTI_IDENTIFIANT_ELEVE, :COU_CODE, :SIG_COMMENTAIRE, :SIG_MOTIF, :SIG_TYPE, :SIG_DATE)";
             $req = $db->prepare($sql);
             $req->execute($u);
            
@@ -44,7 +44,7 @@
                 'SIG_DATE'                   => $date,
                 'SIG_TYPE'                   => $type
             ];
-            $sql = "DELETE FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND UPPER(SIG_TYPE) = UPPER(:SIG_TYPE) AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)";
+            $sql = "DELETE FROM ABS_BILLET WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND UPPER(SIG_TYPE) = UPPER(:SIG_TYPE) AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)";
             $req = $db->prepare($sql);
             $req->execute($u);
     
@@ -60,7 +60,7 @@
                 'SIG_DATE'                   => $date,
                 'SIG_COMMENTAIRE'            => $commentaire
             ];
-            $sql = "UPDATE ABS_SIGNALEMENT SET SIG_COMMENTAIRE = :SIG_COMMENTAIRE WHERE SIG_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND SIG_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)"; // modifier le commentaire à une date précise
+            $sql = "UPDATE ABS_BILLET SET SIG_COMMENTAIRE = :SIG_COMMENTAIRE WHERE SIG_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND SIG_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)"; // modifier le commentaire à une date précise
             $req = $db->prepare($sql);
             $req->execute($sql);
         }
@@ -70,7 +70,7 @@
             $u = [
                 'UTI_IDENTIFIANT' => $username
             ];
-            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
+            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_BILLET absence
             JOIN ABS_COURS cours ON cours.COU_CODE = absence.COU_CODE
             WHERE UTI_CODE_1 = :UTI_IDENTIFIANT";
             $req = $db->prepare($sql);
@@ -89,7 +89,7 @@
             $u = [
                 'UTI_IDENTIFIANT' => $username
             ];
-            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_SIGNALEMENT absence
+            $sql = "SELECT absence.SIG_TYPE, absence.SIG_DATE, cours.COU_LIBELLE, absence.UTI_CODE, absence.SIG_MOTIF, absence.SIG_COMMENTAIRE FROM ABS_BILLET absence
             JOIN ABS_COURS cours ON cours.COU_CODE = absence.COU_CODE
             WHERE UTI_CODE = :UTI_IDENTIFIANT";
             $req = $db->prepare($sql);
