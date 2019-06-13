@@ -26,41 +26,41 @@
                         </tfoot>
                         <tbody>
                             <?php
-                            $absences = list_teacher_absences();
-                            foreach ($absences as $absence) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <strong><?php echo $absence->COU_MODULE; ?></strong>
-                                    </td>
-                                    <td>
-                                        <?php echo strtoupper($absence->COU_TYPE); ?>
-                                    </td>
-                                    <td>
-                                        <span class="tag is-danger is-rounded"><?php echo $absence->COU_MODULE; ?></span>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->UTI_IDENTIFIANT; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->UTI_PRENOM; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->UTI_NOM; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->SIG_MOTIF; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->SIG_COMMENTAIRE; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $absence->SIG_DATE; ?>
-                                    </td>
-                                    <td>
-                                        <span class="tag is-danger is-rounded">
-                                            <?php
-                                            if ($absence->SIG_TRAITE == 0) {
+                                $absences = list_teacher_absences();
+                                foreach($absences as $absence) {
+                            ?>
+                            <tr>
+                                <td>
+                                    <strong><?php echo $absence->COU_MODULE; ?></strong>
+                                </td>
+                                <td>
+                                    <?php echo strtoupper($absence->COU_TYPE); ?>
+                                </td>
+                                <td>
+                                    <span class="tag is-danger is-rounded"><?php echo $absence->SIG_TYPE; ?></span>
+                                </td>
+                                <td>
+                                    <?php echo $absence->UTI_IDENTIFIANT; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->UTI_PRENOM; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->UTI_NOM; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_MOTIF; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_COMMENTAIRE; ?>
+                                </td>
+                                <td>
+                                    <?php echo $absence->SIG_DATE; ?>
+                                </td>
+                                <td>
+                                    <span class="tag is-danger is-rounded">
+                                        <?php 
+                                            if($absence->SIG_TRAITE == 0) {
                                                 echo "Non traité";
                                             } else {
                                                 echo "Traité";

@@ -26,41 +26,41 @@
                         </tfoot>
                         <tbody>
                             <?php
-                            $retards = list_teacher_delays();
-                            foreach ($retards as $retard) {
-                                ?>
-                                <tr>
-                                    <td>
-                                        <strong><?php echo $retard->COU_MODULE; ?></strong>
-                                    </td>
-                                    <td>
-                                        <?php echo strtoupper($retard->COU_TYPE); ?>
-                                    </td>
-                                    <td>
-                                        <span class="tag is-danger is-rounded"><?php echo $retard->COU_MODULE; ?></span>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->UTI_IDENTIFIANT; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->UTI_PRENOM; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->UTI_NOM; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->SIG_MOTIF; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->SIG_COMMENTAIRE; ?>
-                                    </td>
-                                    <td>
-                                        <?php echo $retard->SIG_DATE; ?>
-                                    </td>
-                                    <td>
-                                        <span class="tag is-danger is-rounded">
-                                            <?php
-                                            if ($retard->SIG_TRAITE == 0) {
+                                $retards = list_teacher_delays();
+                                foreach($retards as $retard) {
+                            ?>
+                            <tr>
+                                <td>
+                                    <strong><?php echo $retard->COU_MODULE; ?></strong>
+                                </td>
+                                <td>
+                                    <?php echo strtoupper($retard->COU_TYPE); ?>
+                                </td>
+                                <td>
+                                    <span class="tag is-danger is-rounded"><?php echo $retard->SIG_TYPE; ?></span>
+                                </td>
+                                <td>
+                                    <?php echo $retard->UTI_IDENTIFIANT; ?>
+                                </td>
+                                <td>
+                                    <?php echo $retard->UTI_PRENOM; ?>
+                                </td>
+                                <td>
+                                    <?php echo $retard->UTI_NOM; ?>
+                                </td>
+                                <td>
+                                    <?php echo $retard->SIG_MOTIF; ?>
+                                </td>
+                                <td>
+                                    <?php echo $retard->SIG_COMMENTAIRE; ?>
+                                </td>
+                                <td>
+                                    <?php echo $retard->SIG_DATE; ?>
+                                </td>
+                                <td>
+                                    <span class="tag is-danger is-rounded">
+                                        <?php 
+                                            if($retard->SIG_TRAITE == 0) {
                                                 echo "Non traité";
                                             } else {
                                                 echo "Traité";
