@@ -60,7 +60,7 @@ if($page == 'login' && isLogged()){
             require 'pages/' . $page . '.php';
             
             //On importe le pied de page
-            require 'body/footer.php';
+            require 'includes/body/footer.php';
         }
     ?>
 
