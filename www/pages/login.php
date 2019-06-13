@@ -26,23 +26,14 @@ if (isset($_POST['submit'])) {
 ?>
 
 <section class="hero is-dark is-fullheight">
-    <div class="logo">
-        <img src="../img/logoiut.png" alt="Logo">
-    </div>
     <div class="hero-body">
         <div class="container">
-            <section class="hero">
-                <div class="hero-body">
-                    <div class="container">
-                        <h1 class="title bleu">
-                            Espace étudiant
-                        </h1>
-                        <h2 class="subtitle">
-                            Gestion des absences
-                        </h2>
-                    </div>
-                </div>
-            </section>
+        <h1 class="title bleu">
+                Espace étudiant
+            </h1>
+            <h2 class="subtitle">
+                Gestion des absences
+            </h2>
             <div class="column is-6 is-offset-3">
                 <nav class="tabs is-fullwidth is-boxed is-medium">
                     <ul>
@@ -68,19 +59,17 @@ if (isset($_POST['submit'])) {
                                     <?php echo $error; ?>
                                 </div>
                             </article>
-                            <?php
-                        }
-                    } else
-                        ?>
+                        <?php
+                    }
+                } else
+                    ?>
                     <div class="stroke-line is-center"></div>
                     <?php
                 require 'forms/login.form.php';
                 ?>
                 </div>
             </div>
-            <div class="hero-body">
-                <div class="container">
-                </div>
-            </div>
         </div>
+    </div>
+    <img class="logo" src="../img/logoiut.png" alt="Logo">
 </section>
