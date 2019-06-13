@@ -1,6 +1,7 @@
 <?php
     function user_exist($username, $password){
-        /*$rank = (isset($_GET["rank"])) ? $_GET["rank"] : NULL;*/
+        $rank = (isset($_GET["rank"])) ? $_GET["rank"] : NULL;
+        echo $rank;
         
         global $db;
         $u = [
