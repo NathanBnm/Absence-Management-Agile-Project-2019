@@ -8,7 +8,7 @@ if (isset($_POST['submit'])) {
 
     if (empty($username) || empty($password)) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
-    } else if (user_exist($username, $password, $rang) == 0 || user_exist($username, $password) > 1) {
+    } else if (user_exist($username, $password, $rang) == 0 || user_exist($username, $password, $rang) > 1) {
         $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
     }
 

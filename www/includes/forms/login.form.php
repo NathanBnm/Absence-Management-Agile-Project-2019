@@ -20,7 +20,7 @@
         </div>
     </div>
     <div style="display:none">
-        <input class="input" type="text" name="rang" id="rang">
+        <input class="input" type="text" name="rang" id="rang" value="ETU">
     </div>
     <br>
     <button name="submit" id="submit" class="button is-block has-text-black is-fullwidth has-text-weight-medium bg-bleu">Connexion</button>

@@ -37,22 +37,21 @@ document.addEventListener('DOMContentLoaded', function () {
                         istitle[0].innerHTML = "Espace étudiant";
                         istitle[1].classList.add('bleu');
                         issubmit.classList.add('bg-bleu');
-                        israng.value="ETU";
+                        israng.value = "ETU";
                     }
                     else if (tabName == 'enseignant') {
                         istitle[0].classList.add('orange');
                         istitle[0].innerHTML = "Espace enseignant";
                         istitle[1].classList.add('orange');
                         issubmit.classList.add('bg-orange');
-                        israng.value="ENS";
-
+                        israng.value = "ENS";
                     }
                     else if (tabName == 'directeur') {
                         istitle[0].classList.add('violet');
                         istitle[0].innerHTML = "Espace directeur des études";
                         istitle[1].classList.add('violet');
                         issubmit.classList.add('bg-violet');
-                        israng.value="DIR";
+                        israng.value = "DIR";
                     }
 
                 }, false);
