@@ -47,3 +47,26 @@ function list_students_delays()
     }
     return $delays;
 }
+
+function list_director_delays()
+{
+    global $db;
+    $u = [
+        'UTI_IDENTIFIANT' => $_SESSION['id']
+    ];
+    $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, cours.COU_MODULE, DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT
+            FROM ABS_BILLET absence
+            JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
+            JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1
+            WHERE absence.SIG_TYPE = 'R'
+            ORDER BY SIG_CODE DESC";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+    $delays = [];
+    $i = 0;
+    while ($row = $req->fetchObject()) {
+        $delays[$i] = $row;
+        $i++;
+    }
+    return $delays;
+}

@@ -3,13 +3,14 @@
         <article class="tile is-child">
             <article class="message">
                 <div class="message-header">
-                    <p>Tous vos Billets d'Absences</p>
+                    <p>Tous vos billets d'absence</p>
                 </div>
                 <div class="message-body">
                     <table class="table is-fullwidth is-striped">
                         <thead>
                             <tr>
                                 <th><abbr title="module">Module</abbr></th>
+                                <th><abbr title="type">Type</abbr></th>
                                 <th><abbr title="etat">État</abbr></th>
                                 <th><abbr title="etucode">N°Étudiant</abbr></th>
                                 <th><abbr title="prenom">Prénom</abbr></th>
@@ -17,34 +18,82 @@
                                 <th><abbr title="nom">Motif</abbr></th>
                                 <th><abbr title="commentaire">Commentaire</abbr></th>
                                 <th><abbr title="date">Date</abbr></th>
+                                <th><abbr title="date">Statut</abbr></th>
                                 <th><abbr title="edit">Options</abbr></th>
                             </tr>
                         </thead>
                         <tfoot>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th>M2101</th>
-                                <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                                <td>21800346</td>
-                                <td>Marie</td>
-                                <td>Martin</td>
-                                <td>Maladie</td>
-                                <td>2eme absence à ce cours</td>
-                                <td>15/06/2019</td>
-                                <td>
-                                    <a href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_absence.open()">
-                                        <span class="icon is-small">
-                                            <i class="far fa-edit"></i>
-                                        </span>
-                                    </a>
-                                    <a class="button is-danger">
-                                        <span class="icon is-small">
-                                            <i class="fas fa-trash-alt"></i>
-                                        </span>
-                                    </a>
-                                </td>
-                            </tr>
+                            <?php
+                            $color = null;
+                            $color_etat = null;
+                            $absences = list_director_absences();
+                            foreach($absences as $absence) {
+                                if($absence->SIG_TRAITE == 0) {
+                                    $color = "is-danger";
+                                } else {
+                                    $color = "is-success";
+                                }
+
+                                if($absence->SIG_ETAT == "Non justifié") {
+                                    $color_etat = "is-danger";
+                                } else if ($absence->SIG_ETAT == "Rattrapage"){
+                                    $color_etat = "is-warning";
+                                } else{
+                                    $color_etat = "is-success";
+                                }
+
+                                ?>
+                                <tr>
+                                    <td>
+                                        <strong><?php echo $absence->COU_MODULE; ?></strong>
+                                    </td>
+                                    <td>
+                                        <?php echo strtoupper($absence->COU_TYPE); ?>
+                                    </td>
+                                    <td>
+                                        <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->UTI_IDENTIFIANT; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->UTI_PRENOM; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->UTI_NOM; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_MOTIF; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_COMMENTAIRE; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_DATE; ?>
+                                    </td>
+                                    <td>
+                                        <label class="checkbox">
+                                            <input type="checkbox">
+                                        </label>
+                                    </td>
+                                    <td>
+                                        <a href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_absence.open()">
+                                                <span class="icon is-small">
+                                                    <i class="far fa-edit"></i>
+                                                </span>
+                                        </a>
+                                        <a class="button is-danger">
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                                <?php
+                                }
+                            ?>
                         </tbody>
                     </table>
                 </div>
