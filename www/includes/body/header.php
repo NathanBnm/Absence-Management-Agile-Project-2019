@@ -54,7 +54,7 @@ if ($_SESSION['rank'] == 'ETU') {
 			?>
 		</div>
 		<div class="navbar-end">
-			<a class="navbar-item" href="#">
+			<a class="navbar-item" href="#" onclick="michel2.information.open()">
 				<?php echo $_SESSION['firstname'] . " " . $_SESSION['lastname']; ?>
 			</a>
 			<a href="index.php?page=logout" title="Déconnexion" class="navbar-item">
