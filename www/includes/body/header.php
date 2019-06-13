@@ -17,6 +17,13 @@ if ($_SESSION['rank'] == 'ETU') {
 }
 ?>
 <nav class="navbar <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+        <span class="navbar-burger burger" data-target="navMenu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </span>
+    </div>
 	<div id="navbar" class="navbar-menu">
 		<div class="navbar-start">
 			<p class="navbar-item">
@@ -56,3 +63,13 @@ if ($_SESSION['rank'] == 'ETU') {
 		</div>
 	</div>
 </nav>
+<script type="text/javascript">
+    (function() {
+        var burger = document.querySelector('.burger');
+        var nav = document.querySelector('#'+burger.dataset.target);
+        burger.addEventListener('click', function(){
+            burger.classList.toggle('is-active');
+            nav.classList.toggle('is-active');
+        });
+    })();
+</script>
