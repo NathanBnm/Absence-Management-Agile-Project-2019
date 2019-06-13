@@ -1,23 +1,6 @@
 <?php
     //les enseignants ou le directeur des études peuvent y accéder, pas les étudiants
-        function saisie_absence($username, $usernametu, $codecours, $commentaire, $motif, $type, $date, $typeabsence){
-            global $db;
-            $u = [
-                'UTI_IDENTIFIANT_ENSEIGNANT'    =>  $username,
-                'UTI_IDENTIFIANT_ELEVE'         =>  $usernametu,
-                'COU_CODE'                      =>  $codecours,
-                'SIG_COMMENTAIRE'               =>  $commentaire,
-                'SIG_MOTIF'                     =>  $motif,
-                'SIG_TYPE'                      =>  $type,
-                'SIG_DATE'                      =>  $date,
-                'COU_TYPE'                      =>  $typeadsence
 
-            ];
-            $sql = "INSERT INTO ABS_BILLET (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_MOTIF, SIG_TYPE,SIG_DATE, COU_TYPE) VALUES (:UTI_IDENTIFIANT_ENSEIGNANT, :UTI_IDENTIFIANT_ELEVE, :COU_CODE, :SIG_COMMENTAIRE, :SIG_MOTIF, :SIG_TYPE, :SIG_DATE, :COU_TYPE)";
-            $req = $db->prepare($sql);
-            $req->execute($u);
-           
-        }
 
         function recup_etupass($nom, $prenom){
             global $db;

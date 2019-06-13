@@ -1,18 +1,36 @@
-<form id="add-ticket" method="POST"></form>
+<form id="add-ticket" method="POST">
 <div class="field is-horizontal">
     <div class="field-label is-normal ">
-        <label class="label">Séléctioner votre Cours :</label>
+        <label class="label">Module :</label>
     </div>
     <div class="field-label">
         <div class="control">
             <div class="select ">
                 <select id="module" name="module">
                     <?php
-                        $modules = list_modules();
-                        foreach($modules as $module) {
-                            echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
-                        }
+                    $modules = list_modules();
+                    foreach ($modules as $module) {
+                        echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
+                    }
                     ?>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="field is-horizontal">
+    <div class="field-label is-normal ">
+        <label class="label">Type de cours :</label>
+    </div>
+    <div class="field-label">
+        <div class="control">
+            <div class="select ">
+                <select id="typecourse" name="typecourse">
+                    <option value="td">TD</option>
+                    <option value="tp">TP</option>
+                    <option value="cm">CM</option>
+                    <option value="cc">CC</option>
                 </select>
             </div>
         </div>
@@ -58,7 +76,10 @@
                     </div>
                 </div>
                 <div class="control">
-                    <input class="input is-danger" type="time">
+                    <input class="input" type="hidden" value="<?php echo date('Y'); ?>" id="year" name="year">
+                </div>
+                <div class="control">
+                    <input class="input" type="time" id="time" name="time">
                 </div>
             </div>
         </div>
@@ -72,9 +93,9 @@
     <div class="field-label">
         <div class="control">
             <div class="select ">
-                <select>
-                    <option>Absence</option>
-                    <option>Retard</option>
+                <select id="type" name="type">
+                    <option value="a">Absence</option>
+                    <option value="r">Retard</option>
                 </select>
             </div>
         </div>
@@ -83,12 +104,29 @@
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
-        <label class="label">Nom de l'Elève :</label>
+        <label class="label">Numéro étudiant :</label>
     </div>
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input is-danger" type="text" placeholder="ex: Marie">
+                <input class="input is-danger" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
+            </div>
+            <p class="help is-danger">
+                Ce champ est obligatoire
+            </p>
+        </div>
+    </div>
+</div>
+
+<!--
+<div class="field is-horizontal">
+    <div class="field-label is-normal">
+        <label class="label">Nom de l'étudiant :</label>
+    </div>
+    <div class="field-label">
+        <div class="field">
+            <div class="control">
+                <input class="input is-danger" type="text" placeholder="ex: Marie" id="firstname" name="fisrtname">
             </div>
             <p class="help is-danger">
                 Ce champ est obligatoire
@@ -99,12 +137,12 @@
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
-        <label class="label">Prénom de l'Elève :</label>
+        <label class="label">Prénom de l'étudiant :</label>
     </div>
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input is-danger" type="text" placeholder="ex: Martin">
+                <input class="input is-danger" type="text" placeholder="ex: Martin" id="lastname" name="lastname">
             </div>
             <p class="help is-danger">
                 Ce champ est obligatoire
@@ -112,6 +150,7 @@
         </div>
     </div>
 </div>
+-->
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
@@ -120,27 +159,19 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <textarea class="textarea has-fixed-size" placeholder="Votre Commentaire" rows="5"></textarea>
+                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" id="message" name="message"></textarea>
             </div>
             <p class="help">
                 X caractères restants
             </p>
             <div class="field is-grouped">
                 <div class="control">
-                    <a class="button is-success" aria-haspopup="true">
+                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
                         <span>Confirmer</span>
-                    </a>
-                </div>
-                <div class="control">
-                    <a class="button is-danger" aria-haspopup="true">
-                        <span class="icon is-small">
-                            <i class="fas fa-ban"></i>
-                        </span>
-                        <span>Annuler</span>
-                    </a>
+                    </button>
                 </div>
             </div>
         </div>

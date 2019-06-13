@@ -94,7 +94,7 @@ if (isset($_POST['submit'])) {
 <section class="hero is-dark is-fullheight">
     <div class="hero-body">
         <div class="container">
-        <h1 class="title bleu">
+            <h1 class="title bleu">
                 Espace étudiant
             </h1>
             <h2 class="subtitle">
@@ -127,12 +127,12 @@ if (isset($_POST['submit'])) {
                             </article>
                         <?php
                     }
-                } else
-                    ?>
+                }
+                ?>
                     <div class="stroke-line is-center"></div>
                     <?php
-                require 'includes/forms/login.form.php';
-                ?>
+                    require 'includes/forms/login.form.php';
+                    ?>
                 </div>
             </div>
         </div>
