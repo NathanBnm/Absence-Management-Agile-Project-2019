@@ -12,8 +12,8 @@ function envoie($mail){
     }
 
 
-    $message_txt = "Salut à tous, voici un e-mail envoyé par un script PHP.";
-    $message_html = "<html><head></head><body><b>Salut à tous</b>, voici un e-mail envoyé par un <i>script PHP</i>.</body></html>";
+    $message_txt = "Vous êtes notifié car une connexion incorrecte a été effectuée.";
+    $message_html = "<html><head></head><body><b>Vous êtes notifié</b> car une connexion <b>incorrecte</b>a été effectuée.</body></html>";
 
     $boundary = "-----=" . md5(rand());
 
