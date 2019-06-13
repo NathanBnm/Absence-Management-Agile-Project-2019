@@ -13,7 +13,7 @@ function envoie($mail){
 
 
     $message_txt = "Vous êtes notifié car une connexion incorrecte a été effectuée.";
-    $message_html = "<html><head></head><body><b>Vous êtes notifié</b> car une connexion <b>incorrecte</b>a été effectuée.</body></html>";
+    $message_html = "<html><head></head><body><b>Vous êtes notifié</b> car une connexion <b>incorrecte</b> a été effectuée.</body></html>";
 
     $boundary = "-----=" . md5(rand());
 
