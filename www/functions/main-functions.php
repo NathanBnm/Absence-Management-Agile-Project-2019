@@ -108,6 +108,7 @@ function count_students_delays_not_justified()
     $sql = "SELECT COUNT(*) FROM ABS_BILLET
             JOIN ABS_COURS USING(COU_CODE)
             WHERE SIG_TYPE = 'R'
+            AND SIG_ETAT = 'Non justifié'
             AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
             ORDER BY SIG_CODE DESC";
 
