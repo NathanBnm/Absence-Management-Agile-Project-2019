@@ -168,5 +168,23 @@
              return $user_cours;
         }
 
+        function test_billet_existant($professeur, $etudiant, $module, $date){
+            global $db;
+            $u = [
+                'UTI_CODE' => $professeur,
+                'UTI_CODE_1' => $etudiant,
+                'COU_CODE' => $module,
+                'SIG_DATE' => $date
+            ];
+            $sql = "SELECT COUNT(SIG_CODE) FROM ABS_SIGNALEMENT WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = :UTI_CODE_1 AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
+            $req = $db->prepare($sql);
+            $billet_existant = [];
+            $i = 0;
+             while($row = $req->fetchObject()){
+                 $billet_existant[$i] = $row;
+                 $i++;
+             }
+            return $i;
+        }
 
 ?>
