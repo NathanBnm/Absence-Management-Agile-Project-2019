@@ -8,43 +8,45 @@
                 <div class="message-body">
                     <table class="table is-fullwidth is-striped">
                         <thead>
-                            <tr>
-                                <th><abbr title="module">Module</abbr></th>
-                                <th><abbr title="etat">État</abbr></th>
-                                <th><abbr title="etucode">N°Étudiant</abbr></th>
-                                <th><abbr title="prenom">Prénom</abbr></th>
-                                <th><abbr title="nom">Nom</abbr></th>
-                                <th><abbr title="nom">Motif</abbr></th>
-                                <th><abbr title="commentaire">Commentaire</abbr></th>
-                                <th><abbr title="date">Date</abbr></th>
-                                <th><abbr title="edit">Options</abbr></th>
-                            </tr>
+                        <tr>
+                            <th><abbr title="module">Module</abbr></th>
+                            <th><abbr title="etat">État</abbr></th>
+                            <th><abbr title="etucode">N°Étudiant</abbr></th>
+                            <th><abbr title="prenom">Prénom</abbr></th>
+                            <th><abbr title="nom">Nom</abbr></th>
+                            <th><abbr title="nom">Motif</abbr></th>
+                            <th><abbr title="commentaire">Commentaire</abbr></th>
+                            <th><abbr title="date">Date</abbr></th>
+                            <th><abbr title="date">Statut</abbr></th>
+                            <th><abbr title="edit">Options</abbr></th>
+                        </tr>
                         </thead>
                         <tfoot>
                         </tfoot>
                         <tbody>
-                            <tr>
-                                <th>M2101</th>
-                                <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                                <td>21800346</td>
-                                <td>Marie</td>
-                                <td>Martin</td>
-                                <td>Panne de Réveil</td>
-                                <td>2eme absence à ce cours</td>
-                                <td>15/06/2019</td>
-                                <td>
-                                    <a href="#" class="button is-info" aria-haspopup="true">
+                        <tr>
+                            <th>M2101</th>
+                            <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
+                            <td>21800346</td>
+                            <td>Marie</td>
+                            <td>Martin</td>
+                            <td>Maladie</td>
+                            <td>2eme absence à ce cours</td>
+                            <td>15/06/2019</td>
+                            <td><span class="tag is-danger is-rounded">Non Traité</span></td>
+                            <td>
+                                <a href="#" class="button is-info" aria-haspopup="true">
                                         <span class="icon is-small">
                                             <i class="far fa-edit"></i>
                                         </span>
-                                    </a>
-                                    <a class="button is-danger">
+                                </a>
+                                <a class="button is-danger">
                                         <span class="icon is-small">
                                             <i class="fas fa-trash-alt"></i>
                                         </span>
-                                    </a>
-                                </td>
-                            </tr>
+                                </a>
+                            </td>
+                        </tr>
                         </tbody>
                     </table>
                 </div>
