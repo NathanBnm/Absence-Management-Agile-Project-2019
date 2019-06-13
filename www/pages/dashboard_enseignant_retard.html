@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="../css/bulma.css" />
+    <link rel="stylesheet" href="../css/main.css" />
+    <script src="https://kit.fontawesome.com/4a31b437ba.js"></script>
+
+</head>
+<body>
+    <nav class="navbar bg-orange" role="navigation" aria-label="main navigation">
+        <div id="navbar" class="navbar-menu">
+            <div class="navbar-start">
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link has-dropdown">
+                        <i class="fas fa-user fa-lg"></i>
+                        Enseignant
+                    </a>
+                    <div class="navbar-dropdown is-left">
+                        <a class="navbar-item">
+                            Mes Informations
+                        </a>
+                    </div>
+                </div>
+                <a href="dashboard_enseignant_accueil.html" class="navbar-item">
+                    Accueil
+                </a>
+                <a href="dashboard_enseignant_absence.html" class="navbar-item">
+                    Absences
+                </a>
+                <a href="dashboard_enseignant_retard.html" class="navbar-item">
+                    Retards
+                </a>
+                <a href="dashboard_enseignant_cours.html" class="navbar-item">
+                    Cours
+                </a>
+            </div>
+            <div class="navbar-end">
+                <a href="index.php?page=logout" class="navbar-item">
+                    <i class="fas fa-power-off fa-lg"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
+    <div class="tile is-ancestor">
+        <div class="tile is-parent" style="margin: 20px;">
+            <article class="tile is-child">
+                <article class="message">
+                    <div class="message-header">
+                        <p>Tous vos Billets de Retards</p>
+                    </div>
+                    <div class="message-body">
+                        <table class="table is-fullwidth is-striped">
+                            <thead>
+                                <tr>
+                                    <th><abbr title="module">Module</abbr></th>
+                                    <th><abbr title="etat">État</abbr></th>
+                                    <th><abbr title="etucode">N°Étudiant</abbr></th>
+                                    <th><abbr title="prenom">Prénom</abbr></th>
+                                    <th><abbr title="nom">Nom</abbr></th>
+                                    <th><abbr title="commentaire">Commentaire</abbr></th>
+                                    <th><abbr title="date">Date</abbr></th>
+                                    <th><abbr title="edit">Options</abbr></th>
+                                </tr>
+                            </thead>
+                            <tfoot>
+                            </tfoot>
+                            <tbody>
+                                <tr>
+                                    <th>M2101</th>
+                                    <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
+                                    <td>21800346</td>
+                                    <td>Marie</td>
+                                    <td>Martin</td>
+                                    <td>2eme absence à ce cours</td>
+                                    <td>15/06/2019</td>
+                                    <td>
+                                        <a href="#" class="button is-info" aria-haspopup="true">
+                                            <span class="icon is-small">
+                                              <i class="far fa-edit"></i>
+                                            </span>
+                                        </a>
+                                        <a class="button is-danger">
+                                            <span class="icon is-small">
+                                              <i class="fas fa-trash-alt"></i>
+                                            </span>
+                                        </a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </article>
+            </article>
+        </div>
+    </div>
+</body>
+</html>
