@@ -54,7 +54,7 @@ if($page == 'login' && isLogged()){
             require 'pages/' . $page . '.php';
         } else {
             //On importe l'entête
-            require 'body/header.php';
+            require 'includes/body/header.php';
 
             //On importe la page correspondante
             require 'pages/' . $page . '.php';
