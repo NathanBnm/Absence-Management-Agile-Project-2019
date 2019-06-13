@@ -37,7 +37,7 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
             )";
     $req = $db->prepare($sql);
     $req->execute($u);
-    $mail = recuperer_mail();
+    //$mail = recuperer_mail();
     //envoie($mail, $type, $date);
 }
 

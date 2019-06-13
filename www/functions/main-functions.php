@@ -27,5 +27,3 @@ function isLogged()
     }
     return $logged;
 }
-
-?>

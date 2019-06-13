@@ -11,7 +11,7 @@ function list_teacher_delays(){
             JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1
             WHERE absence.SIG_TYPE = 'r'
             AND absence.UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
-            ORDER BY SIG_DATE";
+            ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
     $user_absences = [];
