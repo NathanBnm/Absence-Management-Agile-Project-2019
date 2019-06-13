@@ -14,6 +14,24 @@
             $sql = "INSERT INTO ABS_SIGNALEMENT (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_MOTIF, SIG_TYPE) VALUES (:UTI_IDENTIFIANT_ENSEIGNANT, :UTI_IDENTIFIANT_ELEVE, :COU_CODE, :SIG_COMMENTAIRE, :SIG_MOTIF, :SIG_TYPE)";
             $req = $db->prepare($sql);
             $req->execute($u);
+           
+        }
+
+        function recup_etupass($nom, $prenom){
+            global $db;
+            $u = [
+                'UTI_NOM'         =>  $nom,
+                'UTI_PRENOM'      =>  $prenom
+            ];
+            $sql = "SELECT * FROM ABS_UTILISATEUR WHERE UTI_NOM = :UTI_NOM AND UTI_PRENOM = :UTI_PRENOM";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+            $user_etupass = [];
+            while($row = $req->fetchObject()){
+                $user_etupass['etupass'] = $row;
+            }
+            return $user_etupass;
+
         }
 
         function saisie_cours($module,$date, $type, $libelle, $groupe, $promo){
