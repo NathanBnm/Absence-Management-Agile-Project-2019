@@ -34,23 +34,6 @@
             return $user_etupass;
 
         }
-
-        function saisie_cours($module,$date, $type, $libelle, $groupe, $promo){
-            global $db;
-            $u = [
-                'COU_MODULE'    =>  $module, 
-                'SIG_DATE'      =>  $date,
-                'COU_TYPE'      =>  $type,
-                'COU_LIBELLE'   =>  $libelle,
-                'COU_GROUPE'    =>  $groupe,
-                'COU_PROMO'     => $promo
-            ];
-            $sql = "INSERT INTO ABS_COURS (SIG_DATE,COU_MODULE,COU_TYPE,COU_LIBELLE,COU_GROUPE,COU_PROMO) 
-            VALUES (:SIG_DATE,:COU_MODULE,:COU_TYPE,COU_LIBELLE, :COU_GROUPE,:COU_PROMO)";
-            $req = $db->prepare($sql);
-            $req->execute($u);
-        }
-
         
         //demander vérification à l'utilisateur
         function delete_absence_retard($username, $usernametu, $date, $type){
