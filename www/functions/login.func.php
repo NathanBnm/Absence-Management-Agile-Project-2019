@@ -11,9 +11,9 @@
         $u = [
             'UTI_IDENTIFIANT'   =>  $username,
             'UTI_MDP'           =>  hash('sha256', $password)
-            /*'CAT_CODE'          =>  $rank*/
+            'CAT_CODE'          =>  $rank
         ];
-        $sql = "SELECT * FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT AND UTI_MDP = :UTI_MDP /*AND CAT_CODE = :CAT_CODE*/";
+        $sql = "SELECT * FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT AND UTI_MDP = :UTI_MDP AND CAT_CODE = :CAT_CODE";
         $req = $db->prepare($sql);
         $req->execute($u);
         $exist = $req->rowCount($sql);
