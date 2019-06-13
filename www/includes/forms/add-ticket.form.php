@@ -109,11 +109,8 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input is-danger" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
+                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
             </div>
-            <p class="help is-danger">
-                Ce champ est obligatoire
-            </p>
         </div>
     </div>
 </div>

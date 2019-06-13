@@ -58,7 +58,7 @@ function last_ticket(){
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
     ];
-    $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, cours.COU_MODULE, SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_TYPE
+    $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, cours.COU_MODULE, DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_TYPE
             FROM ABS_BILLET absence
             JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
             JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1

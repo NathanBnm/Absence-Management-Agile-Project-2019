@@ -32,8 +32,14 @@
                 <div class="message-body">
                     <div class="tile is-parent is-vertical">
                         <?php
+                            $color = null;
                             $tickets = last_ticket();
                             foreach($tickets as $ticket) {
+                                if($ticket->SIG_TRAITE == 0) {
+                                    $color = "is-danger";
+                                } else {
+                                    $color = "is-success";
+                                }
                         ?>
                         <div class="tile is-child">
                             <div class="card" style="margin-bottom: 1%;">
@@ -50,7 +56,7 @@
                                                     ?>
                                                 </span>
                                                 <span class="tag is-danger is-rounded"><?php echo $ticket->SIG_ETAT; ?></span>
-                                                <span class="tag is-success is-rounded">
+                                                <span class="tag <?php echo $color ?> is-rounded">
                                                     <?php
                                                     if($ticket->SIG_TRAITE == 0) {
                                                         echo "Non traité";
