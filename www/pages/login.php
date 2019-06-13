@@ -3,12 +3,12 @@
 if (isset($_POST['submit'])) {
     $username = htmlspecialchars(trim($_POST['username']));
     $password = htmlspecialchars(trim($_POST['password']));
-
+    $rang = htmlspecialchars(trim($_POST['rang']));
     $errors = [];
 
     if (empty($username) || empty($password)) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
-    } else if (user_exist($username, $password) == 0 || user_exist($username, $password) > 1) {
+    } else if (user_exist($username, $password, $rang) == 0 || user_exist($username, $password) > 1) {
         $errors['user_not_found'] = "Identifiant ou mot de passe incorrect";
     }
 

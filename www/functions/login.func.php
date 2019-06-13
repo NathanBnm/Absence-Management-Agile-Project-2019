@@ -1,12 +1,5 @@
 <?php
-    function user_exist($username, $password){
-        if(isset($_POST["rang"])){
-            $rank = $_POST["rang"];
-        }
-        else {
-            $rank = 'ETU';
-        }
-        
+    function user_exist($username, $password, $rank){
         global $db;
         $u = [
             'UTI_IDENTIFIANT'   =>  $username,
