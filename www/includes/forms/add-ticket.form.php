@@ -94,8 +94,8 @@
         <div class="control">
             <div class="select ">
                 <select id="type" name="type">
-                    <option value="a">Absence</option>
-                    <option value="r">Retard</option>
+                    <option value="A">Absence</option>
+                    <option value="R">Retard</option>
                 </select>
             </div>
         </div>
