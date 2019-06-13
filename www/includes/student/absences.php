@@ -26,15 +26,23 @@
                         </tfoot>
                         <tbody>
                             <?php
+                                $color_etat = null;
                                 $absences = list_students_absences();
                                 foreach($absences as $absence) {
+                                    if($absence->SIG_ETAT == "Non justifié") {
+                                        $color_etat = "is-danger";
+                                    } else if ($absence->SIG_ETAT == "Rattrapage"){
+                                        $color_etat = "is-warning";
+                                    } else{
+                                        $color_etat = "is-success";
+                                    }
                             ?>
                             <tr>
                                 <th>
                                     <?php echo $absence->COU_MODULE; ?>
                                 </th>
                                 <td>
-                                    <span class="tag is-danger is-rounded">
+                                    <span class="tag <?php echo $color_etat ?> is-rounded">
                                         <?php echo $absence->SIG_ETAT; ?>
                                     </span>
                                 </td>

@@ -26,15 +26,23 @@
                         </tfoot>
                         <tbody>
                             <?php
+                                $color_etat = null;
                                 $retards = list_students_delays();
                                 foreach($retards as $retard) {
+                                    if($retard->SIG_ETAT == "Non justifié") {
+                                        $color_etat = "is-danger";
+                                    } else if ($retard->SIG_ETAT == "Rattrapage"){
+                                        $color_etat = "is-warning";
+                                    } else{
+                                        $color_etat = "is-success";
+                                    }
                             ?>
                             <tr>
                                 <th>
                                     <?php echo $retard->COU_MODULE; ?>
                                 </th>
                                 <td>
-                                    <span class="tag is-danger is-rounded">
+                                    <span class="tag <?php echo $color_etat ?> is-rounded">
                                         <?php echo $retard->SIG_ETAT; ?>
                                     </span>
                                 </td>
