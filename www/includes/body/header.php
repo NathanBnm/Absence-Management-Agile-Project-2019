@@ -36,14 +36,6 @@ if ($_SESSION['rank'] == 'ETU') {
 				Retards
 			</a>
 			<?php
-				if ($_SESSION['rank'] == 'ENS' || $_SESSION['rank'] == 'DIR') {
-			?>
-				<a class="navbar-item <?php echo ($page == "courses") ? "is-active" : ""; ?>" href="index.php?page=courses">
-					<i class="fas fa-book"></i>
-					Cours
-				</a>
-			<?php
-				}
 				if ($_SESSION['rank'] == 'DIR') {
 			?>
 				<a class="navbar-item <?php echo ($page == "resume") ? "is-active" : ""; ?>" href="index.php?page=resume">
