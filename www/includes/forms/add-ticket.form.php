@@ -6,10 +6,13 @@
     <div class="field-label">
         <div class="control">
             <div class="select ">
-                <select>
-                    <option>M2101 - 15/06/2019</option>
-                    <option>M2101 - 16/06/2019</option>
-                    <option>M2101 - 16/06/2019</option>
+                <select id="module" name="module">
+                    <?php
+                        $modules = list_modules();
+                        foreach($modules as $module) {
+                            echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
+                        }
+                    ?>
                 </select>
             </div>
         </div>
