@@ -61,7 +61,7 @@ function list_director_delays()
     JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE 
     JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1 
     JOIN ABS_UTILISATEUR ens ON ens.UTI_CODE = absence.UTI_CODE 
-    WHERE absence.SIG_TYPE = 'A' 
+    WHERE absence.SIG_TYPE = 'R' 
     AND absence.UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) 
     ORDER BY SIG_CODE DESC ";
     $req = $db->prepare($sql);
