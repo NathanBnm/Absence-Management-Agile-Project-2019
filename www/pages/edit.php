@@ -86,6 +86,17 @@ if ($ticket) {
                         <strong>Type de Cours : </strong>
                         <span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo strtoupper($ticket['COU_TYPE']); ?></span>
                         <br>
+                        <strong>Contrôle :</strong>
+                        <span class="tag is-info is-rounded" style="margin-left: 10px;">
+                            <?php
+                            if ($ticket['COU_CONTROLE'] == 1) {
+                                echo "Oui";
+                            } else {
+                                echo "Non";
+                            }
+                            ?>
+                        </span>
+                        <br>
                         <strong>Motif : </strong><?php echo $ticket['SIG_MOTIF']; ?>
                         <br>
                     </div>
