@@ -13,6 +13,7 @@ function list_teacher_absences()
     JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
     JOIN ABS_UTILISATEUR etu1 ON etu1.UTI_CODE = absence.UTI_CODE_1
     WHERE absence.SIG_TYPE = 'A'
+    AND absence.UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
     ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
@@ -38,6 +39,7 @@ function list_students_absences()
     JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
     JOIN ABS_UTILISATEUR etu1 ON etu1.UTI_CODE = absence.UTI_CODE
     WHERE absence.SIG_TYPE = 'A'
+    AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
     ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
