@@ -27,10 +27,10 @@
         <div class="control">
             <div class="select ">
                 <select id="typecourse" name="typecourse">
-                    <option value="td">TD</option>
-                    <option value="tp">TP</option>
-                    <option value="cm">CM</option>
-                    <option value="cc">CC</option>
+                    <option value="TD">TD</option>
+                    <option value="TP">TP</option>
+                    <option value="CM">CM</option>
+                    <option value="CC">CC</option>
                 </select>
             </div>
         </div>
@@ -169,7 +169,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" max="255" id="message" name="message"></textarea>
+                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" maxlength="255" id="message" name="message"></textarea>
             </div>
             <p id="count" class="help">
                 0 / 255
