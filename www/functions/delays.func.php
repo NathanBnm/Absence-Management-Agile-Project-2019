@@ -37,6 +37,7 @@ function list_students_delays()
         JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
         JOIN ABS_UTILISATEUR etu1 ON etu1.UTI_CODE = absence.UTI_CODE
         WHERE absence.SIG_TYPE = 'R'
+        AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)
         ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
