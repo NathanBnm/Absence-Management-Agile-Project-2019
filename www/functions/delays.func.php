@@ -36,7 +36,7 @@ function list_students_delays()
         FROM ABS_BILLET absence
         JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
         JOIN ABS_UTILISATEUR etu1 ON etu1.UTI_CODE = absence.UTI_CODE
-        WHERE absence.SIG_TYPE = 'A'
+        WHERE absence.SIG_TYPE = 'R'
         ORDER BY SIG_CODE DESC";
     $req = $db->prepare($sql);
     $req->execute($u);
