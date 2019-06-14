@@ -298,7 +298,7 @@ function change_justif($etat)
         'SIG_CODE'  =>  $etat,
         'SIG_ETAT' => $temp
     ];
-    $sql = "UPDATE ABS_BILLET SET SIG_TRAITE = :SIG_TRAITE WHERE SIG_CODE = :SIG_CODE";
+    $sql = "UPDATE ABS_BILLET SET SIG_ETAT = :ETAT WHERE SIG_CODE = :SIG_CODE";
     $req = $db->prepare($sql);
     $req->execute($u);
 }

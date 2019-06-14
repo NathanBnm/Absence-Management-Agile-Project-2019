@@ -76,7 +76,7 @@
                                         <form method ="POST">
                                             <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="etat" name="etat">
                                             <button type="submit" id="justifier" name="justifier" href="#" class="button <?php echo $color; ?> is-rounded">
-                                                <span class="tag <?php echo $color_etat; ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                                <span class="tag is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
                                             </button>
                                         </form>
 
