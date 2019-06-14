@@ -179,4 +179,25 @@
             $req = $db->prepare($sql);
             $req->execute($u);
         }
+
+        function changer_etat ($absence){
+            global $db;
+            $trait=null;
+
+            if ($absence->SIG_TRAITE == 0){
+                $trait==1;
+            }
+            else{
+                $trait==0;
+            }
+
+            $u = [
+                'SIG_TRAITE' => $trait,
+                'SIG_CODE' => $absence->SIG_CODE
+            ];
+
+            $sql = "UPDATE ABS_BILLET SET SIG_TRAITE = :SIG_TRAITE WHERE SIG_CODE= :SIG_CODE";
+            $req = $db->prepare($sql);
+            $req->execute($u);
+        }
 ?>

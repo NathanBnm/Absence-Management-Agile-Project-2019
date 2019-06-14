@@ -3,6 +3,7 @@
     $total_delays = count_students_delays();
     $total_absences_not_justified = count_students_absences_not_justified();
     $total_delays_not_justified = count_students_delays_not_justified();
+    $utilisateur = get_utilisateur();
 ?>
 
 <header>
@@ -281,20 +282,20 @@
         <section class="modal-card-body">
             <span class="icon is-small">
                 <i class="fas fa-user-graduate"></i>
-            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;">21800346</span>
+            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_IDENTIFIANT;?></span>
             <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
             <span class="icon is-small">
                 <i class="fas fa-signature"></i>
-            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;">Jacquie</span>
+            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_PRENOM;?></span>
             <span class="icon is-small">
                 <i class="fas fa-signature"></i>
-            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;">21800346@unicaen</span>
+            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_MAIL;?></span>
             <span class="icon is-small">
                 <i class="fas fa-envelope-open"></i>
-            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP 2.2</span>
+            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP <?php echo $utilisateur->UTI_GROUPE;?></span>
             <span class="icon is-small">
                 <i class="fas fa-graduation-cap"></i>
-            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">1ère année</span>
+            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;"> <?php echo $utilisateur->UTI_PROMO;?><sup><?php echo($utilisateur->UTI_IDENTIFIANT==1)?ère:eme;?></sup> année</span>
             <span class="icon is-small">
                 <i class="fas fa-university"></i>
             </span></i>

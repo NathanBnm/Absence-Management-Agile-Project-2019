@@ -16,6 +16,8 @@ function list_modules()
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
     global $db;
+
+    if(etupass_vers_role($etupass) == 'ETU'){
     $u = [
         'COU_MODULE'                    =>  $module,
         'COU_TYPE'                      =>  $typecourse,
@@ -39,6 +41,43 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
     $req->execute($u);
     //$mail = recuperer_mail();
     //envoie($mail, $type, $date);
+    }
+}
+
+function nom_vers_etupass($nom, $prenom){
+    global $db;
+    $u = [
+        'UTI_NOM'       => $prenom,
+        'UTI_PRENOM'    => $nom
+    ];
+   
+    $sql = "SELECT UTI_IDENTIFIANT FROM ABS_UTILISATEUR WHERE UTI_NOM = :UTI_NOM AND UTI_PRENOM = :UTI_PRENOM";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+    $etupass = [];
+    $i = 0;
+    while($row = $req->fetchObject()){
+        $etupass[$i] = $row;
+        $i++;
+    }
+    return $etupass;
+}
+
+function etupass_vers_role($etupass){
+    global $db;
+    $u = [
+        'UTI_IDENTIFIANT' => $etupass
+    ];
+    $sql = "SELECT CAT_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+    $role = [];
+    $i = 0;
+    while($row = $req->fetchObject()){
+        $role[$i] = $row;
+        $i++;
+    }
+    return $role;
 }
 
 function recuperer_mail() {
