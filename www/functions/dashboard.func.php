@@ -60,7 +60,7 @@ function test_billet_existant($professeur, $etudiant, $module, $date){
         $exist = $req->fetch();
         $req->closeCursor();
         $i = 0;
-        $exist['COMPTEUR'] = $i;
+        $i = $exist['COMPTEUR'];
         return $i;
 }
      
