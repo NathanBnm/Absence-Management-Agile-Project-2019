@@ -122,7 +122,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input id="etudiant" class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
+                <input id="etudiant" class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" autocomplete="off">
                 <script>
                     $( function() {
                         $( "#etudiant" ).autocomplete({
