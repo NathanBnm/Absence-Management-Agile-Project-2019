@@ -48,7 +48,7 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 function test_billet_existant($professeur, $etudiant, $module, $date){
     global $db;
     $u = [
-                'UTI_CODE' => $professeur,
+            'UTI_CODE' => $professeur,
             'UTI_IDENTIFIANT' => $etudiant,
             'COU_CODE' => $module,
             'SIG_DATE' => $date
