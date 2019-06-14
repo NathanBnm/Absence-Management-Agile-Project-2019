@@ -16,9 +16,9 @@ if(isset($_POST['delete'])) {
     echo "<meta http-equiv='refresh' content='0'>";
 }
 
-if(isset($_POST['traite'])) {
-    $traite = $_POST['coder'];
-    change_traitement($traite);
+if(isset($_POST['traite2'])) {
+    $traite2 = $_POST['coder2'];
+    change_traitement($traite2);
     echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
