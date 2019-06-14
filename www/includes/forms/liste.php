@@ -1,26 +1,25 @@
 <?php
-// debut session
+
 global $db;
-$u = [
-    'COU_CODE' =>  $cours
+
+$e = [
+	'ETUDIANT'	=> $_POST['etudiant'];
 ];
-$sql = "SELECT UTI_NOM, UTI_PRENOM, UTI_IDENTIFIANT FROM ABS_UTILISATEUR";
+
+$sql = "SELECT CONCAT(UTI_NOM,' ',UTI_PRENOM,' <',UTI_IDENTIFIANT,'>') FROM ABS_UTILISATEUR WHERE CONCAT(UTI_NOM,' ',UTI_PRENOM,' <',UTI_IDENTIFIANT,'>') LIKE '%:ETUDIANT%'";
+
 $req = $db->prepare($sql);
-$req->execute($u);
-$array = array(); // on créé le tableau
+$req->execute($e);
 
-$term = $_POST['term'];
 
-$requete = $db->prepare('SELECT CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') FROM ABS_UTILISATEUR WHERE CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') LIKE :etudiant'); // j'effectue ma requête SQL grâce au mot-clé LIKE
-$requete->execute(array('term' => '%'.$term.'%'));
+$etudiants = [];
 
-$array = array(); // on créé le tableau
-
-while($donnee = $requete->fetch()) // on effectue une boucle pour obtenir les données
-{
-    array_push($array, $donnee['nom']); // et on ajoute celles-ci à notre tableau
+$i = 0;
+while($row = $req->fetchObject()){
+    $etudiants[$i] = $row;
+    $i++;
 }
 
-echo json_encode($array); // il n'y a plus qu'à convertir en JSON
+echo json_encode($etudiants);
 
 ?>

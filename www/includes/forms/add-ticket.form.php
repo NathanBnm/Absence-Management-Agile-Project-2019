@@ -122,12 +122,11 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input id="etudiant" class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" autocomplete="off">
+                <input class="input" type="text" placeholder="ex: 21801010" id="etudiant" name="etudiant" autocomplete="off">
                 <script>
-                    $( function() {
+                    $(function() {
                         $( "#etudiant" ).autocomplete({
-                            source: "liste.php",
-                            minLength: 1
+                            source: "liste.php"
                         });
                     });
                 </script>
