@@ -95,6 +95,17 @@ var michel2 = {
     }
 };
 
+var mod = null;
+var typecours = null;
+var controle = null;
+var day = null;
+var month = null;
+var year = null;
+var time = null;
+var type = null;
+var etudiant = null;
+var message = null;
+
 function sauvegarder(){
     var mod = document.getElementById("module").value;
     var typecours = document.getElementById("typecourse").value;
@@ -106,7 +117,7 @@ function sauvegarder(){
     var type = document.getElementById("type").value;
     var etudiant = document.getElementById("etupass").value;
     var message = document.getElementById("message").value;
-    return false;
+    setTimeOut(remplir,1000,mod,typecours,controle,day,month,year,time,type,etudiant,message);
 }
 
 function remplir(mod,typecours,controle,day,month,year,time,type,etudiant,message){
