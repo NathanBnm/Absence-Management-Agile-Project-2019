@@ -16,8 +16,10 @@ function list_modules()
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
     global $db;
-
-    if(etupass_vers_role($etupass) == 'ETU'){
+    $role = etupass_vers_role($etupass);
+    echo "$role[0]";
+    echo "role tab $role";
+    if($role[0]=='ETU'){
     $u = [
         'COU_MODULE'                    =>  $module,
         'COU_TYPE'                      =>  $typecourse,
