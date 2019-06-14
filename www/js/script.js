@@ -118,6 +118,7 @@ function sauvegarder(){
     var etudiant = document.getElementById("etupass").value;
     var message = document.getElementById("message").value;
     setTimeOut(remplir,1000,mod,typecours,controle,day,month,year,time,type,etudiant,message);
+    return false;
 }
 
 function remplir(mod,typecours,controle,day,month,year,time,type,etudiant,message){
