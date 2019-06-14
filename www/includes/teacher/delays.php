@@ -25,56 +25,56 @@
                         </tfoot>
                         <tbody>
                             <?php
-                                $color = null;
-                                $color_etat = null;
-                                $retards = list_teacher_delays();
-                                foreach($retards as $retard) {
-                                    if($retard->SIG_TRAITE == 0) {
-                                        $color = "is-danger";
-                                    } else {
-                                        $color = "is-success";
-                                    }
+                            $color = null;
+                            $color_etat = null;
+                            $retards = list_teacher_delays();
+                            foreach ($retards as $retard) {
+                                if ($retard->SIG_TRAITE == 0) {
+                                    $color = "is-danger";
+                                } else {
+                                    $color = "is-success";
+                                }
 
-                                    if($retard->SIG_ETAT == "Non justifié") {
-                                        $color_etat = "is-danger";
-                                    } else if ($retard->SIG_ETAT == "Rattrapage"){
-                                        $color_etat = "is-warning";
-                                    } else{
-                                        $color_etat = "is-success";
-                                    }
-                            ?>
-                            <tr>
-                                <td>
-                                    <strong><?php echo $retard->COU_MODULE; ?></strong>
-                                </td>
-                                <td>
-                                    <?php echo strtoupper($retard->COU_TYPE); ?>
-                                </td>
-                                <td>
-                                    <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
-                                </td>
-                                <td>
-                                    <?php echo $retard->UTI_IDENTIFIANT; ?>
-                                </td>
-                                <td>
-                                    <span class="uppercase">
-                                        <?php echo strtoupper($retard->UTI_NOM); ?>
-                                    </span>
-                                    <?php echo $retard->UTI_PRENOM; ?>
-                                </td>
-                                <td>
-                                    <?php echo $retard->SIG_MOTIF; ?>
-                                </td>
-                                <td>
-                                    <?php echo $retard->SIG_COMMENTAIRE; ?>
-                                </td>
-                                <td>
-                                    <?php echo $retard->SIG_DATE; ?>
-                                </td>
-                                <td>
-                                    <span class="tag <?php echo $color ?> is-rounded">
-                                        <?php 
-                                            if($retard->SIG_TRAITE == 0) {
+                                if ($retard->SIG_ETAT == "Non justifié") {
+                                    $color_etat = "is-danger";
+                                } else if ($retard->SIG_ETAT == "Rattrapage") {
+                                    $color_etat = "is-warning";
+                                } else {
+                                    $color_etat = "is-success";
+                                }
+                                ?>
+                                <tr>
+                                    <td>
+                                        <strong><?php echo $retard->COU_MODULE; ?></strong>
+                                    </td>
+                                    <td>
+                                        <?php echo strtoupper($retard->COU_TYPE); ?>
+                                    </td>
+                                    <td>
+                                        <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
+                                    </td>
+                                    <td>
+                                        <?php echo $retard->UTI_IDENTIFIANT; ?>
+                                    </td>
+                                    <td>
+                                        <span class="uppercase">
+                                            <?php echo strtoupper($retard->UTI_NOM); ?>
+                                        </span>
+                                        <?php echo $retard->UTI_PRENOM; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $retard->SIG_MOTIF; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $retard->SIG_COMMENTAIRE; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $retard->SIG_DATE; ?>
+                                    </td>
+                                    <td>
+                                        <span class="tag <?php echo $color ?> is-rounded">
+                                            <?php
+                                            if ($retard->SIG_TRAITE == 0) {
                                                 echo "Non traité";
                                             } else {
                                                 echo "Traité";
@@ -83,13 +83,13 @@
                                         </span>
                                     </td>
                                     <td>
+                                        <a href="index.php?page=edit&id=<?php echo $retard->SIG_CODE; ?>" class="button is-info">
+                                            <span class="icon is-small">
+                                                <i class="far fa-edit"></i>
+                                            </span>
+                                        </a>
                                         <form method="POST">
                                             <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="code" name="code">
-                                            <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_retard.open()">
-                                                <span class="icon is-small">
-                                                    <i class="far fa-edit"></i>
-                                                </span>
-                                            </button>
                                             <button type="submit" class="button is-danger" id="delete" name="delete">
                                                 <span class="icon is-small">
                                                     <i class="fas fa-trash-alt"></i>

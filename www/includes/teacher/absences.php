@@ -25,56 +25,56 @@
                         </tfoot>
                         <tbody>
                             <?php
-                                $color = null;
-                                $color_etat = null;
-                                $absences = list_teacher_absences();
-                                foreach($absences as $absence) {
-                                    if($absence->SIG_TRAITE == 0) {
-                                        $color = "is-danger";
-                                    } else {
-                                        $color = "is-success";
-                                    }
+                            $color = null;
+                            $color_etat = null;
+                            $absences = list_teacher_absences();
+                            foreach ($absences as $absence) {
+                                if ($absence->SIG_TRAITE == 0) {
+                                    $color = "is-danger";
+                                } else {
+                                    $color = "is-success";
+                                }
 
-                                    if($absence->SIG_ETAT == "Non justifié") {
-                                        $color_etat = "is-danger";
-                                    } else if ($absence->SIG_ETAT == "Rattrapage"){
-                                        $color_etat = "is-warning";
-                                    } else{
-                                        $color_etat = "is-success";
-                                    }
-                            ?>
-                            <tr>
-                                <td>
-                                    <strong><?php echo $absence->COU_MODULE; ?></strong>
-                                </td>
-                                <td>
-                                    <?php echo strtoupper($absence->COU_TYPE); ?>
-                                </td>
-                                <td>
-                                    <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
-                                </td>
-                                <td>
-                                    <?php echo $absence->UTI_IDENTIFIANT; ?>
-                                </td>
-                                <td>
-                                    <span class="uppercase">
-                                        <?php echo strtoupper($absence->UTI_NOM); ?>
-                                    </span>
-                                    <?php echo $absence->UTI_PRENOM; ?>
-                                </td>
-                                <td>
-                                    <?php echo $absence->SIG_MOTIF; ?>
-                                </td>
-                                <td>
-                                    <?php echo $absence->SIG_COMMENTAIRE; ?>
-                                </td>
-                                <td>
-                                    <?php echo $absence->SIG_DATE; ?>
-                                </td>
-                                <td>
-                                    <span class="tag <?php echo $color ?> is-rounded">
-                                        <?php 
-                                            if($absence->SIG_TRAITE == 0) {
+                                if ($absence->SIG_ETAT == "Non justifié") {
+                                    $color_etat = "is-danger";
+                                } else if ($absence->SIG_ETAT == "Rattrapage") {
+                                    $color_etat = "is-warning";
+                                } else {
+                                    $color_etat = "is-success";
+                                }
+                                ?>
+                                <tr>
+                                    <td>
+                                        <strong><?php echo $absence->COU_MODULE; ?></strong>
+                                    </td>
+                                    <td>
+                                        <?php echo strtoupper($absence->COU_TYPE); ?>
+                                    </td>
+                                    <td>
+                                        <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->UTI_IDENTIFIANT; ?>
+                                    </td>
+                                    <td>
+                                        <span class="uppercase">
+                                            <?php echo strtoupper($absence->UTI_NOM); ?>
+                                        </span>
+                                        <?php echo $absence->UTI_PRENOM; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_MOTIF; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_COMMENTAIRE; ?>
+                                    </td>
+                                    <td>
+                                        <?php echo $absence->SIG_DATE; ?>
+                                    </td>
+                                    <td>
+                                        <span class="tag <?php echo $color ?> is-rounded">
+                                            <?php
+                                            if ($absence->SIG_TRAITE == 0) {
                                                 echo "Non traité";
                                             } else {
                                                 echo "Traité";
@@ -83,13 +83,13 @@
                                         </span>
                                     </td>
                                     <td>
+                                        <a href="index.php?page=edit&id=<?php echo $absence->SIG_CODE; ?>" class="button is-info">
+                                            <span class="icon is-small">
+                                                <i class="far fa-edit"></i>
+                                            </span>
+                                        </a>
                                         <form method="POST">
                                             <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="code" name="code">
-                                            <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_absence.open()">
-                                                <span class="icon is-small">
-                                                    <i class="far fa-edit"></i>
-                                                </span>
-                                            </button>
                                             <button type="submit" class="button is-danger" id="delete" name="delete">
                                                 <span class="icon is-small">
                                                     <i class="fas fa-trash-alt"></i>
@@ -141,7 +141,7 @@
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
-                        <span >Confirmer</span>
+                        <span>Confirmer</span>
                     </a>
                 </div>
                 <div class="control" onclick="abs.Modif_absence.close()">
