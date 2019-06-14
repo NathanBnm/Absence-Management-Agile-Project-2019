@@ -31,7 +31,7 @@ function list_students_delays()
         'UTI_IDENTIFIANT' => $_SESSION['id']
     ];
         $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT,
-        etu1.UTI_PRENOM, etu1.UTI_NOM, etu1.UTI_IDENTIFIANT, COU_CONTROLE
+        etu1.UTI_PRENOM, etu1.UTI_NOM, etu1.UTI_IDENTIFIANT, COU_CONTROLE,
         cours.COU_MODULE, SIG_CODE
         FROM ABS_BILLET absence
         JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE
