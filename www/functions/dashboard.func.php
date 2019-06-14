@@ -15,6 +15,9 @@ function list_modules()
 
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
+
+
+
     global $db;
 
     $u = [
@@ -60,7 +63,7 @@ function test_billet_existant($professeur, $etudiant, $module, $date){
         $exist = $req->fetch();
         $req->closeCursor();
         $i = 0;
-        $exist['COMPTEUR'] = $i;
+        $i = $exist['COMPTEUR'];
         return $i;
 }
      
