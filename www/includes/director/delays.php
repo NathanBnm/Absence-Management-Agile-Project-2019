@@ -40,8 +40,6 @@
 
                                 if ($retard->SIG_ETAT == "Non justifié") {
                                     $color_etat = "is-danger";
-                                } else if ($retard->SIG_ETAT == "Rattrapage") {
-                                    $color_etat = "is-warning";
                                 } else {
                                     $color_etat = "is-success";
                                 }
@@ -72,7 +70,12 @@
                                         </span> <br>
                                     </td>
                                     <td>
-                                        <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
+                                        <form method="POST">
+                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="etat" name="etat">
+                                            <button type="submit" id="justifier" name="justifier" class="button <?php echo $color_etat; ?> is-rounded">
+                                                <?php echo $retard->SIG_ETAT; ?>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>
                                         <?php echo $retard->UTI_IDENTIFIANT; ?>
@@ -100,8 +103,8 @@
                                     </td>
                                     <td>
                                         <form method="POST">
-                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="coder2" name="coder2">
-                                            <button type="submit" id="traite2" name="traite2" href="#" class="button <?php echo $color; ?> is-rounded">
+                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="coder" name="coder">
+                                            <button type="submit" id="traite" name="traite" class="button <?php echo $color; ?> is-rounded">
                                                 <?php
                                                 if ($retard->SIG_TRAITE == 0) {
                                                     echo "Non traité";

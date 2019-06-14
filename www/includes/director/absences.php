@@ -40,8 +40,6 @@
 
                                 if ($absence->SIG_ETAT == "Non justifié") {
                                     $color_etat = "is-danger";
-                                } else if ($absence->SIG_ETAT == "Rattrapage") {
-                                    $color_etat = "is-warning";
                                 } else {
                                     $color_etat = "is-success";
                                 }
@@ -72,14 +70,12 @@
                                         </span> <br>
                                     </td>
                                     <td>
-
                                         <form method ="POST">
                                             <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="etat" name="etat">
-                                            <button type="submit" id="justifier" name="justifier" href="#" class="button <?php echo $color; ?> is-rounded">
-                                                <span class="tag is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                            <button type="submit" id="justifier" name="justifier" class="button <?php echo $color_etat; ?> is-rounded">
+                                                <?php echo $absence->SIG_ETAT; ?>
                                             </button>
                                         </form>
-
                                     </td>
                                     <td>
                                         <?php echo $absence->UTI_IDENTIFIANT; ?>
@@ -108,7 +104,7 @@
                                     <td>
                                         <form method="POST">
                                             <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="coder" name="coder">
-                                            <button type="submit" id="traite" name="traite" href="#" class="button <?php echo $color; ?> is-rounded">
+                                            <button type="submit" id="traite" name="traite" class="button <?php echo $color; ?> is-rounded">
                                                 <?php
                                                 if ($absence->SIG_TRAITE == 0) {
                                                     echo "Non traité";

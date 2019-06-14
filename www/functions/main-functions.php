@@ -195,7 +195,7 @@ function envoie_perso($mail, $sujet, $comment)
     }
 
     $message_txt = "Mail automatique." . $passage_ligne . $comment;
-    $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "<b>".$comment."</b> </body></html>";
+    $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "<b>" . $comment . "</b> </body></html>";
 
 
 
@@ -236,7 +236,8 @@ function delete_ticket($code)
     $req->execute($u);
 }
 
-function recuperer_mail($etupass) {
+function recuperer_mail($etupass)
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $etupass
@@ -252,11 +253,11 @@ function recuperer_mail($etupass) {
 function change_traitement($traite)
 {
     global $db;
-    $trait=null;
-    if(get_traitement($traite)==1){
-        $trait=0;
+    $trait = null;
+    if (get_traitement($traite) == 1) {
+        $trait = 0;
     } else {
-        $trait=1;
+        $trait = 1;
     }
 
     $u = [
@@ -287,11 +288,11 @@ function get_traitement($traite)
 function change_justif($etat)
 {
     global $db;
-    $temp=null;
-    if(get_etat($etat)=="Justifié"){
-        $temp="Non justifié";
+    $temp = null;
+    if (get_etat($etat) == "Justifié") {
+        $temp = "Non justifié";
     } else {
-        $temp="Justifié";
+        $temp = "Justifié";
     }
 
     $u = [
