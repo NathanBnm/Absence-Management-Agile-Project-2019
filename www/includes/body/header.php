@@ -59,7 +59,7 @@ $utilisateur = get_utilisateur();
 			?>
 		</div>
 		<div class="navbar-end">
-			<a class="navbar-item" href="#" onclick="michel2.information.open()">
+			<a class="navbar-item" href="#" onclick="infobox.information.open()">
 				<?php echo $_SESSION['firstname'] . " " . mb_strtoupper($_SESSION['lastname']); ?>
 			</a>
 			<a href="index.php?page=logout" title="Déconnexion" class="navbar-item">
@@ -69,13 +69,13 @@ $utilisateur = get_utilisateur();
 	</div>
 </nav>
 <div id="information" class="modal">
-    <div class="modal-background" onclick="michel2.information.close()"></div>
+    <div class="modal-background" onclick="infobox.information.close()"></div>
     <div class="modal-card">
         <header class="modal-card-head">
             <p class="modal-card-title">
                 Vos Informations
             </p>
-            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
+            <button class="delete" aria-label="close" onclick="infobox.information.close()"></button>
         </header>
         <section class="modal-card-body">
 			<span class="icon is-small"><i class="fas <?php echo $icon; ?>"></i></span>

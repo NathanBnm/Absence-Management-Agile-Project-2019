@@ -31,25 +31,24 @@
                             $color_etat = null;
                             $color_controle = null;
                             $retards = list_director_delays();
-                            foreach($retards as $retard) {
-                                if($retard->SIG_TRAITE == 0) {
+                            foreach ($retards as $retard) {
+                                if ($retard->SIG_TRAITE == 0) {
                                     $color = "is-danger";
                                 } else {
                                     $color = "is-success";
                                 }
 
-                                if($retard->SIG_ETAT == "Non justifié") {
+                                if ($retard->SIG_ETAT == "Non justifié") {
                                     $color_etat = "is-danger";
-                                } else if ($retard->SIG_ETAT == "Rattrapage"){
+                                } else if ($retard->SIG_ETAT == "Rattrapage") {
                                     $color_etat = "is-warning";
-                                } else{
+                                } else {
                                     $color_etat = "is-success";
                                 }
 
                                 if ($retard->COU_CONTROLE == 1) {
                                     $color_controle = "is-success";
-                                }
-                                else {
+                                } else {
                                     $color_controle = "is-danger";
                                 }
 
@@ -66,8 +65,7 @@
                                             <?php
                                             if ($retard->COU_CONTROLE == 1) {
                                                 echo "Oui";
-                                            }
-                                            else {
+                                            } else {
                                                 echo "Non";
                                             }
                                             ?>
@@ -101,11 +99,11 @@
                                         <?php echo $retard->SIG_DATE; ?>
                                     </td>
                                     <td>
-                                        <form method ="POST">
+                                        <form method="POST">
                                             <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="coder2" name="coder2">
                                             <button type="submit" id="traite2" name="traite2" href="#" class="button <?php echo $color; ?> is-rounded">
                                                 <?php
-                                                if($retard->SIG_TRAITE == 0) {
+                                                if ($retard->SIG_TRAITE == 0) {
                                                     echo "Non traité";
                                                 } else {
                                                     echo "Traité";
@@ -115,13 +113,13 @@
                                         </form>
                                     </td>
                                     <td>
+                                        <a href="index.php?page=edit&id=<?php echo $retard->SIG_CODE; ?>" class="button is-info">
+                                            <span class="icon is-small">
+                                                <i class="far fa-edit"></i>
+                                            </span>
+                                        </a>
                                         <form method="POST">
                                             <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="code" name="code">
-                                            <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_retard.open()">
-                                                <span class="icon is-small">
-                                                    <i class="far fa-edit"></i>
-                                                </span>
-                                            </button>
                                             <button type="submit" class="button is-danger" id="delete" name="delete">
                                                 <span class="icon is-small">
                                                     <i class="fas fa-trash-alt"></i>
@@ -130,68 +128,13 @@
                                         </form>
                                     </td>
                                 </tr>
-                                <?php
-                                }
-                            ?>
+                            <?php
+                        }
+                        ?>
                         </tbody>
                     </table>
                 </div>
             </article>
         </article>
-    </div>
-</div>
-<div class="modal" id="Modif_absence">
-    <div class="modal-background" onclick="abs.Modif_absence.close()"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">
-                Nom Prénom | Promo - Groupe
-            </p>
-            <button class="delete" aria-label="close" onclick="abs.Modif_absence.close()"></button>
-        </header>
-        <section class="modal-card-body">
-            <strong>N°Étudiant : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">21800346</span>
-            <br><strong>Type : </strong><span class="tag is-warning is-rounded" style="margin-right: 10px;">Absence</span>
-            <br><strong>Motif : </strong><textarea class="textarea has-fixed-size" placeholder="Motif" rows="1"></textarea>
-            <br><strong>État : </strong><span class="tag" style="margin-right: 10px;">
-                <div class="select is-danger is-rounded">
-                    <select>
-                        <option>Non Justifié</option>
-                        <option>Justifié</option>
-                    </select>
-                </div>
-            </span>
-            <br><strong>Date : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">16 Juin 2019 - 11h39</span>
-            <br><strong>Module : </strong><span class="tag is-success is-rounded" style="margin-right: 10px;">M2101</span>
-            <label class="label">Commentaire :</label>
-            <div class="field">
-                <div class="control">
-                    <textarea class="textarea has-fixed-size" placeholder="Le Commentaire dans la base" rows="5"></textarea>
-                </div>
-                <p class="help">
-                    X caractères restants
-                </p>
-            </div>
-        </section>
-        <footer class="modal-card-foot">
-            <div class="field is-grouped">
-                <div class="control">
-                    <a class="button is-success" aria-haspopup="true">
-                        <span class="icon is-small">
-                            <i class="fas fa-check"></i>
-                        </span>
-                        <span>Confirmer</span>
-                    </a>
-                </div>
-                <div class="control">
-                    <a class="button is-danger" aria-haspopup="true">
-                        <span class="icon is-small">
-                            <i class="fas fa-ban"></i>
-                        </span>
-                        <span>Annuler</span>
-                    </a>
-                </div>
-            </div>
-        </footer>
     </div>
 </div>

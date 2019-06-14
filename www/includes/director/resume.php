@@ -364,13 +364,13 @@
     </div>
 </div>
 <div id="information" class="modal">
-    <div class="modal-background" onclick="michel2.information.close()"></div>
+    <div class="modal-background" onclick="infobox.information.close()"></div>
     <div class="modal-card">
         <header class="modal-card-head">
             <p class="modal-card-title">
                 Vos Informations !
             </p>
-            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
+            <button class="delete" aria-label="close" onclick="infobox.information.close()"></button>
         </header>
         <section class="modal-card-body">
                 <span class="icon is-small">
