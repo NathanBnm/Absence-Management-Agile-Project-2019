@@ -1,5 +1,7 @@
 <?php
 
+$email = recuperer_mail('21801526');
+var_dump($email);
 
 if (isset($_POST['submit'])) {
     $username = htmlspecialchars(trim($_POST['username']));
