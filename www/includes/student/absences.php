@@ -47,7 +47,9 @@
                                     </span>
                                 </td>
                                 <td>
-                                    <?php echo "Récupérer nom du prof" ?>
+                                    <span class="uppercase">
+                                        <?php echo "Récupérer nom du prof" ?>
+                                    </span>
                                 </td>
                                 <td>
                                     <?php echo $absence->SIG_MOTIF; ?>

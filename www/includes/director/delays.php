@@ -59,7 +59,10 @@
                                     <?php echo $absence->UTI_IDENTIFIANT; ?>
                                 </td>
                                 <td>
-                                    <?php echo strtoupper($absence->UTI_NOM); ?> <?php echo $absence->UTI_PRENOM; ?>
+                                    <span class="uppercase">
+                                        <?php echo strtoupper($absence->UTI_NOM); ?>
+                                    </span>
+                                    <?php echo $absence->UTI_PRENOM; ?>
                                 </td>
                                 <td>
                                     <?php echo "Récupérer nom du prof" ?>

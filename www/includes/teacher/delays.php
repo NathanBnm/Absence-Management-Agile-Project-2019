@@ -57,7 +57,10 @@
                                     <?php echo $retard->UTI_IDENTIFIANT; ?>
                                 </td>
                                 <td>
-                                    <?php echo strtoupper($retard->UTI_NOM); ?> <?php echo $retard->UTI_PRENOM; ?>
+                                    <span class="uppercase">
+                                        <?php echo strtoupper($retard->UTI_NOM); ?>
+                                    </span>
+                                    <?php echo $retard->UTI_PRENOM; ?>
                                 </td>
                                 <td>
                                     <?php echo $retard->SIG_MOTIF; ?>
