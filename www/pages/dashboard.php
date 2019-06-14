@@ -46,7 +46,13 @@ if(isset($_POST['submit-ticket'])) {
 
     if(empty($errors)) {
         $date = $date . " " . $time;
+        if((saisie_absence($module, $typecourse, $type, $etupass, $message, $date) == 'ENS') || saisie_absence($module, $typecourse, $type, $etupass, $message, $date) =='DIR'){
+            $errors['ens_abs'] = "Un enseignant ne peut pas être absent";
+        }
+        
+        else {
         saisie_absence($module, $typecourse, $type, $etupass, $message, $date);
+        }
     }
 }
 

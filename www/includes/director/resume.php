@@ -14,12 +14,12 @@
                             <div class="control">
                                 <div class="select ">
                                     <select>
-                                        <option>Info 2017-2018</option>
                                         <option>Info 2018-2019</option>
-                                        <option>Info-com 2017-2018</option>
+                                        <option>Info 2017-2018</option>
                                         <option>Info-com 2018-2019</option>
-                                        <option>Rt 2017-2018</option>
+                                        <option>Info-com 2017-2018</option>
                                         <option>Rt 2018-2019</option>
+                                        <option>Rt 2017-2018</option>
                                     </select>
 
                                 </div>
@@ -48,7 +48,6 @@
                     <div class="columns" style="text-align: center">
                         <div class="column">
                             <a class="button is-primary" onclick="refs.Recap_semestre.open()">
-
                                             <span class="icon is-small" >
                                               <i class="fas fa-clipboard-list"></i>
                                             </span>
@@ -65,10 +64,12 @@
                         </div>
                         <div class="column">
                             <a class="button is-info">
-                                            <span class="icon is-small">
-                                              <i class="fas fa-file-export"></i>
-                                            </span>
-                                <span>Exporter</span>
+                                <button>
+                                    <span class="icon is-small">
+                                        <i class="fas fa-file-export"></i>
+                                    </span>
+                                    Exporter
+                                </button>
                             </a>
                         </div>
                     </div>

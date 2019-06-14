@@ -58,13 +58,23 @@ function nom_vers_etupass($nom, $prenom){
     $sql = "SELECT UTI_IDENTIFIANT FROM ABS_UTILISATEUR WHERE UTI_NOM = :UTI_NOM AND UTI_PRENOM = :UTI_PRENOM";
     $req = $db->prepare($sql);
     $req->execute($u);
-    $etupass = [];
-    $i = 0;
-    while($row = $req->fetchObject()){
-        $etupass[$i] = $row;
-        $i++;
-    }
-    return $etupass;
+    $etupass = $req->fetch();
+    $req->closeCursor();
+    return $etupass['UTI_IDENTIFIANT'];
+  
+}
+
+function etupass_vers_nom($etupass){
+    global $db;
+    $u = [
+        'UTI_IDENTIFIANT'       => $etupass
+    ];
+   
+    $sql = "SELECT UTI_NOM, UTI_PRENOM FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+   
+  
 }
 
 function etupass_vers_role($etupass){

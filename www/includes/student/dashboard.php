@@ -29,7 +29,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
                             <?php
                         } else {
                             ?>
-                                Vous n'avez <strong>aucun retard</strong>
+                                Vous n'avez <strong>aucune absence</strong>
                             <?php
                         }
                         ?>
