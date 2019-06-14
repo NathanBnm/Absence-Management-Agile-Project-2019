@@ -11,6 +11,7 @@
                             <tr>
                                 <th>Module</th>
                                 <th>Type</th>
+                                <th>Contrôle</th>
                                 <th>État</th>
                                 <th>N°Étudiant</th>
                                 <th>Étudiant</th>

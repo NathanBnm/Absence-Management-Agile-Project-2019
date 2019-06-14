@@ -34,6 +34,7 @@
                         <?php
                             $color_status = null;
                             $color_etat = null;
+                            $color_controle = null;
                             $tickets = last_ticket();
                             foreach($tickets as $ticket) {
                                 if($ticket->SIG_TRAITE == 0) {
@@ -48,6 +49,13 @@
                                     $color_etat = "is-warning";
                                 } else{
                                     $color_etat = "is-success";
+                                }
+
+                                if ($ticket->COU_CONTROLE == 1) {
+                                    $color_controle = "is-success";
+                                }
+                                else {
+                                    $color_controle = "is-danger";
                                 }
                         ?>
                         <div class="tile is-child">
@@ -83,6 +91,17 @@
                                         <div class="tile is-parent">
                                             <div class="tile is-child">
                                                 <strong>Module : </strong><span class="tag is-success is-rounded" style="margin-left: 10px;"><?php echo $ticket->COU_MODULE; ?></span> <br>
+                                                <strong>Contrôle : </strong>
+                                                <span class="tag <?php echo $color_controle ?> is-rounded">
+                                                        <?php
+                                                        if ($ticket->COU_CONTROLE == 1) {
+                                                            echo "Oui";
+                                                        }
+                                                        else {
+                                                            echo "Non";
+                                                        }
+                                                        ?>
+                                                    </span> <br>
                                                 <strong>Date :</strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo $ticket->SIG_DATE; ?></span> <br>
                                                 <strong>Type de Cours : </strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo strtoupper($ticket->COU_TYPE); ?></span><br>
                                                 <strong>Motif : </strong><?php echo $ticket->SIG_MOTIF; ?><br>
@@ -105,12 +124,14 @@
                                             </a>
                                         </div>
                                         <div class="column">
-                                            <a class="button is-danger">
-                                                <span>Supprimer</span>
-                                                <span class="icon is-small">
+                                            <form method="POST">
+                                                <button type="submit" class="button is-danger" id="delete" name="delete">
+                                                    <span>Supprimer</span>
+                                                        <span class="icon is-small">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </span>
-                                            </a>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

@@ -14,6 +14,8 @@
                         <thead>
                             <tr>
                                 <th>Module</th>
+                                <th>Type</th>
+                                <th>Contrôle</th>
                                 <th>État</th>
                                 <th>Enseignant</th>
                                 <th>Motif</th>
@@ -27,6 +29,7 @@
                         <tbody>
                             <?php
                                 $color_etat = null;
+                            $color_controle = null;
                                 $absences = list_students_absences();
                                 foreach($absences as $absence) {
                                     if($absence->SIG_ETAT == "Non justifié") {
@@ -36,11 +39,33 @@
                                     } else{
                                         $color_etat = "is-success";
                                     }
+
+                                    if ($absence->COU_CONTROLE == 1) {
+                                        $color_controle = "is-success";
+                                    }
+                                    else {
+                                        $color_controle = "is-danger";
+                                    }
                             ?>
                             <tr>
                                 <th>
                                     <?php echo $absence->COU_MODULE; ?>
                                 </th>
+                                <td>
+                                    <?php echo strtoupper($absence->COU_TYPE); ?>
+                                </td>
+                                <td>
+                                        <span class="tag <?php echo $color_controle ?> is-rounded">
+                                            <?php
+                                            if ($absence->COU_CONTROLE == 1) {
+                                                echo "Oui";
+                                            }
+                                            else {
+                                                echo "Non";
+                                            }
+                                            ?>
+                                        </span> <br>
+                                </td>
                                 <td>
                                     <span class="tag <?php echo $color_etat ?> is-rounded">
                                         <?php echo $absence->SIG_ETAT; ?>

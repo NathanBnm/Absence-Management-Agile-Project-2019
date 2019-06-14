@@ -15,4 +15,10 @@ if(isset($_POST['delete'])) {
     delete_ticket($code);
     echo "<meta http-equiv='refresh' content='0'>";
 }
+
+if(isset($_POST['traite'])) {
+    $traite = $_POST['coder'];
+    change_traitement($traite);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
 ?>

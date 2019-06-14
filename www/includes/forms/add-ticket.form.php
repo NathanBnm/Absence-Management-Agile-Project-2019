@@ -122,7 +122,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" autocomplete="off">
+                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" value="<?php if( isset($_POST['etupass'])) {echo $_POST['etupass'];}?>">
             </div>
         </div>
     </div>
@@ -142,7 +142,7 @@
             </p>
             <div class="field is-grouped">
                 <div class="control">
-                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket" onsubmit="sauvegarder()">
+                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>

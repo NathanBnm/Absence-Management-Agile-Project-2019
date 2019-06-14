@@ -67,6 +67,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
                         <?php
                         $color_status = null;
                         $color_etat = null;
+                        $color_controle = null;
                         $delay_tickets = last_absence_ticket();
                         foreach ($delay_tickets as $delay_ticket) {
                             if ($delay_ticket->SIG_TRAITE == 0) {
@@ -81,6 +82,13 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                 $color_etat = "is-warning";
                             } else {
                                 $color_etat = "is-success";
+                            }
+
+                            if ($delay_ticket->COU_CONTROLE == 1) {
+                                $color_controle = "is-success";
+                            }
+                            else {
+                                $color_controle = "is-danger";
                             }
                             ?>
                             <div class="tile is-child">
@@ -116,6 +124,17 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                             <div class="tile is-parent">
                                                 <div class="tile is-child">
                                                     <strong>Module : </strong><span class="tag is-success is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->COU_MODULE; ?></span> <br>
+                                                    <strong>Contrôle : </strong>
+                                                    <span class="tag <?php echo $color_controle ?> is-rounded">
+                                                        <?php
+                                                        if ($delay_ticket->COU_CONTROLE == 1) {
+                                                            echo "Oui";
+                                                        }
+                                                        else {
+                                                            echo "Non";
+                                                        }
+                                                        ?>
+                                                    </span> <br>
                                                     <strong>Date :</strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->SIG_DATE; ?></span> <br>
                                                     <strong>Type de Cours : </strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo strtoupper($delay_ticket->COU_TYPE); ?></span><br>
                                                     <strong>Motif : </strong><?php echo $delay_ticket->SIG_MOTIF; ?><br>
@@ -150,6 +169,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
                         <?php
                         $color_status = null;
                         $color_etat = null;
+                        $color_controle = null;
                         $delay_tickets = last_delay_ticket();
                         foreach ($delay_tickets as $delay_ticket) {
                             if ($delay_ticket->SIG_TRAITE == 0) {
@@ -164,6 +184,13 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                 $color_etat = "is-warning";
                             } else {
                                 $color_etat = "is-success";
+                            }
+
+                            if ($delay_ticket->COU_CONTROLE == 1) {
+                                $color_controle = "is-success";
+                            }
+                            else {
+                                $color_controle = "is-danger";
                             }
                             ?>
                             <div class="tile is-child">
@@ -199,6 +226,17 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                             <div class="tile is-parent">
                                                 <div class="tile is-child">
                                                     <strong>Module : </strong><span class="tag is-success is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->COU_MODULE; ?></span> <br>
+                                                    <strong>Contrôle : </strong>
+                                                    <span class="tag <?php echo $color_controle ?> is-rounded">
+                                                        <?php
+                                                        if ($delay_ticket->COU_CONTROLE == 1) {
+                                                            echo "Oui";
+                                                        }
+                                                        else {
+                                                            echo "Non";
+                                                        }
+                                                        ?>
+                                                    </span> <br>
                                                     <strong>Date :</strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->SIG_DATE; ?></span> <br>
                                                     <strong>Type de Cours : </strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo strtoupper($delay_ticket->COU_TYPE); ?></span><br>
                                                     <strong>Motif : </strong><?php echo strtoupper($delay_ticket->SIG_MOTIF); ?><br>
