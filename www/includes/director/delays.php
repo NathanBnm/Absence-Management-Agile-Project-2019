@@ -80,9 +80,15 @@
                                         <?php echo $retard->SIG_DATE; ?>
                                     </td>
                                     <td>
-                                        <label class="checkbox">
-                                            <input type="checkbox">
-                                        </label>
+                                        <span class="tag <?php echo $color ?> is-rounded">
+                                        <?php
+                                        if($retard->SIG_TRAITE == 0) {
+                                            echo "Non traité";
+                                        } else {
+                                            echo "Traité";
+                                        }
+                                        ?>
+                                        </span>
                                     </td>
                                     <td>
                                         <form method="POST">
