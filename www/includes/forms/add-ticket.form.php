@@ -10,7 +10,7 @@
                     <?php
                     $modules = list_modules();
                     foreach ($modules as $module) {
-                        echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
+                        echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '<?php if( isset($_POST[\'module\'])) {echo $_POST[\'module\'];}?></option>';
                     }
                     ?>
                 </select>
