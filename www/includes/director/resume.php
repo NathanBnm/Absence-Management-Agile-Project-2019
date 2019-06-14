@@ -63,12 +63,12 @@
                             </a>
                         </div>
                         <div class="column">
-                            <a href="../../functions/csv.php" class="button is-info">
+                            <a class="button is-info">
                                 <button>
                                     <span class="icon is-small">
                                         <i class="fas fa-file-export"></i>
                                     </span>
-                                    Exporter xls
+                                    Exporter
                                 </button>
                             </a>
                         </div>
