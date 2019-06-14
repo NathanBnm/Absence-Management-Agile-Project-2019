@@ -149,6 +149,9 @@ function envoie($mail, $type, $date)
     if ($type == mb_strtoupper("a")) {
         $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre absence en cours le " . $date . ".";
         $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>absence</b> en cours le " . $date . ".</body></html>";
+    } else if ($type == mb_strtoupper("r")) {
+        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre retard en cours le " . $date . ".";
+        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
     } else {
         $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre retard en cours le " . $date . ".";
         $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
@@ -190,4 +193,17 @@ function delete_ticket($code)
     $sql = "DELETE FROM ABS_BILLET WHERE SIG_CODE = :SIG_CODE";
     $req = $db->prepare($sql);
     $req->execute($u);
+}
+
+function recuperer_mail($etupass) {
+    global $db;
+    $u = [
+        'UTI_IDENTIFIANT' => $etupass
+    ];
+    $sql = "SELECT UTI_MAIL FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+    $mail = $req->fetch();
+    $req->closeCursor();
+    return $mail;
 }
