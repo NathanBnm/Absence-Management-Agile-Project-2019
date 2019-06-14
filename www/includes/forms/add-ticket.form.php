@@ -117,12 +117,20 @@
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
-        <label class="label">Numéro étudiant :</label>
+        <label class="label">Etudiant :</label>
     </div>
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
+                <input id="etudiant" class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass">
+                <script>
+                    $( function() {
+                        $( "#etudiant" ).autocomplete({
+                            source: "liste.php",
+                            minLength: 1
+                        });
+                    });
+                </script>
             </div>
         </div>
     </div>
