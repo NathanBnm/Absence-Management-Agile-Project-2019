@@ -74,7 +74,7 @@
                                         </span> <br>
                                     </td>
                                     <td>
-                                        <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
+                                        <span class="tag <?php echo $color_etat; ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
                                     </td>
                                     <td>
                                         <?php echo $absence->UTI_IDENTIFIANT; ?>
@@ -101,15 +101,18 @@
                                         <?php echo $absence->SIG_DATE; ?>
                                     </td>
                                     <td>
-                                        <span class="tag <?php echo $color ?> is-rounded">
-                                        <?php
-                                        if($absence->SIG_TRAITE == 0) {
-                                            echo "Non traité";
-                                        } else {
-                                            echo "Traité";
-                                        }
-                                        ?>
-                                        </span>
+                                        <form method ="POST">
+                                            <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="coder" name="coder">
+                                            <button type="submit" id="traite" name="traite" href="#" class="button <?php echo $color; ?> is-rounded">
+                                                <?php
+                                                if($absence->SIG_TRAITE == 0) {
+                                                    echo "Non traité";
+                                                } else {
+                                                    echo "Traité";
+                                                }
+                                                ?>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>
                                         <form method="POST">
