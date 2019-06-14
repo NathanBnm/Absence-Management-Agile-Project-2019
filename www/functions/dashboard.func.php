@@ -72,7 +72,7 @@ function etupass_vers_role($etupass){
     $u = [
         'UTI_IDENTIFIANT' => $etupass
     ];
-    $sql = "SELECT UPPER(CAT_CODE) FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
+    $sql = "SELECT CAT_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
     $req = $db->prepare($sql);
     $req->execute($u);
     $role = $req->fetch();
