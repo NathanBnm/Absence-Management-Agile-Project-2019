@@ -48,8 +48,9 @@
                                 </td>
                                 <td>
                                     <span class="uppercase">
-                                        <?php echo "Récupérer nom du prof" ?>
+                                        <?php echo strtoupper($absence->UTI_NOM); ?>
                                     </span>
+                                    <?php echo $absence->UTI_PRENOM; ?>
                                 </td>
                                 <td>
                                     <?php echo $absence->SIG_MOTIF; ?>
