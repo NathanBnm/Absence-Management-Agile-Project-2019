@@ -123,51 +123,10 @@
         <div class="field">
             <div class="control">
                 <input class="input" type="text" placeholder="ex: 21801010" id="etudiant" name="etudiant" autocomplete="off">
-                <script>
-                    $(function() {
-                        $( "#etudiant" ).autocomplete({
-                            source: "liste.php"
-                        });
-                    });
-                </script>
             </div>
         </div>
     </div>
 </div>
-
-<!--
-<div class="field is-horizontal">
-    <div class="field-label is-normal">
-        <label class="label">Nom de l'étudiant :</label>
-    </div>
-    <div class="field-label">
-        <div class="field">
-            <div class="control">
-                <input class="input is-danger" type="text" placeholder="ex: Marie" id="firstname" name="fisrtname">
-            </div>
-            <p class="help is-danger">
-                Ce champ est obligatoire
-            </p>
-        </div>
-    </div>
-</div>
-
-<div class="field is-horizontal">
-    <div class="field-label is-normal">
-        <label class="label">Prénom de l'étudiant :</label>
-    </div>
-    <div class="field-label">
-        <div class="field">
-            <div class="control">
-                <input class="input is-danger" type="text" placeholder="ex: Martin" id="lastname" name="lastname">
-            </div>
-            <p class="help is-danger">
-                Ce champ est obligatoire
-            </p>
-        </div>
-    </div>
-</div>
--->
 
 <div class="field is-horizontal">
     <div class="field-label is-normal">
