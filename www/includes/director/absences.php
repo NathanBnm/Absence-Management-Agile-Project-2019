@@ -71,7 +71,7 @@
                                                 echo "Non";
                                             }
                                             ?>
-                                                    </span> <br>
+                                        </span> <br>
                                     </td>
                                     <td>
                                         <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $absence->SIG_ETAT; ?></span>
