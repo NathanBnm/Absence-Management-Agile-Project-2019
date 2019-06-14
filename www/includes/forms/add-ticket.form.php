@@ -122,7 +122,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" value="if( isset($_POST['etupass'])) {echo $_POST['etupass'];}">
+                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" value="<?php if( isset($_POST['etupass'])) {echo $_POST['etupass'];}?>">
             </div>
         </div>
     </div>
