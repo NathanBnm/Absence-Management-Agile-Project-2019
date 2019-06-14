@@ -45,7 +45,7 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 }
 
 function nom_vers_etupass($nom, $prenom){
-    global db;
+    global $db;
     $u = [
         'UTI_NOM'       => $prenom,
         'UTI_PRENOM'    => $nom
