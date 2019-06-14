@@ -16,8 +16,7 @@ function list_modules()
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
     global $db;
-    $role = etupass_vers_role($etupass);
-    if($role == 'ETU'){
+
     $u = [
         'COU_MODULE'                    =>  $module,
         'COU_TYPE'                      =>  $typecourse,
@@ -27,6 +26,7 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
         'SIG_COMMENTAIRE'               =>  $message,
         'SIG_DATE'                      =>  $date
     ];
+
     $sql = "INSERT INTO ABS_BILLET (UTI_CODE, UTI_CODE_1, COU_CODE, SIG_COMMENTAIRE, SIG_TYPE, SIG_DATE, COU_TYPE)
             VALUES (
                 (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT_ENSEIGNANT),
@@ -37,47 +37,45 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
                 :SIG_DATE,
                 :COU_TYPE
             )";
+
     $req = $db->prepare($sql);
     $req->execute($u);
 
-    $mailetu=recuperer_mail($etupass);
+    $mailetu = recuperer_mail($etupass);
     envoie($mailetu, $type, $date);
-    }
-    else {
-        return $role;
-    }
 }
 
-function nom_vers_etupass($nom, $prenom){
+function nom_vers_etupass($nom, $prenom)
+{
     global $db;
     $u = [
         'UTI_NOM'       => $prenom,
         'UTI_PRENOM'    => $nom
     ];
-   
+
     $sql = "SELECT UTI_IDENTIFIANT FROM ABS_UTILISATEUR WHERE UTI_NOM = :UTI_NOM AND UTI_PRENOM = :UTI_PRENOM";
     $req = $db->prepare($sql);
     $req->execute($u);
     $etupass = $req->fetch();
     $req->closeCursor();
     return $etupass['UTI_IDENTIFIANT'];
-  
 }
 
-function etupass_vers_nom($etupass){
+function etupass_vers_nom($etupass)
+{
     global $db;
+
     $u = [
         'UTI_IDENTIFIANT'       => $etupass
     ];
-   
+
     $sql = "SELECT UTI_NOM, UTI_PRENOM FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
     $req = $db->prepare($sql);
     $req->execute($u);
-   
-  
 }
 
-function etupass_vers_role($etupass){
+function etupass_vers_role($etupass)
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $etupass
@@ -90,7 +88,8 @@ function etupass_vers_role($etupass){
     return $role['CAT_CODE'];
 }
 
-function last_ticket(){
+function last_ticket()
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
@@ -106,14 +105,15 @@ function last_ticket(){
     $req->execute($u);
     $user_last_ticket = [];
     $i = 0;
-    while($row = $req->fetchObject()){
+    while ($row = $req->fetchObject()) {
         $user_last_ticket[$i] = $row;
         $i++;
     }
     return $user_last_ticket;
 }
 
-function last_absence_ticket(){
+function last_absence_ticket()
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
@@ -130,14 +130,15 @@ function last_absence_ticket(){
     $req->execute($u);
     $user_last_absence_ticket = [];
     $i = 0;
-    while($row = $req->fetchObject()){
+    while ($row = $req->fetchObject()) {
         $user_last_absence_ticket[$i] = $row;
         $i++;
     }
     return $user_last_absence_ticket;
 }
 
-function last_delay_ticket(){
+function last_delay_ticket()
+{
     global $db;
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
@@ -154,14 +155,15 @@ function last_delay_ticket(){
     $req->execute($u);
     $user_last_delay_ticket = [];
     $i = 0;
-    while($row = $req->fetchObject()){
+    while ($row = $req->fetchObject()) {
         $user_last_delay_ticket[$i] = $row;
         $i++;
     }
     return $user_last_delay_ticket;
 }
 
-function detail_ticket(){
+function detail_ticket()
+{
     global $db;
     $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, cours.COU_MODULE, 
             DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_TYPE, UTI_GROUPE,UTI_PROMO
@@ -174,7 +176,7 @@ function detail_ticket(){
     $req = $db->query($sql);
     $user_detail_ticket = [];
     $i = 0;
-    while($row = $req->fetchObject()){
+    while ($row = $req->fetchObject()) {
         $user_detail_ticket[$i] = $row;
         $i++;
     }

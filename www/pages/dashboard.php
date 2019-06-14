@@ -43,16 +43,14 @@ if(isset($_POST['submit-ticket'])) {
     if (!preg_match("/^(?:2[0-3]|[01][0-9]):[0-5][0-9]$/", $_POST['time'])) {
         $errors['invalid-time'] = "L'heure n'est pas valide";
     }
+    
+    if(etupass_vers_role($etupass) != 'ETU') {
+        $errors['invalid-user'] = "Seul un étudiant peut être absent";
+    }
 
     if(empty($errors)) {
         $date = $date . " " . $time;
-        if((saisie_absence($module, $typecourse, $type, $etupass, $message, $date) == 'ENS') || saisie_absence($module, $typecourse, $type, $etupass, $message, $date) =='DIR'){
-            $errors['ens_abs'] = "Un enseignant ne peut pas être absent";
-        }
-        
-        else {
         saisie_absence($module, $typecourse, $type, $etupass, $message, $date);
-        }
     }
 }
 
