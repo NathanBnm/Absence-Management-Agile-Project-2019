@@ -48,24 +48,21 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 function test_billet_existant($professeur, $etudiant, $module, $date){
     global $db;
     $u = [
-            'UTI_CODE' => $professeur,
+                'UTI_CODE' => $professeur,
             'UTI_IDENTIFIANT' => $etudiant,
             'COU_CODE' => $module,
             'SIG_DATE' => $date
         ];
-        $sql = "SELECT COUNT(*) FROM ABS_BILLET WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
+        $sql = "SELECT COUNT(*) as 'COMPTEUR' FROM ABS_BILLET WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
+        
         $req = $db->prepare($sql);
         $req->execute($u);
-        $i =0;
-        $absence = [];
-        while ($row = $req->fetchObject()) {
-            $absence[$i] = $row;
-            $i++;
-        }
-        return $i;
-
+        $exist = $req->fetch();
+        $req->closeCursor();
+        return $exist['COMPTEUR'];
+}
      
-    }
+    
 
 function nom_vers_etupass($nom, $prenom)
 {
