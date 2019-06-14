@@ -9,16 +9,16 @@
                     <table class="table is-fullwidth is-striped">
                         <thead>
                             <tr>
-                                <th><abbr title="module">Module</abbr></th>
-                                <th><abbr title="type">Type</abbr></th>
-                                <th><abbr title="etat">État</abbr></th>
-                                <th><abbr title="etucode">N°Étudiant</abbr></th>
-                                <th><abbr title="prenom">Étudiant</abbr></th>
-                                <th><abbr title="nom">Motif</abbr></th>
-                                <th><abbr title="commentaire">Commentaire</abbr></th>
-                                <th><abbr title="date">Date</abbr></th>
-                                <th><abbr title="date">Statut</abbr></th>
-                                <th><abbr title="edit">Options</abbr></th>
+                                <th>Module</th>
+                                <th>Type</th>
+                                <th>État</th>
+                                <th>N°Étudiant</th>
+                                <th>Étudiant</th>
+                                <th>Motif</th>
+                                <th>Commentaire</th>
+                                <th>Date</th>
+                                <th>Statut</th>
+                                <th>Options</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -83,16 +83,19 @@
                                         </span>
                                     </td>
                                     <td>
-                                        <a href="#" class="button is-info" aria-haspopup="true" onclick="rtd.Modif_retard.open()">
-                                            <span class="icon is-small">
-                                                <i class="far fa-edit"></i>
-                                            </span>
-                                        </a>
-                                        <a class="button is-danger">
-                                            <span class="icon is-small">
-                                                <i class="fas fa-trash-alt"></i>
-                                            </span>
-                                        </a>
+                                        <form method="POST">
+                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="code" name="code">
+                                            <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_retard.open()">
+                                                <span class="icon is-small">
+                                                    <i class="far fa-edit"></i>
+                                                </span>
+                                            </button>
+                                            <button type="submit" class="button is-danger" id="delete" name="delete">
+                                                <span class="icon is-small">
+                                                    <i class="fas fa-trash-alt"></i>
+                                                </span>
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             <?php

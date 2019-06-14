@@ -120,15 +120,12 @@ function count_students_delays_not_justified()
     return $total_absences[0];
 }
 
-function delete_ticket($username, $usernametu, $date, $type) {
+function delete_ticket($code) {
     global $db;
     $u = [
-        'UTI_IDENTIFIANT_ENSEIGNANT' => $username,
-        'UTI_IDENTIFIANT_ELEVE'      => $usernametu,
-        'SIG_DATE'                   => $date,
-        'SIG_TYPE'                   => $type
+        'SIG_CODE'  =>  $code
     ];
-    $sql = "DELETE FROM ABS_BILLET WHERE UTI_CODE = :UTI_IDENTIFIANT_ENSEIGNANT AND UTI_CODE_1 = :UTI_IDENTIFIANT_ELEVE AND UPPER(SIG_TYPE) = UPPER(:SIG_TYPE) AND COU_CODE = (SELECT COU_CODE FROM ABS_COURS WHERE SIG_DATE = :SIG_DATE)";
+    $sql = "DELETE FROM ABS_BILLET WHERE SIG_CODE = :SIG_CODE";
     $req = $db->prepare($sql);
     $req->execute($u);
 }

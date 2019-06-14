@@ -9,4 +9,10 @@ if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 }
 
 require($path . 'delays.php');
+
+if(isset($_POST['delete'])) {
+    $code = $_POST['code'];
+    delete_ticket($code);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
 ?>

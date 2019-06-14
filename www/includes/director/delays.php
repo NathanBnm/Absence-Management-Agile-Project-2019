@@ -82,16 +82,19 @@
                                     </label>
                                 </td>
                                 <td>
-                                    <a href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_absence.open()">
-                                                <span class="icon is-small">
-                                                    <i class="far fa-edit"></i>
-                                                </span>
-                                    </a>
-                                    <a class="button is-danger">
-                                                <span class="icon is-small">
-                                                    <i class="fas fa-trash-alt"></i>
-                                                </span>
-                                    </a>
+                                    <form method="POST">
+                                        <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="code" name="code">
+                                        <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_retard.open()">
+                                            <span class="icon is-small">
+                                                <i class="far fa-edit"></i>
+                                            </span>
+                                        </button>
+                                        <button type="submit" class="button is-danger" id="delete" name="delete">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-trash-alt"></i>
+                                            </span>
+                                        </button>
+                                    </form>
                                 </td>
                             </tr>
                             <?php
