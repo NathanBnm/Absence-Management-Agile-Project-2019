@@ -17,7 +17,7 @@ if ($_SESSION['rank'] == 'ETU') {
 }
 $utilisateur = get_utilisateur();
 ?>
-<nav class="navbar <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
+<nav class="navbar is-fixed-top <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
         <span class="navbar-burger burger" data-target="navMenu">
         <span></span>
