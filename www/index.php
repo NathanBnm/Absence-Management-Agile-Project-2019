@@ -45,7 +45,7 @@ if($page == 'login' && isLogged()){
     <script src="https://kit.fontawesome.com/4a31b437ba.js"></script>
 </head>
 
-<body class="has-navbar-fixed-top">
+<body class=" <?php echo ($page != "login" && $page != "error") ? "has-navbar-fixed-top" : ""; ?>">
 
     <?php 
         if($page == 'login' || $page == 'error') {
