@@ -1,15 +1,11 @@
 </body>
-<footer>
-	<div style="float: left;><font size="2">
-		<p> GROUPE A3 </p></font>
-		<a href="https://www.facebook.com" title="Suivez-nous sur facebook !">
-		<img src="https://www.calliframe.com/wp-content/uploads/2013/12/facebook.png" /></a>
-		<span style="font-family: 'Century Gothic', arial"><font size="0">
-	</div>
-	<div style="float: center;><font size="2">
-			<p>COPYRIGHT ©2018 · PROJET AGILE ABSENCE · TOUS DROITS RÉSERVÉS -</p>
-			<p>SITE CRÉÉ PAR JESSY , BAPTISTE, CLEMENCE, THOMAS, GERMAIN, NATHAN C. ET NATHAN B. - MENTIONS LÉGALES  - POLITIQUE DE CONFIDENTIALITÉ</p>
-		</font></span>
-	</div>
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
 </footer>
 </html>
