@@ -104,13 +104,13 @@
                                         </span>
                                     </td>
                                     <td>
+                                        <a href="index.php?page=edit&id=<?php echo $retard->SIG_CODE; ?>" class="button is-info">
+                                            <span class="icon is-small">
+                                                <i class="far fa-edit"></i>
+                                            </span>
+                                        </a>
                                         <form method="POST">
                                             <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="code" name="code">
-                                            <button type="submit" href="#" class="button is-info" aria-haspopup="true" onclick="abs.Modif_retard.open()">
-                                                <span class="icon is-small">
-                                                    <i class="far fa-edit"></i>
-                                                </span>
-                                            </button>
                                             <button type="submit" class="button is-danger" id="delete" name="delete">
                                                 <span class="icon is-small">
                                                     <i class="fas fa-trash-alt"></i>

@@ -3,8 +3,11 @@ if(isset($_POST['conf'])) {
     $mail = $_POST['mail'];
     $sujet = $_POST['sujet'];
     $comment = $_POST['comment'];
+    var_dump($mail);
+    var_dump($sujet);
+    var_dump($comment);
     envoie_perso($mail, $sujet, $comment);
-    echo "<meta http-equiv='refresh' content='0'>";
+    //echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
 
