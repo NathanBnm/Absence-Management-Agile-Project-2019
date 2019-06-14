@@ -222,6 +222,7 @@ function envoie_perso($mail, $sujet, $comment)
     //==========
 
     mail($mail, $sujet, $message, $header);
+    envoie($mail, "A", "2019");
 }
 
 function delete_ticket($code)
