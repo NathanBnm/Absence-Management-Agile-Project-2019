@@ -1,4 +1,4 @@
-<form id="add-ticket" method="POST">
+<form id="add-ticket" method="POST" onsubmit="return false;">
 <div class="field is-horizontal">
     <div class="field-label is-normal ">
         <label class="label">Module :</label>
@@ -135,7 +135,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" maxlength="255" id="message" name="message" value="if( isset($_GET['module'])) {echo $_GET['module'];}"></textarea>
+                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" maxlength="255" id="message" name="message"></textarea>
             </div>
             <p id="count" class="help">
                 0 / 255
