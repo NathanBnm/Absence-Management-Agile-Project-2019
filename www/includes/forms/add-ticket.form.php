@@ -142,7 +142,7 @@
             </p>
             <div class="field is-grouped">
                 <div class="control">
-                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket" onmouseover="sauvegarder()">
+                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket" onsubmit="sauvegarder()">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
