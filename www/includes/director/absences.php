@@ -62,7 +62,7 @@
                                         <?php echo strtoupper($absence->UTI_NOM); ?> <?php echo $absence->UTI_PRENOM; ?>
                                     </td>
                                     <td>
-                                        Nom de l'Enseignant
+                                        <?php echo "Récupérer nom du prof" ?>
                                     </td>
                                     <td>
                                         <?php echo $absence->SIG_MOTIF; ?>
