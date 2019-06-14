@@ -194,6 +194,10 @@ function envoie_perso($mail, $sujet, $comment)
         $passage_ligne = "\n";
     }
 
+    $message_txt = "Mail automatique." . $passage_ligne . $comment;
+    $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "<b>".$comment."</b> </body></html>";
+
+
 
     $boundary = "-----=" . md5(rand());
 
@@ -205,13 +209,13 @@ function envoie_perso($mail, $sujet, $comment)
     $message = $passage_ligne . "--" . $boundary . $passage_ligne;
     $message .= "Content-Type: text/html; charset=\"ISO-8859-1\"" . $passage_ligne;
     $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
-    $message .= $passage_ligne . $comment . $passage_ligne;
+    $message .= $passage_ligne . $message_txt . $passage_ligne;
     //==========
     $message .= $passage_ligne . "--" . $boundary . $passage_ligne;
     //=====Ajout du message au format HTML
     $message .= "Content-Type: text/html; charset=\"ISO-8859-1\"" . $passage_ligne;
     $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
-    $message .= $passage_ligne . $comment . $passage_ligne;
+    $message .= $passage_ligne . $message_html . $passage_ligne;
     //==========
     $message .= $passage_ligne . "--" . $boundary . "--" . $passage_ligne;
     $message .= $passage_ligne . "--" . $boundary . "--" . $passage_ligne;
