@@ -112,7 +112,7 @@
                                                     ?>
                                                 </span>
                                             </span>
-                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo $delay_ticket->UTI_NOM; ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
+                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo strtoupper($delay_ticket->UTI_NOM); ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
                                         </p>
                                     </header>
                                     <div class="card-content">
@@ -195,7 +195,7 @@
                                                     ?>
                                                 </span>
                                             </span>
-                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo $delay_ticket->UTI_NOM; ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
+                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo strtoupper($delay_ticket->UTI_NOM); ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
                                         </p>
                                     </header>
                                     <div class="card-content">
@@ -205,7 +205,7 @@
                                                     <strong>Module : </strong><span class="tag is-success is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->COU_MODULE; ?></span> <br>
                                                     <strong>Date :</strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo $delay_ticket->SIG_DATE; ?></span> <br>
                                                     <strong>Type de Cours : </strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo strtoupper($delay_ticket->COU_TYPE); ?></span><br>
-                                                    <strong>Motif : </strong><?php echo $delay_ticket->SIG_MOTIF; ?><br>
+                                                    <strong>Motif : </strong><?php echo strtoupper($delay_ticket->SIG_MOTIF); ?><br>
                                                 </div>
                                                 <div class="tile is-child">
                                                     <strong>Commentaire:<br></strong>

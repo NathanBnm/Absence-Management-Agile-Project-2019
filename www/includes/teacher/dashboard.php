@@ -75,7 +75,7 @@
                                                     ?>
                                                 </span>
                                             </span>
-                                        <?php echo $ticket->UTI_PRENOM; ?> <?php echo $ticket->UTI_NOM; ?> (<?php echo $ticket->UTI_IDENTIFIANT; ?>)
+                                        <?php echo $ticket->UTI_PRENOM; ?> <?php echo strtoupper($ticket->UTI_NOM); ?> (<?php echo $ticket->UTI_IDENTIFIANT; ?>)
                                     </p>
                                 </header>
                                 <div class="card-content">

@@ -13,8 +13,8 @@
                                 <th><abbr title="type">Type</abbr></th>
                                 <th><abbr title="etat">État</abbr></th>
                                 <th><abbr title="etucode">N°Étudiant</abbr></th>
-                                <th><abbr title="prenom">Prénom</abbr></th>
-                                <th><abbr title="nom">Nom</abbr></th>
+                                <th><abbr title="prenom">Étudiant</abbr></th>
+                                <th><abbr title="nom">Enseignant</abbr></th>
                                 <th><abbr title="nom">Motif</abbr></th>
                                 <th><abbr title="commentaire">Commentaire</abbr></th>
                                 <th><abbr title="date">Date</abbr></th>
@@ -59,10 +59,10 @@
                                         <?php echo $absence->UTI_IDENTIFIANT; ?>
                                     </td>
                                     <td>
-                                        <?php echo $absence->UTI_PRENOM; ?>
+                                        <?php echo strtoupper($absence->UTI_NOM); ?> <?php echo $absence->UTI_PRENOM; ?>
                                     </td>
                                     <td>
-                                        <?php echo $absence->UTI_NOM; ?>
+                                        Nom de l'Enseignant
                                     </td>
                                     <td>
                                         <?php echo $absence->SIG_MOTIF; ?>
