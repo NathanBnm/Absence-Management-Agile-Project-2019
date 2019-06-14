@@ -195,7 +195,7 @@
                                                     ?>
                                                 </span>
                                             </span>
-                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo strtoupper($delay_ticket->UTI_NOM); ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
+                                            <?php echo $delay_ticket->UTI_PRENOM; ?> <?php echo mb_strtoupper($delay_ticket->UTI_NOM); ?> (<?php echo $delay_ticket->UTI_IDENTIFIANT; ?>)
                                         </p>
                                     </header>
                                     <div class="card-content">
