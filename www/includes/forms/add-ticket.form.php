@@ -1,4 +1,4 @@
-<form id="add-ticket" method="POST" onsubmit="sauvegarder()">
+<form id="add-ticket" method="POST">
 <div class="field is-horizontal">
     <div class="field-label is-normal ">
         <label class="label">Module :</label>
@@ -6,7 +6,7 @@
     <div class="field-label">
         <div class="control">
             <div class="select ">
-                <select id="module" name="module">
+                <select id="module" name="module" value="<?php if( isset($_POST['module'])) ){echo $_POST['module'];}?>">
                     <?php
                     $modules = list_modules();
                     foreach ($modules as $module) {
