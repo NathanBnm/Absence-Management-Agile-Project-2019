@@ -124,12 +124,14 @@
                                             </a>
                                         </div>
                                         <div class="column">
-                                            <a class="button is-danger">
-                                                <span>Supprimer</span>
-                                                <span class="icon is-small">
+                                            <form method="POST">
+                                                <button type="submit" class="button is-danger" id="delete" name="delete">
+                                                    <span>Supprimer</span>
+                                                        <span class="icon is-small">
                                                         <i class="fas fa-trash-alt"></i>
                                                     </span>
-                                            </a>
+                                                </button>
+                                            </form>
                                         </div>
                                     </div>
                                 </div>

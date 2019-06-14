@@ -11,6 +11,7 @@
                             <tr>
                                 <th>Module</th>
                                 <th>Type</th>
+                                <th>Contrôle</th>
                                 <th>État</th>
                                 <th>N°Étudiant</th>
                                 <th>Étudiant</th>
@@ -100,15 +101,18 @@
                                         <?php echo $retard->SIG_DATE; ?>
                                     </td>
                                     <td>
-                                        <span class="tag <?php echo $color ?> is-rounded">
-                                        <?php
-                                        if($retard->SIG_TRAITE == 0) {
-                                            echo "Non traité";
-                                        } else {
-                                            echo "Traité";
-                                        }
-                                        ?>
-                                        </span>
+                                        <form method ="POST">
+                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="coder" name="coder">
+                                            <button type="submit" id="traite" name="traite" href="#" class="button <?php echo $color; ?> is-rounded">
+                                                <?php
+                                                if($retard->SIG_TRAITE == 0) {
+                                                    echo "Non traité";
+                                                } else {
+                                                    echo "Traité";
+                                                }
+                                                ?>
+                                            </button>
+                                        </form>
                                     </td>
                                     <td>
                                         <form method="POST">
