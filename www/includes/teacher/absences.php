@@ -124,7 +124,7 @@
             <label class="label">Commentaire :</label>
             <div class="field">
                 <div class="control">
-                    <textarea class="textarea has-fixed-size" placeholder="Le Commentaire dans la base" rows="5"></textarea>
+                    <textarea name="comment" class="textarea has-fixed-size" placeholder="Le Commentaire dans la base" rows="5"></textarea>
                 </div>
                 <p class="help">
                     X caractères restants
@@ -133,15 +133,15 @@
         </section>
         <footer class="modal-card-foot">
             <div class="field is-grouped">
-                <div class="control">
+                <div name="conf" class="control" onclick="abs.Modif_absence.close()">
                     <a class="button is-success" aria-haspopup="true">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
-                        <span>Confirmer</span>
+                        <span >Confirmer</span>
                     </a>
                 </div>
-                <div class="control">
+                <div class="control" onclick="abs.Modif_absence.close()">
                     <a class="button is-danger" aria-haspopup="true">
                         <span class="icon is-small">
                             <i class="fas fa-ban"></i>
