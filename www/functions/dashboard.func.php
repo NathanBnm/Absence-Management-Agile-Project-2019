@@ -53,14 +53,11 @@ function test_billet_existant($professeur, $etudiant, $module, $date){
             'COU_CODE' => $module,
             'SIG_DATE' => $date
         ];
-        $sql = "SELECT COUNT(*) as 'COMPTEUR' FROM ABS_BILLET WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
-        
+        $sql = "SELECT COUNT(*) FROM ABS_BILLET WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
         $req = $db->prepare($sql);
         $req->execute($u);
-        $exist = $req->fetch();
-        $req->closeCursor();
-        var_dump($exist);
-        return $exist['COMPTEUR'];
+        $exist = $req->rowCount($sql);
+        return $exist;
     }
 
 function nom_vers_etupass($nom, $prenom)

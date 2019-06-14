@@ -47,8 +47,8 @@ if(isset($_POST['submit-ticket'])) {
     if(etupass_vers_role($etupass) != 'ETU') {
         $errors['invalid-user'] = "Seul un étudiant peut être absent";
     }
-    $testbillet = test_billet_existant($_SESSION['id'], $etupass, $module, $date)
-    if( $testbillet != 0){
+    
+    if( $testbillet = test_billet_existant($_SESSION['id'], $etupass, $module, $date) == 0){
         $errors['invalid-abs'] = "Cette absence existe déjà";
     }
 
