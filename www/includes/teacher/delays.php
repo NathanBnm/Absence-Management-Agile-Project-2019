@@ -11,6 +11,7 @@
                             <tr>
                                 <th>Module</th>
                                 <th>Type</th>
+                                <th>Contrôle</th>
                                 <th>État</th>
                                 <th>N°Étudiant</th>
                                 <th>Étudiant</th>
@@ -27,6 +28,7 @@
                             <?php
                                 $color = null;
                                 $color_etat = null;
+                                $color_controle = null;
                                 $retards = list_teacher_delays();
                                 foreach($retards as $retard) {
                                     if($retard->SIG_TRAITE == 0) {
@@ -42,6 +44,13 @@
                                     } else{
                                         $color_etat = "is-success";
                                     }
+
+                                    if ($retard->COU_CONTROLE == 1) {
+                                        $color_controle = "is-success";
+                                    }
+                                    else {
+                                        $color_controle = "is-danger";
+                                    }
                             ?>
                             <tr>
                                 <td>
@@ -49,6 +58,18 @@
                                 </td>
                                 <td>
                                     <?php echo strtoupper($retard->COU_TYPE); ?>
+                                </td>
+                                <td>
+                                        <span class="tag <?php echo $color_controle ?> is-rounded">
+                                            <?php
+                                            if ($retard->COU_CONTROLE == 1) {
+                                                echo "Oui";
+                                            }
+                                            else {
+                                                echo "Non";
+                                            }
+                                            ?>
+                                        </span> <br>
                                 </td>
                                 <td>
                                     <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $retard->SIG_ETAT; ?></span>
