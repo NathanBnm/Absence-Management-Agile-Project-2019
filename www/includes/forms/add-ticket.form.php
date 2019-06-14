@@ -12,7 +12,6 @@
                     foreach ($modules as $module) {
                         echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
                     }
-                    if( isset($_POST['module'])) {echo $_POST['module'];}
                     ?>
                 </select>
             </div>
@@ -136,7 +135,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" maxlength="255" id="message" name="message"></textarea>
+                <textarea class="textarea has-fixed-size" placeholder="Votre commentaire" rows="5" maxlength="255" id="message" name="message" value="if( isset($_GET['module'])) {echo $_GET['module'];}"></textarea>
             </div>
             <p id="count" class="help">
                 0 / 255
