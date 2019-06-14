@@ -22,7 +22,7 @@ if(isset($_POST['submit-ticket'])) {
 
     $errors = [];
 
-    if(empty($module) || empty($typecourse) || empty($type) || empty($etupass) || empty($year) || empty($month) || empty($day) || empty($time)) {
+    if(empty($module) || empty($typecourse) || empty($type) || empty($etupass) || $year == 0 || $month == 0 || $day == 0 || empty($time)) {
         $errors['empty'] = "Tous les champs n'ont pas été remplis";
     }
 
@@ -30,7 +30,7 @@ if(isset($_POST['submit-ticket'])) {
         $errors['invalid-size'] = "Le commentaire ne peut pas dépasser 255 caractères";
     } 
 
-    if($typecourse != 'td' && $typecourse != 'tp' && $typecourse != 'cm' && $typecourse != 'cc' && $type != 'A' && $type != 'R') {
+    if($typecourse != 'TD' && $typecourse != 'TP' && $typecourse != 'CM' && $typecourse != 'CC' && $type != 'A' && $type != 'R') {
         $errors['invalid'] = "Le formulaire n'est pas valide";
     }
 

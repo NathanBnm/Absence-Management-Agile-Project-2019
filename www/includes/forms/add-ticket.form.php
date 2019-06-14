@@ -27,10 +27,10 @@
         <div class="control">
             <div class="select ">
                 <select id="typecourse" name="typecourse">
-                    <option value="td">TD</option>
-                    <option value="tp">TP</option>
-                    <option value="cm">CM</option>
-                    <option value="cc">CC</option>
+                    <option value="TD">TD</option>
+                    <option value="TP">TP</option>
+                    <option value="CM">CM</option>
+                    <option value="CC">CC</option>
                 </select>
             </div>
         </div>
