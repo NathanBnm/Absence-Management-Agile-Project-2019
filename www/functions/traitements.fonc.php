@@ -201,5 +201,19 @@
             $req->execute($u);
         }
 
+        function afficher_eleves(){
+            global $db;
+            $sql = "SELECT CONCAT(UTI_NOM,' ',UTI_PRENOM,' ',UTI_IDENTIFIANT) FROM ABS_UTILISATEUR";
+            $req = $db->prepare($sql);
+            $req->execute();
+            $user_cours = [];
+            $i = 0;
+            while($row = $req->fetchObject()){
+                $user_cours[$i] = $row;
+                $i++;
+            }
+               return $user_cours;
+        }
+
 
 ?>
