@@ -184,6 +184,42 @@ function envoie($mail, $type, $date)
     mail($mail, $sujet, $message, $header);
 }
 
+function envoie_perso($mail, $sujet, $comment)
+{
+
+
+    if (!preg_match("#^[a-z0-9._-]+@(hotmail|live|msn).[a-z]{2,4}$#", $mail)) {
+        $passage_ligne = "\r\n";
+    } else {
+        $passage_ligne = "\n";
+    }
+
+
+    $boundary = "-----=" . md5(rand());
+
+
+    $header = "From: \"EXPEDITEUR\"noreply@unicaen.fr" . $passage_ligne;
+    $header .= "MIME-Version: 1.0" . $passage_ligne;
+    $header .= "Content-Type: multipart/alternative;" . $passage_ligne . " boundary=\"$boundary\"" . $passage_ligne;
+
+    $message = $passage_ligne . "--" . $boundary . $passage_ligne;
+    $message .= "Content-Type: text/html; charset=\"ISO-8859-1\"" . $passage_ligne;
+    $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
+    $message .= $passage_ligne . $comment . $passage_ligne;
+    //==========
+    $message .= $passage_ligne . "--" . $boundary . $passage_ligne;
+    //=====Ajout du message au format HTML
+    $message .= "Content-Type: text/html; charset=\"ISO-8859-1\"" . $passage_ligne;
+    $message .= "Content-Transfer-Encoding: 8bit" . $passage_ligne;
+    $message .= $passage_ligne . $comment . $passage_ligne;
+    //==========
+    $message .= $passage_ligne . "--" . $boundary . "--" . $passage_ligne;
+    $message .= $passage_ligne . "--" . $boundary . "--" . $passage_ligne;
+    //==========
+
+    mail($mail, $sujet, $message, $header);
+}
+
 function delete_ticket($code)
 {
     global $db;
