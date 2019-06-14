@@ -4,7 +4,7 @@ if(isset($_POST['conf'])) {
     $sujet = $_POST['sujet'];
     $comment = $_POST['comment'];
     envoie_perso($mail, $sujet, $comment);
-    //echo "<meta http-equiv='refresh' content='0'>";
+    echo "<meta http-equiv='refresh' content='0'>";
 }
 ?>
 

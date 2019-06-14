@@ -101,18 +101,15 @@
                                         <?php echo $retard->SIG_DATE; ?>
                                     </td>
                                     <td>
-                                        <form method ="POST">
-                                            <input type="hidden" value="<?php echo $retard->SIG_CODE; ?>" id="coder" name="coder">
-                                            <button type="submit" id="traite" name="traite" href="#" class="button <?php echo $color; ?> is-rounded">
-                                                <?php
-                                                if($retard->SIG_TRAITE == 0) {
-                                                    echo "Non traité";
-                                                } else {
-                                                    echo "Traité";
-                                                }
-                                                ?>
-                                            </button>
-                                        </form>
+                                        <span class="tag <?php echo $color ?> is-rounded">
+                                        <?php
+                                        if($retard->SIG_TRAITE == 0) {
+                                            echo "Non traité";
+                                        } else {
+                                            echo "Traité";
+                                        }
+                                        ?>
+                                        </span>
                                     </td>
                                     <td>
                                         <form method="POST">
