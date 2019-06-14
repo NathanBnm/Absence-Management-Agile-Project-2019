@@ -6,11 +6,11 @@
     <div class="field-label">
         <div class="control">
             <div class="select ">
-                <select id="module" name="module">
+                <select id="module" name="module" value="<?php if( isset($_POST['module'])) {echo $_POST['module'];}?>">
                     <?php
                     $modules = list_modules();
                     foreach ($modules as $module) {
-                        echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '<?php if( isset($_POST[\'module\'])) {echo $_POST[\'module\'];}?></option>';
+                        echo '<option value="' . $module->COU_MODULE . '">' . $module->COU_MODULE . " - " . $module->COU_LIBELLE . '</option>';
                     }
                     ?>
                 </select>
