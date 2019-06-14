@@ -68,7 +68,7 @@
                                         <span class="uppercase">
                                             <?php echo $absence->UTI_ENS_NOM; ?>
                                         </span>
-                                        <?php echo $absence->UTI_ENS_PRENOM; ?>
+                                        <?php echo $absence->UTI_ENS_PRE; ?>
                                     </td>
                                     <td>
                                         <?php echo $absence->SIG_MOTIF; ?>
