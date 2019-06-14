@@ -15,6 +15,7 @@ if ($_SESSION['rank'] == 'ETU') {
 	$couleur = 'bg-violet';
 	$icon = 'fa-user-tie';
 }
+$utilisateur = get_utilisateur();
 ?>
 <nav class="navbar <?php echo $couleur; ?>" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
@@ -67,6 +68,75 @@ if ($_SESSION['rank'] == 'ETU') {
 		</div>
 	</div>
 </nav>
+<div id="information" class="modal">
+    <div class="modal-background" onclick="michel2.information.close()"></div>
+    <div class="modal-card">
+        <header class="modal-card-head">
+            <p class="modal-card-title">
+                Vos Informations
+            </p>
+            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
+        </header>
+        <section class="modal-card-body">
+			<span class="icon is-small"><i class="fas <?php echo $icon; ?>"></i></span>
+			<?php
+				if($_SESSION['rank'] == 'ETU')
+				{
+			?>
+			<strong>N° Étudiant : </strong>
+			<?php
+				}
+				else
+				{
+			?>
+			<strong>Identifiant : </strong>
+			<?php
+				}
+			?>
+
+            <span class="tag is-light is-rounded" style="margin-right: 10px;">
+                <?php echo $utilisateur['UTI_IDENTIFIANT']; ?>
+            </span>
+			<br>
+			<span class="icon is-small"><i class="fas fa-signature"></i></span>			
+			<strong>Nom : </strong>
+            <span class="tag is-dark is-rounded" style="margin-right: 10px;">
+				<?php echo mb_strtoupper($utilisateur['UTI_NOM']); ?>
+            </span>
+			<br>
+			<span class="icon is-small"><i class="fas fa-signature"></i></span>			
+            <strong>Prénom : </strong>
+            <span class="tag is-black is-rounded" style="margin-right: 10px;">
+				<?php echo $utilisateur['UTI_PRENOM']; ?>
+            </span>
+			<br>
+			<span class="icon is-small"><i class="fas fa-envelope-open"></i></span>			
+            <strong>Mail : </strong>
+            <span class="tag is-link is-rounded" style="margin-right: 10px;">
+				<?php echo $utilisateur['UTI_MAIL']; ?>
+            </span>
+			<br>
+			<?php
+				if($_SESSION['rank'] == 'ETU')
+				{
+			?>
+				<span class="icon is-small"><i class="fas fa-graduation-cap"></i></span>			
+				<strong>Groupe : </strong>
+				<span class="tag is-info is-rounded" style="margin-right: 10px;">
+					TP <?php echo $utilisateur['UTI_GROUPE']; ?>
+				</span>
+				<br>
+				<span class="icon is-small"><i class="fas fa-university"></i></span>			
+				<strong>Promo : </strong>
+				<span class="tag is-primary is-rounded" style="margin-right: 10px;">
+					<?php echo $utilisateur['UTI_PROMO']; ?><?php echo ($utilisateur['UTI_PROMO'] == 1) ? "ère année" : "ème année"; ?>
+				</span>
+			<?php
+				}
+			?>
+        </section>
+    </div>
+</div>
 <script type="text/javascript">
     (function() {
         var burger = document.querySelector('.burger');

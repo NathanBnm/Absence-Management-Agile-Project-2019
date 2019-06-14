@@ -9,17 +9,17 @@
                     <table class="table is-fullwidth is-striped">
                         <thead>
                         <tr>
-                            <th><abbr title="module">Module</abbr></th>
-                            <th><abbr title="type">Type</abbr></th>
-                            <th><abbr title="etat">État</abbr></th>
-                            <th><abbr title="etucode">N°Étudiant</abbr></th>
-                            <th><abbr title="prenom">Étudiant</abbr></th>
-                            <th><abbr title="nom">Enseignant</abbr></th>
-                            <th><abbr title="nom">Motif</abbr></th>
-                            <th><abbr title="commentaire">Commentaire</abbr></th>
-                            <th><abbr title="date">Date</abbr></th>
-                            <th><abbr title="date">Statut</abbr></th>
-                            <th><abbr title="edit">Options</abbr></th>
+                            <th>Module</th>
+                            <th>Type</th>
+                            <th>État</th>
+                            <th>N°Étudiant</th>
+                            <th>Étudiant</th>
+                            <th>Enseignant</th>
+                            <th>Motif</th>
+                            <th>Commentaire</th>
+                            <th>Date</th>
+                            <th>Statut</th>
+                            <th>Options</th>
                         </tr>
                         </thead>
                         <tfoot>
@@ -159,41 +159,6 @@
                     </a>
                 </div>
             </div>
-        </footer>
-    </div>
-</div>
-<div id="information" class="modal">
-    <div class="modal-background" onclick="michel2.information.close()"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">
-                Vos Informations !
-            </p>
-            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
-        </header>
-        <section class="modal-card-body">
-            <span class="icon is-small">
-                <i class="fas fa-user-graduate"></i>
-            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;">21800346</span>
-            <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
-            <span class="icon is-small">
-                <i class="fas fa-signature"></i>
-            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;">Jacquie</span>
-            <span class="icon is-small">
-                <i class="fas fa-signature"></i>
-            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;">21800346@unicaen</span>
-            <span class="icon is-small">
-                <i class="fas fa-envelope-open"></i>
-            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP 2.2</span>
-            <span class="icon is-small">
-                <i class="fas fa-graduation-cap"></i>
-            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">1ère année</span>
-            <span class="icon is-small">
-                <i class="fas fa-university"></i>
-            </span></i>
-        </section>
-        <footer class="modal-card-foot">
-            <strong>Vous êtes Mme Jort</strong>
         </footer>
     </div>
 </div>
