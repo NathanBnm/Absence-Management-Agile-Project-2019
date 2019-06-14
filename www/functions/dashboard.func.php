@@ -15,6 +15,9 @@ function list_modules()
 
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
+
+
+
     global $db;
 
     $u = [

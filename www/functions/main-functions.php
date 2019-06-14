@@ -147,14 +147,14 @@ function envoie($mail, $type, $date)
     }
 
     if ($type == mb_strtoupper("a")) {
-        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre absence en cours le " . $date . ".";
-        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>absence</b> en cours le " . $date . ".</body></html>";
+        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail est ici pour vous signaler votre absence en cours le " . $date . ".";
+        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail est ici pour vous signaler votre <b>absence</b> en cours le " . $date . ".</body></html>";
     } else if ($type == mb_strtoupper("r")) {
-        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre retard en cours le " . $date . ".";
-        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
+        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail est ici pour vous signaler votre retard en cours le " . $date . ".";
+        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail est ici pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
     } else {
-        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre retard en cours le " . $date . ".";
-        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail vous est envoyé pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
+        $message_txt = "Mail automatique." . $passage_ligne . "Ce mail est ici pour vous signaler votre retard en cours le " . $date . ".";
+        $message_html = "<html><head></head><body><title><h1>Mail automatique.</h1></title>" . $passage_ligne . "Ce mail est ici pour vous signaler votre <b>retard</b> en cours le " . $date . ".</body></html>";
     }
 
 
@@ -206,4 +206,39 @@ function recuperer_mail($etupass) {
     $mail = $req->fetch();
     $req->closeCursor();
     return $mail['UTI_MAIL'];
+}
+
+function change_traitement($traite)
+{
+    global $db;
+    $trait=null;
+    if(get_traitement($traite)==1){
+        $trait=0;
+    } else {
+        $trait=1;
+    }
+
+    $u = [
+        'SIG_CODE'  =>  $traite,
+        'SIG_TRAITE' => $trait
+    ];
+    $sql = "UPDATE ABS_BILLET SET SIG_TRAITE = :SIG_TRAITE WHERE SIG_CODE = :SIG_CODE";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+}
+
+function get_traitement($traite)
+{
+    global $db;
+
+    $u = [
+        'SIG_CODE' => $traite
+    ];
+    $sql = "SELECT SIG_TRAITE FROM ABS_BILLET WHERE SIG_CODE =:SIG_CODE ";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+
+    $code = $req->fetch();
+    $req->closeCursor();
+    return $code['SIG_TRAITE'];
 }
