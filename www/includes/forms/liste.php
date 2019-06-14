@@ -9,9 +9,9 @@ $req = $db->prepare($sql);
 $req->execute($u);
 $array = array(); // on créé le tableau
 
-$etudiant = $_POST['etudiant'];
+$etudiant = $_GET['etudiant'];
 
-$requete = $bdd->prepare('SELECT CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') FROM ABS_UTILISATEUR WHERE CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') LIKE :etudiant'); // j'effectue ma requête SQL grâce au mot-clé LIKE
+$requete = $db->prepare('SELECT CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') FROM ABS_UTILISATEUR WHERE CONCAT(UTI_NOM,\' \',UTI_PRENOM,\' <\',UTI_IDENTIFIANT,\'>\') LIKE :etudiant'); // j'effectue ma requête SQL grâce au mot-clé LIKE
 $requete->execute(array('etudiant' => '%'.$etudiant.'%'));
 
 $array = array(); // on créé le tableau
