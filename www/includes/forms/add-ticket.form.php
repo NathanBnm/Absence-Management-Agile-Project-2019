@@ -1,4 +1,4 @@
-<form id="add-ticket" method="POST" onsubmit="return false;">
+<form id="add-ticket" method="POST">
 <div class="field is-horizontal">
     <div class="field-label is-normal ">
         <label class="label">Module :</label>
@@ -122,7 +122,7 @@
     <div class="field-label">
         <div class="field">
             <div class="control">
-                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" autocomplete="off">
+                <input class="input" type="text" placeholder="ex: 21801010" id="etupass" name="etupass" value="if( isset($_POST['etupass'])) {echo $_POST['etupass'];}">
             </div>
         </div>
     </div>
