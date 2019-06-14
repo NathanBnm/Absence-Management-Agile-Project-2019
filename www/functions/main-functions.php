@@ -126,13 +126,14 @@ function get_utilisateur()
     $u = [
         'UTI_IDENTIFIANT' => $_SESSION['id']
     ];
-    $sql = "SELECT UTI_GROUPE, UTI_IDENTIFIANT, UTI_PRENOM, UTI_NOM, UTI_PROMO, UTI_MAIL FROM ABS_UTILISATEUR WHERE
-    UTI_IDENTIFIANT = :UTI_IDENTIFIANT)";
+    $sql = "SELECT UTI_GROUPE, UTI_IDENTIFIANT, UTI_PRENOM, UTI_NOM, UTI_PROMO, UTI_MAIL
+            FROM ABS_UTILISATEUR
+            WHERE UTI_CODE = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT)";
     $req = $db->prepare($sql);
     $req->execute($u);
     $utilisateur = $req->fetch();
     $req->closeCursor();
-    return $utilisateur[0];
+    return $utilisateur;
 }
 
 function envoie($mail, $type, $date)

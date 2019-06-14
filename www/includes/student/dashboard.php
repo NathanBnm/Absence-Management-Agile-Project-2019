@@ -1,9 +1,8 @@
 <?php
-    $total_absences = count_students_absences();
-    $total_delays = count_students_delays();
-    $total_absences_not_justified = count_students_absences_not_justified();
-    $total_delays_not_justified = count_students_delays_not_justified();
-    $utilisateur = get_utilisateur();
+$total_absences = count_students_absences();
+$total_delays = count_students_delays();
+$total_absences_not_justified = count_students_absences_not_justified();
+$total_delays_not_justified = count_students_delays_not_justified();
 ?>
 
 <header>
@@ -24,34 +23,30 @@
                         <p>
                             <i class="fas fa-chair fa-sm"></i>
                             <?php
-                                if($total_absences > 0)
-                                {
-                                    ?>
-                                        Vous avez <strong><?php echo $total_absences ?><?php echo ($total_absences > 1) ? " absences" : " absence"; ?></strong> dont <strong><?php echo $total_absences_not_justified ?><?php echo ($total_absences_not_justified > 1) ? " non justifiées" : " non justifiée"; ?></strong>
-                                    <?php
-                                }
-                                else {
-                                    ?>
-                                        Vous n'avez <strong>aucun retard</strong>
-                                    <?php 
-                                }
+                            if ($total_absences > 0) {
+                                ?>
+                                Vous avez <strong><?php echo $total_absences ?><?php echo ($total_absences > 1) ? " absences" : " absence"; ?></strong> dont <strong><?php echo $total_absences_not_justified ?><?php echo ($total_absences_not_justified > 1) ? " non justifiées" : " non justifiée"; ?></strong>
+                            <?php
+                        } else {
                             ?>
+                                Vous n'avez <strong>aucun retard</strong>
+                            <?php
+                        }
+                        ?>
                         </p>
                         <p>
                             <i class="fas fa-running fa-sm"></i>
                             <?php
-                                if($total_delays > 0)
-                                {
-                                    ?>
-                                        Vous avez <strong><?php echo $total_delays ?><?php echo ($total_delays > 1) ? " retards" : " retard"; ?></strong> dont <strong><?php echo $total_delays_not_justified ?><?php echo ($total_delays_not_justified > 1) ? " non justifiés" : " non justifié"; ?></strong>
-                                    <?php
-                                }
-                                else {
-                                    ?>
-                                        Vous n'avez <strong>aucun retard</strong>
-                                    <?php 
-                                }
+                            if ($total_delays > 0) {
+                                ?>
+                                Vous avez <strong><?php echo $total_delays ?><?php echo ($total_delays > 1) ? " retards" : " retard"; ?></strong> dont <strong><?php echo $total_delays_not_justified ?><?php echo ($total_delays_not_justified > 1) ? " non justifiés" : " non justifié"; ?></strong>
+                            <?php
+                        } else {
                             ?>
+                                Vous n'avez <strong>aucun retard</strong>
+                            <?php
+                        }
+                        ?>
                         </p>
                     </div>
                 </article>
@@ -73,18 +68,18 @@
                         $color_status = null;
                         $color_etat = null;
                         $delay_tickets = last_absence_ticket();
-                        foreach($delay_tickets as $delay_ticket) {
-                            if($delay_ticket->SIG_TRAITE == 0) {
+                        foreach ($delay_tickets as $delay_ticket) {
+                            if ($delay_ticket->SIG_TRAITE == 0) {
                                 $color_status = "is-danger";
                             } else {
                                 $color_status = "is-success";
                             }
 
-                            if($delay_ticket->SIG_ETAT == "Non justifié") {
+                            if ($delay_ticket->SIG_ETAT == "Non justifié") {
                                 $color_etat = "is-danger";
-                            } else if ($delay_ticket->SIG_ETAT == "Rattrapage"){
+                            } else if ($delay_ticket->SIG_ETAT == "Rattrapage") {
                                 $color_etat = "is-warning";
-                            } else{
+                            } else {
                                 $color_etat = "is-success";
                             }
                             ?>
@@ -92,10 +87,10 @@
                                 <div class="card" style="margin-bottom: 1%;">
                                     <header class="card-header">
                                         <p class="card-header-title">
-                                            <span class="tags has-addons"  style="margin-right: 10px;">
+                                            <span class="tags has-addons" style="margin-right: 10px;">
                                                 <span class="tag is-link is-rounded">
                                                     <?php
-                                                    if(strtoupper($delay_ticket->SIG_TYPE) == "A") {
+                                                    if (strtoupper($delay_ticket->SIG_TYPE) == "A") {
                                                         echo "Absence";
                                                     } else {
                                                         echo "Retard";
@@ -105,7 +100,7 @@
                                                 <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $delay_ticket->SIG_ETAT; ?></span>
                                                 <span class="tag <?php echo $color_status ?> is-rounded">
                                                     <?php
-                                                    if($delay_ticket->SIG_TRAITE == 0) {
+                                                    if ($delay_ticket->SIG_TRAITE == 0) {
                                                         echo "Non traité";
                                                     } else {
                                                         echo "Traité";
@@ -128,7 +123,7 @@
                                                 <div class="tile is-child">
                                                     <strong>Commentaire:<br></strong>
                                                     <div class="control">
-                                                        <textarea class="textarea has-fixed-size"  rows="3" readonly><?php echo $delay_ticket->SIG_COMMENTAIRE; ?></textarea>
+                                                        <textarea class="textarea has-fixed-size" rows="3" readonly><?php echo $delay_ticket->SIG_COMMENTAIRE; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -136,9 +131,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php
+                    }
+                    ?>
                     </div>
                 </div>
             </article>
@@ -156,18 +151,18 @@
                         $color_status = null;
                         $color_etat = null;
                         $delay_tickets = last_delay_ticket();
-                        foreach($delay_tickets as $delay_ticket) {
-                            if($delay_ticket->SIG_TRAITE == 0) {
+                        foreach ($delay_tickets as $delay_ticket) {
+                            if ($delay_ticket->SIG_TRAITE == 0) {
                                 $color_status = "is-danger";
                             } else {
                                 $color_status = "is-success";
                             }
 
-                            if($delay_ticket->SIG_ETAT == "Non justifié") {
+                            if ($delay_ticket->SIG_ETAT == "Non justifié") {
                                 $color_etat = "is-danger";
-                            } else if ($delay_ticket->SIG_ETAT == "Rattrapage"){
+                            } else if ($delay_ticket->SIG_ETAT == "Rattrapage") {
                                 $color_etat = "is-warning";
-                            } else{
+                            } else {
                                 $color_etat = "is-success";
                             }
                             ?>
@@ -175,10 +170,10 @@
                                 <div class="card" style="margin-bottom: 1%;">
                                     <header class="card-header">
                                         <p class="card-header-title">
-                                            <span class="tags has-addons"  style="margin-right: 10px;">
+                                            <span class="tags has-addons" style="margin-right: 10px;">
                                                 <span class="tag is-link is-rounded">
                                                     <?php
-                                                    if(strtoupper($delay_ticket->SIG_TYPE) == "A") {
+                                                    if (strtoupper($delay_ticket->SIG_TYPE) == "A") {
                                                         echo "Absence";
                                                     } else {
                                                         echo "Retard";
@@ -188,7 +183,7 @@
                                                 <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $delay_ticket->SIG_ETAT; ?></span>
                                                 <span class="tag <?php echo $color_status ?> is-rounded">
                                                     <?php
-                                                    if($delay_ticket->SIG_TRAITE == 0) {
+                                                    if ($delay_ticket->SIG_TRAITE == 0) {
                                                         echo "Non traité";
                                                     } else {
                                                         echo "Traité";
@@ -211,7 +206,7 @@
                                                 <div class="tile is-child">
                                                     <strong>Commentaire:<br></strong>
                                                     <div class="control">
-                                                        <textarea class="textarea has-fixed-size"  rows="3" readonly><?php echo $delay_ticket->SIG_COMMENTAIRE; ?></textarea>
+                                                        <textarea class="textarea has-fixed-size" rows="3" readonly><?php echo $delay_ticket->SIG_COMMENTAIRE; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -219,9 +214,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php
+                    }
+                    ?>
                     </div>
                 </div>
             </article>
@@ -267,41 +262,6 @@
                     </span>
                 </label>
             </div>
-        </footer>
-    </div>
-</div>
-<div id="information" class="modal">
-    <div class="modal-background" onclick="michel2.information.close()"></div>
-    <div class="modal-card">
-        <header class="modal-card-head">
-            <p class="modal-card-title">
-                Vos Informations !
-            </p>
-            <button class="delete" aria-label="close" onclick="michel2.information.close()"></button>
-        </header>
-        <section class="modal-card-body">
-            <span class="icon is-small">
-                <i class="fas fa-user-graduate"></i>
-            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_IDENTIFIANT;?></span>
-            <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
-            <span class="icon is-small">
-                <i class="fas fa-signature"></i>
-            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_PRENOM;?></span>
-            <span class="icon is-small">
-                <i class="fas fa-signature"></i>
-            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;"><?php echo $utilisateur->UTI_MAIL;?></span>
-            <span class="icon is-small">
-                <i class="fas fa-envelope-open"></i>
-            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP <?php echo $utilisateur->UTI_GROUPE;?></span>
-            <span class="icon is-small">
-                <i class="fas fa-graduation-cap"></i>
-            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;"> <?php echo $utilisateur->UTI_PROMO;?><sup><?php echo($utilisateur->UTI_IDENTIFIANT==1)?ère:eme;?></sup> année</span>
-            <span class="icon is-small">
-                <i class="fas fa-university"></i>
-            </span></i>
-        </section>
-        <footer class="modal-card-foot">
-            <strong>Vous êtes un étudiant</strong>
         </footer>
     </div>
 </div>
