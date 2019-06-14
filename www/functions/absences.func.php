@@ -59,8 +59,8 @@ function list_director_absences()
         'UTI_IDENTIFIANT' => $_SESSION['id']
     ];
     $sql = "SELECT absence.SIG_COMMENTAIRE, absence.SIG_MOTIF, absence.SIG_ETAT, etu.UTI_PRENOM, etu.UTI_NOM, etu.UTI_IDENTIFIANT, 
-    ens.UTI_NOM as 'UTI_ENS_NOM', ens.UTI_PRENOM as 'UTI_ENS_PRE', cours.COU_MODULE, 
-    DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_CODE 
+    ens.UTI_NOM as 'UTI_ENS_NOM', ens.UTI_PRENOM as 'UTI_ENS_PRE', cours.COU_MODULE,
+    DATE_FORMAT(SIG_DATE, 'Le %d/%m/%Y à %H:%i') AS SIG_DATE, SIG_TRAITE, COU_TYPE, SIG_ETAT, SIG_CODE, COU_CONTROLE
     FROM ABS_BILLET absence 
     JOIN ABS_COURS cours ON absence.COU_CODE = cours.COU_CODE 
     JOIN ABS_UTILISATEUR etu ON etu.UTI_CODE = absence.UTI_CODE_1 
