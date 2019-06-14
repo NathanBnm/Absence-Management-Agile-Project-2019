@@ -1,5 +1,5 @@
 <?php
-if(isset($_POST['conf'])) {
+if (isset($_POST['conf'])) {
     $mail = $_POST['mail'];
     $sujet = $_POST['sujet'];
     $comment = $_POST['comment'];
@@ -45,9 +45,9 @@ if(isset($_POST['conf'])) {
                                 <div class="field is-grouped">
                                     <div class="control">
                                         <button id="conf" name="conf" type="submit" href="#" class="button is-success" aria-haspopup="true">
-                                        <span class="icon is-small">
-                                            <i class="fas fa-check"></i>
-                                        </span>
+                                            <span class="icon is-small">
+                                                <i class="fas fa-check"></i>
+                                            </span>
                                             <span>Confirmer</span>
                                         </button>
                                     </div>

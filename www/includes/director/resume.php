@@ -48,17 +48,17 @@
                     <div class="columns" style="text-align: center">
                         <div class="column">
                             <a class="button is-primary" onclick="refs.Recap_semestre.open()">
-                                            <span class="icon is-small" >
-                                              <i class="fas fa-clipboard-list"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </span>
                                 <span>Acceder</span>
                             </a>
                         </div>
                         <div class="column">
                             <a href="#" class="button is-link" aria-haspopup="true">
-                                            <span class="icon is-small">
-                                              <i class="far fa-edit"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="far fa-edit"></i>
+                                </span>
                                 <span>Modifier</span>
                             </a>
                         </div>
@@ -125,25 +125,25 @@
                     <div class="columns" style="text-align: center">
                         <div class="column">
                             <a class="button is-primary" onclick="refs1.Recap_module.open()">
-                                            <span class="icon is-small">
-                                              <i class="fas fa-clipboard-list"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </span>
                                 <span>Acceder</span>
                             </a>
                         </div>
                         <div class="column">
                             <a href="#" class="button is-link" aria-haspopup="true">
-                                            <span class="icon is-small">
-                                              <i class="far fa-edit"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="far fa-edit"></i>
+                                </span>
                                 <span>Modifier</span>
                             </a>
                         </div>
                         <div class="column">
                             <a class="button is-info">
-                                            <span class="icon is-small">
-                                              <i class="fas fa-file-export"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-file-export"></i>
+                                </span>
                                 <span>Exporter</span>
                             </a>
                         </div>
@@ -200,25 +200,25 @@
                     <div class="columns" style="text-align: center">
                         <div class="column">
                             <a class="button is-primary" onclick="refs1.Recap_module.open()">
-                                            <span class="icon is-small">
-                                              <i class="fas fa-clipboard-list"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-clipboard-list"></i>
+                                </span>
                                 <span>Acceder</span>
                             </a>
                         </div>
                         <div class="column">
                             <a href="#" class="button is-link" aria-haspopup="true">
-                                            <span class="icon is-small">
-                                              <i class="far fa-edit"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="far fa-edit"></i>
+                                </span>
                                 <span>Modifier</span>
                             </a>
                         </div>
                         <div class="column">
                             <a class="button is-info">
-                                            <span class="icon is-small">
-                                              <i class="fas fa-file-export"></i>
-                                            </span>
+                                <span class="icon is-small">
+                                    <i class="fas fa-file-export"></i>
+                                </span>
                                 <span>Exporter</span>
                             </a>
                         </div>
@@ -241,32 +241,32 @@
         <section class="modal-card-body">
             <table class="table is-fullwidth is-striped">
                 <thead>
-                <tr>
-                    <th><abbr title="module">N°Étudiant</abbr></th>
-                    <th><abbr title="etat">État</abbr></th>
-                    <th><abbr title="etucode">Module</abbr></th>
-                    <th><abbr title="prenom">Prénom</abbr></th>
-                    <th><abbr title="nom">Nom</abbr></th>
-                    <th><abbr title="nom">Motif</abbr></th>
-                    <th><abbr title="commentaire">Commentaire</abbr></th>
-                    <th><abbr title="date">Date</abbr></th>
+                    <tr>
+                        <th><abbr title="module">N°Étudiant</abbr></th>
+                        <th><abbr title="etat">État</abbr></th>
+                        <th><abbr title="etucode">Module</abbr></th>
+                        <th><abbr title="prenom">Prénom</abbr></th>
+                        <th><abbr title="nom">Nom</abbr></th>
+                        <th><abbr title="nom">Motif</abbr></th>
+                        <th><abbr title="commentaire">Commentaire</abbr></th>
+                        <th><abbr title="date">Date</abbr></th>
 
-                </tr>
+                    </tr>
                 </thead>
                 <tfoot>
                 </tfoot>
                 <tbody>
-                <tr>
-                    <th>21800346</th>
-                    <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                    <td>M2101</td>
-                    <td>Marie</td>
-                    <td>Martin</td>
-                    <td>Maladie</td>
-                    <td>2eme absence à ce cours</td>
-                    <td>15/06/2019</td>
+                    <tr>
+                        <th>21800346</th>
+                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
+                        <td>M2101</td>
+                        <td>Marie</td>
+                        <td>Martin</td>
+                        <td>Maladie</td>
+                        <td>2eme absence à ce cours</td>
+                        <td>15/06/2019</td>
 
-                </tr>
+                    </tr>
                 </tbody>
             </table>
 
@@ -286,32 +286,32 @@
         <section class="modal-card-body">
             <table class="table is-fullwidth is-striped">
                 <thead>
-                <tr>
-                    <th><abbr title="module">N°Étudiant</abbr></th>
-                    <th><abbr title="etat">État</abbr></th>
-                    <th><abbr title="etucode">Module</abbr></th>
-                    <th><abbr title="prenom">Prénom</abbr></th>
-                    <th><abbr title="nom">Nom</abbr></th>
-                    <th><abbr title="nom">Motif</abbr></th>
-                    <th><abbr title="commentaire">Commentaire</abbr></th>
-                    <th><abbr title="date">Date</abbr></th>
+                    <tr>
+                        <th><abbr title="module">N°Étudiant</abbr></th>
+                        <th><abbr title="etat">État</abbr></th>
+                        <th><abbr title="etucode">Module</abbr></th>
+                        <th><abbr title="prenom">Prénom</abbr></th>
+                        <th><abbr title="nom">Nom</abbr></th>
+                        <th><abbr title="nom">Motif</abbr></th>
+                        <th><abbr title="commentaire">Commentaire</abbr></th>
+                        <th><abbr title="date">Date</abbr></th>
 
-                </tr>
+                    </tr>
                 </thead>
                 <tfoot>
                 </tfoot>
                 <tbody>
-                <tr>
-                    <th>21800346</th>
-                    <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                    <td>M2101</td>
-                    <td>Marie</td>
-                    <td>Martin</td>
-                    <td>Maladie</td>
-                    <td>2eme absence à ce cours</td>
-                    <td>15/06/2019</td>
+                    <tr>
+                        <th>21800346</th>
+                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
+                        <td>M2101</td>
+                        <td>Marie</td>
+                        <td>Martin</td>
+                        <td>Maladie</td>
+                        <td>2eme absence à ce cours</td>
+                        <td>15/06/2019</td>
 
-                </tr>
+                    </tr>
                 </tbody>
             </table>
 
@@ -331,32 +331,32 @@
         <section class="modal-card-body">
             <table class="table is-fullwidth is-striped">
                 <thead>
-                <tr>
-                    <th><abbr title="module">N°Étudiant</abbr></th>
-                    <th><abbr title="etat">État</abbr></th>
-                    <th><abbr title="etucode">Module</abbr></th>
-                    <th><abbr title="prenom">Prénom</abbr></th>
-                    <th><abbr title="nom">Nom</abbr></th>
-                    <th><abbr title="nom">Motif</abbr></th>
-                    <th><abbr title="commentaire">Commentaire</abbr></th>
-                    <th><abbr title="date">Date</abbr></th>
+                    <tr>
+                        <th><abbr title="module">N°Étudiant</abbr></th>
+                        <th><abbr title="etat">État</abbr></th>
+                        <th><abbr title="etucode">Module</abbr></th>
+                        <th><abbr title="prenom">Prénom</abbr></th>
+                        <th><abbr title="nom">Nom</abbr></th>
+                        <th><abbr title="nom">Motif</abbr></th>
+                        <th><abbr title="commentaire">Commentaire</abbr></th>
+                        <th><abbr title="date">Date</abbr></th>
 
-                </tr>
+                    </tr>
                 </thead>
                 <tfoot>
                 </tfoot>
                 <tbody>
-                <tr>
-                    <th>21800346</th>
-                    <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
-                    <td>M2101</td>
-                    <td>Marie</td>
-                    <td>Martin</td>
-                    <td>Maladie</td>
-                    <td>2eme absence à ce cours</td>
-                    <td>15/06/2019</td>
+                    <tr>
+                        <th>21800346</th>
+                        <td><span class="tag is-danger is-rounded">Non Justifié</span></td>
+                        <td>M2101</td>
+                        <td>Marie</td>
+                        <td>Martin</td>
+                        <td>Maladie</td>
+                        <td>2eme absence à ce cours</td>
+                        <td>15/06/2019</td>
 
-                </tr>
+                    </tr>
                 </tbody>
             </table>
 
@@ -373,25 +373,25 @@
             <button class="delete" aria-label="close" onclick="infobox.information.close()"></button>
         </header>
         <section class="modal-card-body">
-                <span class="icon is-small">
-                  <i class="fas fa-user-graduate"></i>
-                </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;">21800346</span>
-                <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
-                <span class="icon is-small">
-                  <i class="fas fa-signature"></i>
-                </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;">Jacquie</span>
-                    <span class="icon is-small">
-                  <i class="fas fa-signature"></i>
-                </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;">21800346@unicaen</span>
-                        <span class="icon is-small">
-                  <i class="fas fa-envelope-open"></i>
-                </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP 2.2</span>
-                            <span class="icon is-small">
-                  <i class="fas fa-graduation-cap"></i>
-                </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">1ère année</span>
-                                <span class="icon is-small">
-                  <i class="fas fa-university"></i>
-                </span></i>
+            <span class="icon is-small">
+                <i class="fas fa-user-graduate"></i>
+            </span></i><strong>N°Étudiant : </strong><span class="tag is-light is-rounded" style="margin-right: 10px;">21800346</span>
+            <br><strong>Nom : </strong><span class="tag is-dark is-rounded" style="margin-right: 10px;">Michel</span>
+            <span class="icon is-small">
+                <i class="fas fa-signature"></i>
+            </span></i><br><strong>Prénom : </strong><span class="tag is-black is-rounded" style="margin-right: 10px;">Jacquie</span>
+            <span class="icon is-small">
+                <i class="fas fa-signature"></i>
+            </span></i><br><strong>Mail : </strong><span class="tag is-link is-rounded" style="margin-right: 10px;">21800346@unicaen</span>
+            <span class="icon is-small">
+                <i class="fas fa-envelope-open"></i>
+            </span></i><br><strong>Groupe : </strong><span class="tag is-info is-rounded" style="margin-right: 10px;">TP 2.2</span>
+            <span class="icon is-small">
+                <i class="fas fa-graduation-cap"></i>
+            </span></i><br><strong>Promo : </strong><span class="tag is-primary is-rounded" style="margin-right: 10px;">1ère année</span>
+            <span class="icon is-small">
+                <i class="fas fa-university"></i>
+            </span></i>
         </section>
         <footer class="modal-card-foot">
             <strong>Vous êtes Mme Jort</strong>

@@ -27,4 +27,3 @@ if(isset($_POST['justifier'])) {
     change_justif($etat);
     echo "<meta http-equiv='refresh' content='0'>";
 }
-?>

@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var israng = document.getElementById('rang');
 
     if (tabs) {
-        var rank = null;
         var loop = function loop() {
             var tabListItems = tabs[i].querySelectorAll('li');
             tabListItems.forEach(function (tabListItem) {

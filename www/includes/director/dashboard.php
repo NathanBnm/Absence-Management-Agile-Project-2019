@@ -36,25 +36,24 @@
                         $color_etat = null;
                         $color_controle = null;
                         $tickets = last_ticket();
-                        foreach($tickets as $ticket) {
-                            if($ticket->SIG_TRAITE == 0) {
+                        foreach ($tickets as $ticket) {
+                            if ($ticket->SIG_TRAITE == 0) {
                                 $color_status = "is-danger";
                             } else {
                                 $color_status = "is-success";
                             }
 
-                            if($ticket->SIG_ETAT == "Non justifié") {
+                            if ($ticket->SIG_ETAT == "Non justifié") {
                                 $color_etat = "is-danger";
-                            } else if ($ticket->SIG_ETAT == "Rattrapage"){
+                            } else if ($ticket->SIG_ETAT == "Rattrapage") {
                                 $color_etat = "is-warning";
-                            } else{
+                            } else {
                                 $color_etat = "is-success";
                             }
 
                             if ($ticket->COU_CONTROLE == 1) {
                                 $color_controle = "is-success";
-                            }
-                            else {
+                            } else {
                                 $color_controle = "is-danger";
                             }
                             ?>
@@ -62,10 +61,10 @@
                                 <div class="card" style="margin-bottom: 1%;">
                                     <header class="card-header">
                                         <p class="card-header-title">
-                                            <span class="tags has-addons"  style="margin-right: 10px;">
+                                            <span class="tags has-addons" style="margin-right: 10px;">
                                                 <span class="tag is-link is-rounded">
                                                     <?php
-                                                    if(strtoupper($ticket->SIG_TYPE) == "A") {
+                                                    if (strtoupper($ticket->SIG_TYPE) == "A") {
                                                         echo "Absence";
                                                     } else {
                                                         echo "Retard";
@@ -75,7 +74,7 @@
                                                 <span class="tag <?php echo $color_etat ?> is-rounded"><?php echo $ticket->SIG_ETAT; ?></span>
                                                 <span class="tag <?php echo $color_status ?> is-rounded">
                                                     <?php
-                                                    if($ticket->SIG_TRAITE == 0) {
+                                                    if ($ticket->SIG_TRAITE == 0) {
                                                         echo "Non traité";
                                                     } else {
                                                         echo "Traité";
@@ -94,12 +93,11 @@
                                                     <strong>Contrôle : </strong>
                                                     <span class="tag <?php echo $color_controle ?> is-rounded">
                                                         <?php
-                                                            if ($ticket->COU_CONTROLE == 1) {
-                                                                echo "Oui";
-                                                            }
-                                                            else {
-                                                                echo "Non";
-                                                            }
+                                                        if ($ticket->COU_CONTROLE == 1) {
+                                                            echo "Oui";
+                                                        } else {
+                                                            echo "Non";
+                                                        }
                                                         ?>
                                                     </span> <br>
                                                     <strong>Date :</strong><span class="tag is-info is-rounded" style="margin-left: 10px;"><?php echo $ticket->SIG_DATE; ?></span> <br>
@@ -109,7 +107,7 @@
                                                 <div class="tile is-child">
                                                     <strong>Commentaire:<br></strong>
                                                     <div class="control">
-                                                        <textarea class="textarea has-fixed-size"  rows="3" readonly><?php echo $ticket->SIG_COMMENTAIRE; ?></textarea>
+                                                        <textarea class="textarea has-fixed-size" rows="3" readonly><?php echo $ticket->SIG_COMMENTAIRE; ?></textarea>
                                                     </div>
                                                 </div>
                                             </div>
@@ -135,9 +133,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <?php
-                        }
-                        ?>
+                        <?php
+                    }
+                    ?>
                     </div>
                 </div>
             </article>

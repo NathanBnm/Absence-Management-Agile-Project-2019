@@ -20,13 +20,13 @@ if (in_array($page . '.func.php', $pages_functions)) {
 }
 
 //On redirige l'utilisateur vers la page de connexion s'il n'est pas connecté
-if($page != 'login' && $page != 'error' && !isLogged()) {
+if ($page != 'login' && $page != 'error' && !isLogged()) {
     header("Location:index.php?page=login");
     exit;
 }
 
 //On redirige l'utilisateur vers la page du tableau de bord s'il est déjà connecté
-if($page == 'login' && isLogged()){
+if ($page == 'login' && isLogged()) {
     header("Location:index.php?page=dashboard");
     exit;
 }
@@ -39,42 +39,42 @@ if($page == 'login' && isLogged()){
 <head>
     <meta charset="UTF-8">
     <title>Absences</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <link type="text/css" rel="stylesheet" href="css/bulma.css"/>
-    <link type="text/css" rel="stylesheet" href="css/main.css"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/bulma.css" />
+    <link type="text/css" rel="stylesheet" href="css/main.css" />
     <script src="https://kit.fontawesome.com/4a31b437ba.js"></script>
 </head>
 
 <body class=" <?php echo ($page != "login" && $page != "error") ? "has-navbar-fixed-top" : ""; ?>">
 
-    <?php 
-        if($page == 'login' || $page == 'error') {
-            //On importe la page correspondante
-            require 'pages/' . $page . '.php';
-        } else {
-            //On importe l'entête
-            require 'includes/body/header.php';
+    <?php
+    if ($page == 'login' || $page == 'error') {
+        //On importe la page correspondante
+        require 'pages/' . $page . '.php';
+    } else {
+        //On importe l'entête
+        require 'includes/body/header.php';
 
-            //On importe la page correspondante
-            require 'pages/' . $page . '.php';
-            
-            //On importe le pied de page
-            require 'includes/body/footer.php';
-        }
+        //On importe la page correspondante
+        require 'pages/' . $page . '.php';
+
+        //On importe le pied de page
+        require 'includes/body/footer.php';
+    }
     ?>
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/script.js"></script>
 
     <?php
-        //On importe dynamiquement le javascript nécessaire aux pages spécifiques
-        $pages_js = scandir('js/');
-        if (in_array($page . '.func.js', $pages_js)) {
-    ?>
+    //On importe dynamiquement le javascript nécessaire aux pages spécifiques
+    $pages_js = scandir('js/');
+    if (in_array($page . '.func.js', $pages_js)) {
+        ?>
         <script type="text/javascript" src="js/<?= $page ?>.func.js"></script>
     <?php
-        }
-    ?>
+}
+?>
 
 </body>
 

@@ -11,4 +11,3 @@ if (isset($_SESSION['rank']) && $_SESSION['rank'] == 'ETU') {
 }
 
 require($path . 'resume.php');
-?>

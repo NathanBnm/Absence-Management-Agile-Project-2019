@@ -86,8 +86,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
 
                             if ($delay_ticket->COU_CONTROLE == 1) {
                                 $color_controle = "is-success";
-                            }
-                            else {
+                            } else {
                                 $color_controle = "is-danger";
                             }
                             ?>
@@ -129,8 +128,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                                         <?php
                                                         if ($delay_ticket->COU_CONTROLE == 1) {
                                                             echo "Oui";
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo "Non";
                                                         }
                                                         ?>
@@ -188,8 +186,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
 
                             if ($delay_ticket->COU_CONTROLE == 1) {
                                 $color_controle = "is-success";
-                            }
-                            else {
+                            } else {
                                 $color_controle = "is-danger";
                             }
                             ?>
@@ -231,8 +228,7 @@ $total_delays_not_justified = count_students_delays_not_justified();
                                                         <?php
                                                         if ($delay_ticket->COU_CONTROLE == 1) {
                                                             echo "Oui";
-                                                        }
-                                                        else {
+                                                        } else {
                                                             echo "Non";
                                                         }
                                                         ?>

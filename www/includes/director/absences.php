@@ -70,7 +70,7 @@
                                         </span> <br>
                                     </td>
                                     <td>
-                                        <form method ="POST">
+                                        <form method="POST">
                                             <input type="hidden" value="<?php echo $absence->SIG_CODE; ?>" id="etat" name="etat">
                                             <button type="submit" id="justifier" name="justifier" class="button <?php echo $color_etat; ?> is-rounded">
                                                 <?php echo $absence->SIG_ETAT; ?>

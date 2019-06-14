@@ -8,7 +8,7 @@
     </div>
     <div class="field">
         <div class="control">
-            <button type="submit" class="button is-success"  id="edit-ticket" name="edit-ticket">
+            <button type="submit" class="button is-success" id="edit-ticket" name="edit-ticket">
                 <span class="icon is-small"><i class="fas fa-check"></i></span>
                 <span>Confirmer</span>
             </button>

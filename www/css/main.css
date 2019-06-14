@@ -1,8 +1,6 @@
-
 html {
     overflow-y: unset !important;
 }
-
 
 .uppercase {
     text-transform: uppercase;
@@ -74,9 +72,9 @@ html {
     font-weight: bold;
 }
 
-footer{
-	position: absolute !important;
-	bottom: 0 !important;
-	left: 0 !important; 
-	right: 0 !important;
+footer {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
 }
