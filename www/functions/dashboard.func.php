@@ -16,7 +16,8 @@ function list_modules()
 function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 {
     global $db;
-
+    $role = etupass_vers_role($etupass);
+    if($role == 'ETU'){
     $u = [
         'COU_MODULE'                    =>  $module,
         'COU_TYPE'                      =>  $typecourse,
@@ -41,7 +42,10 @@ function saisie_absence($module, $typecourse, $type, $etupass, $message, $date)
 
     $mailetu=recuperer_mail($etupass);
     envoie($mailetu, $type, $date);
-
+    }
+    else {
+        return $role;
+    }
 }
 
 function nom_vers_etupass($nom, $prenom){
@@ -71,11 +75,9 @@ function etupass_vers_role($etupass){
     $sql = "SELECT UPPER(CAT_CODE) FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT";
     $req = $db->prepare($sql);
     $req->execute($u);
-    $role = [];
-        while($row = $req->fetchObject()){
-            $role['role'] = $row;
-        }
-        return $role;
+    $role = $req->fetch();
+    $req->closeCursor();
+    return $role['CAT_CODE'];
 }
 
 function last_ticket(){
