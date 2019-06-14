@@ -205,5 +205,5 @@ function recuperer_mail($etupass) {
     $req->execute($u);
     $mail = $req->fetch();
     $req->closeCursor();
-    return $mail;
+    return $mail['UTI_MAIL'];
 }
