@@ -283,3 +283,38 @@ function get_traitement($traite)
     $req->closeCursor();
     return $code['SIG_TRAITE'];
 }
+
+function change_justif($etat)
+{
+    global $db;
+    $temp=null;
+    if(get_etat($etat)=="Justifié"){
+        $temp="Non justifié";
+    } else {
+        $temp="Justifié";
+    }
+
+    $u = [
+        'SIG_CODE'  =>  $etat,
+        'SIG_ETAT' => $temp
+    ];
+    $sql = "UPDATE ABS_BILLET SET SIG_TRAITE = :SIG_TRAITE WHERE SIG_CODE = :SIG_CODE";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+}
+
+function get_etat($etat)
+{
+    global $db;
+
+    $u = [
+        'SIG_CODE' => $etat
+    ];
+    $sql = "SELECT SIG_ETAT FROM ABS_BILLET WHERE SIG_CODE =:SIG_CODE ";
+    $req = $db->prepare($sql);
+    $req->execute($u);
+
+    $code = $req->fetch();
+    $req->closeCursor();
+    return $code['SIG_ETAT'];
+}

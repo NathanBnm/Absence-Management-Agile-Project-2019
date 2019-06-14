@@ -21,4 +21,10 @@ if(isset($_POST['traite'])) {
     change_traitement($traite);
     echo "<meta http-equiv='refresh' content='0'>";
 }
+
+if(isset($_POST['justifier'])) {
+    $etat = $_POST['etat'];
+    change_justif($etat);
+    echo "<meta http-equiv='refresh' content='0'>";
+}
 ?>
