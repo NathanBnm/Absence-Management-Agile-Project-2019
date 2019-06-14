@@ -26,7 +26,7 @@
     <div class="field-label">
         <div class="control">
             <div class="select ">
-                <select id="typecourse" name="typecourse">
+                <select id="typecourse" name="typecourse" value="<?php if( isset($_POST['typecourse'])) {echo $_POST['typecourse'];}?>">
                     <option value="TD">TD</option>
                     <option value="TP">TP</option>
                     <option value="CM">CM</option>
@@ -44,7 +44,7 @@
         <div class="field-label is-normal">
             <div class="control">
                 <label class="checkbox">
-                    <input type="checkbox" id="controle">
+                    <input type="checkbox" id="controle" name="controle" value="<?php if( isset($_POST['controle'])) {echo $_POST['controle'];}?>">
                 </label>
             </div>
         </div>
