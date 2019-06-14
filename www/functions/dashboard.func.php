@@ -56,8 +56,15 @@ function test_billet_existant($professeur, $etudiant, $module, $date){
         $sql = "SELECT COUNT(*) FROM ABS_BILLET WHERE UTI_CODE = :UTI_CODE AND UTI_CODE_1 = (SELECT UTI_CODE FROM ABS_UTILISATEUR WHERE UTI_IDENTIFIANT = :UTI_IDENTIFIANT) AND COU_CODE = :COU_CODE AND SIG_DATE = :SIG_DATE";
         $req = $db->prepare($sql);
         $req->execute($u);
-        $exist = $req->rowCount($sql);
-        return $exist;
+        $i =0;
+        $absence = [];
+        while ($row = $req->fetchObject()) {
+            $absence[$i] = $row;
+            $i++;
+        }
+        return $i;
+
+     
     }
 
 function nom_vers_etupass($nom, $prenom)

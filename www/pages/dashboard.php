@@ -48,7 +48,7 @@ if(isset($_POST['submit-ticket'])) {
         $errors['invalid-user'] = "Seul un étudiant peut être absent";
     }
     
-    if(test_billet_existant($_SESSION['id'], $etupass, $module, $date) != 0){
+    if(test_billet_existant($_SESSION['id'], $etupass, $module, $date) != 1){
         $errors['invalid-abs'] = "Cette absence existe déjà";
     }
 
