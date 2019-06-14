@@ -1,4 +1,4 @@
-<form id="add-ticket" method="POST">
+<form id="add-ticket" method="POST" onsubmit="sauvegarder()">
 <div class="field is-horizontal">
     <div class="field-label is-normal ">
         <label class="label">Module :</label>
@@ -142,7 +142,7 @@
             </p>
             <div class="field is-grouped">
                 <div class="control">
-                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket" onsubmit="sauvegarder()">
+                    <button type="submit" class="button is-success" aria-haspopup="true" id="submit-ticket" name="submit-ticket">
                         <span class="icon is-small">
                             <i class="fas fa-check"></i>
                         </span>
