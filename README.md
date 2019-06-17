@@ -1,7 +1,8 @@
 # Absence management - Agile Project 2019
 ## University of Caen, Normandie - June 2019
+### Description
 
-A web application to manage student absences.
+A web application to manage student absences. Completed in 3 days.
 
 ### Contributors
 
